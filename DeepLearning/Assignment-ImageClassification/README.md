@@ -14,3 +14,9 @@
 * Hand-crafted Perceptron Algorithm
 * Image Feature Extraction
 * Explain How to train a model and evaluate performance.
+
+## Progress
+### (2021/3/11 09:00 - 11:30)
+1. Understand what perceptron is. 
+    * [Reference link](https://www.cs.toronto.edu/~rgrosse/courses/csc321_2018/readings/L03%20Linear%20Classifiers.pdf)
+    * [Perceptron Link](https://github.com/Vercaca/Perceptron/blob/master/perceptron.py )
