@@ -27,3 +27,4 @@
 1. Study the dataset
 2. Write a program to make sure each folder contains 1,300 pics. (train.txt exist?)
 3. Upload pics to Google Drive. Temporarily do this hw on Google Colab.
+4. Working on read the image dataset now.
