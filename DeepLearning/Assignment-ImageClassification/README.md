@@ -23,3 +23,7 @@
 2. Download the datasets.
 3. Try to run simple pla.
     * [Reference Link](http://terrence.logdown.com/posts/290508-python-simple-perceptron-learning-algorithm-implementations)
+### (2021/03/12 08:30 - 09:50)
+1. Study the dataset
+2. Write a program to make sure each folder contains 1,300 pics. (train.txt exist?)
+3. Upload pics to Google Drive. Temporarily do this hw on Google Colab.
