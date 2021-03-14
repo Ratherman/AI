@@ -28,3 +28,12 @@
 2. Write a program to make sure each folder contains 1,300 pics. (train.txt exist?)
 3. Upload pics to Google Drive. Temporarily do this hw on Google Colab.
 4. Can see the image in RGB format.
+
+### (2021/03/13 10hr)
+1. Write a binary classifier (Single Layer Perceptron with binary cross entropy) from scratch on my own dataset.
+2. Search for Derivatives of Softmax (dE/dZ, where Z is the input of softmax)
+
+### (2021/03/14 10hr)
+1. Writa a multi-class classifier (Single Layer Perceptron with cross entropy) from scratch on my own dataset.
+2. Get familiar with XGBoost.
+3. Get familiar with Random Forest.
