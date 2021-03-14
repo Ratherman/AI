@@ -36,4 +36,5 @@
 ### (2021/03/14 10hr)
 1. Writa a multi-class classifier (Single Layer Perceptron with cross entropy) from scratch on my own dataset.
 2. Get familiar with XGBoost.
-3. Get familiar with Random Forest.
+3. Understand Random Forest.
+4. Get familiar with Random Forest.
