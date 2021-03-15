@@ -38,3 +38,6 @@
 2. Get familiar with XGBoost.
 3. Understand Random Forest.
 4. Get familiar with Random Forest.
+
+### (2021/03/15)
+1. Have my perceptron up and run.
