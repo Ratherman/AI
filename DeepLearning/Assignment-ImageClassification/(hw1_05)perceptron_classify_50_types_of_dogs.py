@@ -226,13 +226,13 @@ def grab_top_5_predictions(Y_pred):
 PATH_TO_DESIRED_LOCATION = "C:/Users/AC/Desktop/AI/images/"
 np_train_txt, np_test_txt, np_val_txt = read_metadata_files(PATH_TO_DESIRED_LOCATION)
 
-Val_COH_Dataset, Val_COH_Label = create_COH_dataset(PATH_TO_DESIRED_LOCATION, np_val_txt, 128)
+Val_COH_Dataset, Val_COH_Label = create_COH_dataset(PATH_TO_DESIRED_LOCATION, np_val_txt, 256)
 save_dataset(Val_COH_Dataset, Val_COH_Label, "Val_COH_Dataset.csv", "Val_COH_Label.csv")
 
-Test_COH_Dataset, Test_COH_Label = create_COH_dataset(PATH_TO_DESIRED_LOCATION, np_test_txt, 128)
+Test_COH_Dataset, Test_COH_Label = create_COH_dataset(PATH_TO_DESIRED_LOCATION, np_test_txt, 256)
 save_dataset(Test_COH_Dataset, Test_COH_Label, "Test_COH_Dataset.csv", "Test_COH_Label.csv")
 
-Train_COH_Dataset, Train_COH_Label = create_COH_dataset(PATH_TO_DESIRED_LOCATION, np_train_txt, 128)
+Train_COH_Dataset, Train_COH_Label = create_COH_dataset(PATH_TO_DESIRED_LOCATION, np_train_txt, 256)
 save_dataset(Train_COH_Dataset, Train_COH_Label, "Train_COH_Dataset_all.csv", "Train_COH_Label_all.csv")
 
 ###############################################
@@ -246,7 +246,7 @@ np.random.seed(0)
 W = np.random.uniform(low=-0.01, high=0.01, size=(769,50))
 # Setup hyper parameters
 Epoch = 100
-r = 0.0003
+r = 0.0001
 Scale = 1000.0
 
 # Accuracy_top_1 will contain the top-1 accuracy per epoch
@@ -337,6 +337,7 @@ plt.plot(Train_Accuracy_top_5, label="Train Top-5")
 plt.plot(Val_Accuracy_top_1, label="Val Top-1")
 plt.plot(Val_Accuracy_top_5, label="Val Top-5")
 plt.legend(loc=2, fontsize=20)
+plt.savefig("Perceptron Accuracy: Scale_256 | Epoch_500 | Rate_10-4")
 plt.show()
 
 
@@ -351,4 +352,5 @@ plt.xlabel("Epochs", fontsize=20)
 plt.ylabel("Loss: Cross Entropy", fontsize=20)
 plt.plot(E)
 plt.legend(loc=2, fontsize=20)
+plt.savefig("Perceptron Loss: Scale_256 | Epoch_500 | Rate_10-4")
 plt.show()
