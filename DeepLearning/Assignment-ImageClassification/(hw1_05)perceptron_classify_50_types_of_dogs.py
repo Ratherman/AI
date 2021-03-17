@@ -227,13 +227,13 @@ PATH_TO_DESIRED_LOCATION = "C:/Users/AC/Desktop/AI/images/"
 np_train_txt, np_test_txt, np_val_txt = read_metadata_files(PATH_TO_DESIRED_LOCATION)
 
 Val_COH_Dataset, Val_COH_Label = create_COH_dataset(PATH_TO_DESIRED_LOCATION, np_val_txt, 256)
-save_dataset(Val_COH_Dataset, Val_COH_Label, "Val_COH_Dataset.csv", "Val_COH_Label.csv")
+save_dataset(Val_COH_Dataset, Val_COH_Label, "Val_COH_Dataset_256.csv", "Val_COH_Label_256.csv")
 
 Test_COH_Dataset, Test_COH_Label = create_COH_dataset(PATH_TO_DESIRED_LOCATION, np_test_txt, 256)
-save_dataset(Test_COH_Dataset, Test_COH_Label, "Test_COH_Dataset.csv", "Test_COH_Label.csv")
+save_dataset(Test_COH_Dataset, Test_COH_Label, "Test_COH_Dataset_256.csv", "Test_COH_Label_256.csv")
 
 Train_COH_Dataset, Train_COH_Label = create_COH_dataset(PATH_TO_DESIRED_LOCATION, np_train_txt, 256)
-save_dataset(Train_COH_Dataset, Train_COH_Label, "Train_COH_Dataset_all.csv", "Train_COH_Label_all.csv")
+save_dataset(Train_COH_Dataset, Train_COH_Label, "Train_COH_Dataset_all_256.csv", "Train_COH_Label_all_256.csv")
 
 ###############################################
 # Build Multi-Class-Classification Perceptron #
