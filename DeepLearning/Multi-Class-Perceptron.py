@@ -206,7 +206,7 @@ def grab_top_5_predictions(Y_pred):
 # Create & Save Dataset #
 #########################
 
-PATH_TO_DESIRED_LOCATION = "C:/Users/USER/Desktop/Projects/Github_Repo/AI/DeepLearning/Assignment-ImageClassification/"
+PATH_TO_DESIRED_LOCATION = "C:/Users/USER/Desktop/Projects/Github_Repo/AI/DeepLearning/"
 np_train_txt, np_test_txt, np_val_txt = read_metadata_files(PATH_TO_DESIRED_LOCATION)
 
 # Training Dataset
