@@ -1,8 +1,3 @@
-# Connect to google Account in order to access dataset.
-# from google.colab import drive
-# drive.mount("/content/gdrive")
-
-
 # [Input Vars]
 #   1. <string> PATH_TO_DESIRED_LOCATION: It should be the directory containing (1) images/ (2) train.txt (3) test.txt (4) val.txt
 
@@ -33,7 +28,6 @@ def read_metadata_files(PATH_TO_DESIRED_LOCATION):
   return np_train_txt, np_test_txt, np_val_txt
 
 
-
 # [Input Vars]
 #   1. <ndarray> img: expected a square image.
 
@@ -58,7 +52,6 @@ def color_of_histogram(img):
         X.append(cnt[key])
 
   return X
-
 
 
 # [Input Vars]
@@ -108,8 +101,6 @@ def create_COH_dataset(PATH_TO_DESIRED_LOCATION, metadata_file, image_size):
       tic = time.time()
   return COH_Dataset, COH_Label
 
-
-
 # [Input Vars]
 #   1. <list> Dataset: Train_COH_Dataset, Val_COH_Dataset, Test_COH_Dataset
 #   2. <string> desired_name: 
@@ -129,16 +120,12 @@ def save_dataset(Dataset, Label, dataset_name, label_name):
 
   print(f"[Save Success] I have spent {round(toc-tic,2)} sec to save the {dataset_name} and the {label_name}.")
 
-
-
 import numpy as np
 def CrossEntropy(y_pred, y_truth):
   return (-1*y_truth*np.log(y_pred)).sum()
 def Softmax(Z):
   S = np.exp(Z-np.max(Z))/np.sum(np.exp(Z-np.max(Z)))
   return S
-
-
 
 # [Input Vars]
 #   1. <list> Dataset: Either Train_COH_Dataset, Val_COH_Dataset, or Test_COH_Dataset
@@ -187,8 +174,6 @@ def top_accuracy(Dataset, Label, W, Scale, Name):
   print(f"[Result of {Name}] The top-5 accuracy is {top5_accuracy} %")
   return top1_accuracy, top5_accuracy
 
-
-
 # [Input Vars]
 #   1. <ndarray> Y_pred: It's a 1-D ndarray which contains the possibilities of the predictions.
 
@@ -217,27 +202,35 @@ def grab_top_5_predictions(Y_pred):
 
     return top_1, top_2, top_3, top_4, top_5
 
+#########################
+# Create & Save Dataset #
+#########################
 
-
-####################
-# Prepare Datasets #
-####################
-
-PATH_TO_DESIRED_LOCATION = "C:/Users/AC/Desktop/AI/images/"
+PATH_TO_DESIRED_LOCATION = "C:/Users/USER/Desktop/Projects/Github_Repo/AI/DeepLearning/Assignment-ImageClassification/"
 np_train_txt, np_test_txt, np_val_txt = read_metadata_files(PATH_TO_DESIRED_LOCATION)
 
-Val_COH_Dataset, Val_COH_Label = create_COH_dataset(PATH_TO_DESIRED_LOCATION, np_val_txt, 256)
-save_dataset(Val_COH_Dataset, Val_COH_Label, "Val_COH_Dataset_256.csv", "Val_COH_Label_256.csv")
-
-Test_COH_Dataset, Test_COH_Label = create_COH_dataset(PATH_TO_DESIRED_LOCATION, np_test_txt, 256)
-save_dataset(Test_COH_Dataset, Test_COH_Label, "Test_COH_Dataset_256.csv", "Test_COH_Label_256.csv")
-
+# Training Dataset
 Train_COH_Dataset, Train_COH_Label = create_COH_dataset(PATH_TO_DESIRED_LOCATION, np_train_txt, 256)
 save_dataset(Train_COH_Dataset, Train_COH_Label, "Train_COH_Dataset_all_256.csv", "Train_COH_Label_all_256.csv")
+
+# Validation Dataset
+Val_COH_Dataset, Val_COH_Label = create_COH_dataset(PATH_TO_DESIRED_LOCATION, np_val_txt, 256)
+save_dataset(Val_COH_Dataset, Val_COH_Label, "Val_COH_Dataset_RF.csv", "Val_COH_Label_RF.csv")
+
+# Testing Dataset
+Test_COH_Dataset, Test_COH_Label = create_COH_dataset(PATH_TO_DESIRED_LOCATION, np_test_txt, 256)
+save_dataset(Test_COH_Dataset, Test_COH_Label, "Test_COH_Dataset_RF.csv", "Test_COH_Label_RF.csv")
+
+np_Train_COH_Dataset = np.array(Train_COH_Dataset)
+np_Train_COH_Label = np.array(Train_COH_Label).reshape(len(Train_COH_Label),1)
+np_Val_COH_Dataset = np.array(Val_COH_Dataset)
+np_Val_COH_Label = np.array(Val_COH_Label).reshape(len(Val_COH_Label), 1)
+print(f"The shape of np_Train_COH_Dataset is {np_Train_COH_Dataset.shape}, and the shape of np_Train_COH_Label is {np_Train_COH_Label.shape}")
 
 ###############################################
 # Build Multi-Class-Classification Perceptron #
 ###############################################
+
 import numpy as np
 import time
 
@@ -245,8 +238,8 @@ import time
 np.random.seed(0)
 W = np.random.uniform(low=-0.01, high=0.01, size=(769,50))
 # Setup hyper parameters
-Epoch = 500
-r = 0.0001
+Epoch = 50
+r = 0.0003
 Scale = 1000.0
 
 # Accuracy_top_1 will contain the top-1 accuracy per epoch
@@ -309,6 +302,7 @@ for epoch in range(Epoch):
   # Measure the top-1 accuracy and top-5 accuracy
   train_top1_accuracy, train_top5_accuracy = top_accuracy(Train_COH_Dataset, Train_COH_Label, W, Scale, "Train")
   val_top1_accuracy, val_top5_accuracy = top_accuracy(Val_COH_Dataset, Val_COH_Label, W, Scale, "Val")
+  test_top1_accuracy, test_top5_accuracy = top_accuracy(Test_COH_Dataset, Test_COH_Label, W, Scale, "Test")
 
   # Collect results
   E.append(np.mean(e))
@@ -317,9 +311,9 @@ for epoch in range(Epoch):
   Val_Accuracy_top_1.append(val_top1_accuracy)
   Val_Accuracy_top_5.append(val_top5_accuracy)
 
-####################
-# Draw the results #
-####################
+########################
+# Evaluate the results #
+########################
 
 # [Input Vars]
 #   1. <list> Accuracy_top_1
@@ -354,3 +348,7 @@ plt.plot(E)
 plt.legend(loc=2, fontsize=20)
 plt.savefig("Perceptron Loss: ImgSize_256 | Scale_1000 | Epoch_500 | Rate_10-4")
 plt.show()
+
+print("[Final]")
+val_top1_accuracy, val_top5_accuracy = top_accuracy(Val_COH_Dataset, Val_COH_Label, W, Scale, "Val")
+test_top1_accuracy, test_top5_accuracy = top_accuracy(Test_COH_Dataset, Test_COH_Label, W, Scale, "Test")
