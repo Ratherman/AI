@@ -331,10 +331,8 @@ plt.plot(Train_Accuracy_top_5, label="Train Top-5")
 plt.plot(Val_Accuracy_top_1, label="Val Top-1")
 plt.plot(Val_Accuracy_top_5, label="Val Top-5")
 plt.legend(loc=2, fontsize=20)
-plt.savefig("Perceptron Accuracy: ImgSize_256 | Scale_1000 | Epoch_500 | Rate_10-4")
+#plt.savefig("Perceptron Accuracy: ImgSize_256 | Scale_1000 | Epoch_500 | Rate_10-4")
 plt.show()
-
-
 
 # [Input Vars]
 #   1. <list> E
@@ -346,7 +344,7 @@ plt.xlabel("Epochs", fontsize=20)
 plt.ylabel("Loss: Cross Entropy", fontsize=20)
 plt.plot(E)
 plt.legend(loc=2, fontsize=20)
-plt.savefig("Perceptron Loss: ImgSize_256 | Scale_1000 | Epoch_500 | Rate_10-4")
+#plt.savefig("Perceptron Loss: ImgSize_256 | Scale_1000 | Epoch_500 | Rate_10-4")
 plt.show()
 
 print("[Final]")

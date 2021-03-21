@@ -1,43 +1,33 @@
-# Assignment-Image Classification
+# Multi-Class-Perceptron
 
-## Used Methods/ Algorithms
-* OpenCV: Extract Features from original data.
-    * Recommended Image Feature Extraction Methods
-        1. Global color histogram
-        2. HoG (Histogram of Oriented Gradients)
-        3. BoVW (Bag of Visual Words)
-* Perceptron: It's a linear classifier for predicting the label.
-* XGboost: Use it for comparison purpose.
-* Random Forest: Use it for comparision purpose.
+## Introduction:
+* [Data Source](https://drive.google.com/open?id=1kwYYWL67O0Dcbx3dvZIfbGg9NiHdyisr) (includeing training, validation and testing dataset.)
+* We have 50 types of animals, and each type contains 1300 images. The goal for our trained model, i.e. Perceptron, is to recognize the animals in the future as long as we provide it an image.
 
-## Features for this repo
-* Hand-crafted Perceptron Algorithm
-* Image Feature Extraction
-* Explain How to train a model and evaluate performance.
+## Train Model
+1. Image Pre-processing
+    * Resize Image: Every Image has different scale, for sake of fairness, I resize each image into (256,256).
+        * (see function **create_COH_dataset** in **Multi-Class-Perceptron.py**)
+    * Feature Extraction: Use [Color Histogram](https://en.wikipedia.org/wiki/Color_histogram) to extract the features.
+        * (see function **color_of_histogram** in **Multi-Class-Perceptron.py**)
+    * (Optional) Save transformed datasets: Because RF and XGBoost needs the same transformed datasets, I decided to save them in csv format.
+        * (see function **save_dataset** in **Multi-Class-Percetron.py**)
+2. Model Design
+    * Input Layer:
+        * 
+    * Weight Matrix:
+        * 
+    * Output Layer:
+        *  
+3. Loss Function Measurance
+    * Cross Entropy: Use cross entropy to measure the current performance of the model.
+4. Update the current Model (Gradient Descent and Back Propagation)
+![Structure of Perceptron]()
 
-## Progress
-### (2021/3/11 09:00 - 11:30)
-1. Understand what perceptron is. 
-    * [Reference Link](https://www.cs.toronto.edu/~rgrosse/courses/csc321_2018/readings/L03%20Linear%20Classifiers.pdf)
-    * [Perceptron Link](https://github.com/Vercaca/Perceptron/blob/master/perceptron.py )
-2. Download the datasets.
-3. Try to run simple pla.
-    * [Reference Link](http://terrence.logdown.com/posts/290508-python-simple-perceptron-learning-algorithm-implementations)
-### (2021/03/12 08:30 - 09:50)
-1. Study the dataset
-2. Write a program to make sure each folder contains 1,300 pics. (train.txt exist?)
-3. Upload pics to Google Drive. Temporarily do this hw on Google Colab.
-4. Can see the image in RGB format.
+## Evaluate performance
+### [Training Phase]
+* Once the training finishes one epoch, it concludes the current performance on both **training** and **validation** datasets.
+* By PERFORMANCE, I mean the "top-1 accuracy" and "top-5 accuracy" of the datasets.
 
-### (2021/03/13 10hr)
-1. Write a binary classifier (Single Layer Perceptron with binary cross entropy) from scratch on my own dataset.
-2. Search for Derivatives of Softmax (dE/dZ, where Z is the input of softmax)
-
-### (2021/03/14 10hr)
-1. Writa a multi-class classifier (Single Layer Perceptron with cross entropy) from scratch on my own dataset.
-2. Get familiar with XGBoost.
-3. Understand Random Forest.
-4. Get familiar with Random Forest.
-
-### (2021/03/15)
-1. Have my perceptron up and run.
+### [Testing Phase]
+* Once the training phase ends, it concludes the final performance on both **validation** and **testing** datasets.
