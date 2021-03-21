@@ -24,10 +24,11 @@
     * (Function **Softmax**)
 * Cross Entropy: Use cross entropy to measure the current performance of the model.
     * (Function **CrossEntropy**)
+![Epoch and Loss](https://github.com/Ratherman/AI/blob/main/DeepLearning/hw1/imgs/Perceptron_Train_Loss.png)
+
 ### [Update the current Model]
 * Back Propagation and Gradient Descent
     * (Codes between 234 and 300)
-![Epoch and Loss](https://github.com/Ratherman/AI/blob/main/DeepLearning/hw1/imgs/Perceptron_Train_Loss.png)
 
 ## Evaluate performance
 ### [Training Phase]
