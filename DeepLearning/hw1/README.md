@@ -1,4 +1,7 @@
 # Multi-Class-Perceptron
+# 0. [Env Setup]
+* Python 3.8.8 
+* Packages Installed: numpy (Ver 1.20.1), matplotlib (Ver 3.3.4), pandas (Ver 1.2.3), opencv-python (Ver 4.5.1)
 
 # 1. Intro:
 ### 1.1 [Download Dataset]
