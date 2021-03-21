@@ -1,7 +1,17 @@
 # Multi-Class-Perceptron
 # 0. [Env Setup]
 * Python 3.8.8 
-* Packages Installed: numpy (Ver 1.20.1), matplotlib (Ver 3.3.4), pandas (Ver 1.2.3), opencv-python (Ver 4.5.1)
+* Packages Installed:
+    * numpy (Ver 1.20.1)
+    * matplotlib (Ver 3.3.4) 
+    * pandas (Ver 1.2.3)
+    * opencv-python (Ver 4.5.1) 
+    * scikit-learn  (Ver 0.24.1)
+    * xgboost (Ver 1.3.3)
+    
+* If wanna run the src code on Google Colab, click the following links:
+    * [(Google Colab) Multi-Class-Perceptron.ipynb](https://colab.research.google.com/drive/1J_7woxV6hS5JVgpAGht-3Frbg4heDeE3?authuser=2#scrollTo=fFvesDo5Ra2I)
+    * [(Google Colab) Random Forest and XGBoost.ipynb](https://colab.research.google.com/drive/1YaMmLyFjPLGtt2uAehAegyTajFBzreHT?authuser=2#scrollTo=qDcFxtDZIBfX)
 
 # 1. Intro:
 ### 1.1 [Download Dataset]
