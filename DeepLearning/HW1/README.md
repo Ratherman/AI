@@ -32,6 +32,7 @@
 * Weight Matrix: The matrix contains all trainable parameters whose shape is (769,50).
 * Output Layer: Followed by Softmax operation, it outputs a possibility vector whose length is 50.
 <br>
+
 ![Structure of Perceptron](https://github.com/Ratherman/AI/blob/main/DeepLearning/HW1/imgs/structure_of_perceptron.png)
 
 ### 2.3 [Loss Function Measurance]
@@ -40,6 +41,7 @@
 * Cross Entropy: Use cross entropy to measure the current performance of the model.
     * (Function **CrossEntropy**)
 <br>
+
 ![Epoch and Loss](https://github.com/Ratherman/AI/blob/main/DeepLearning/HW1/imgs/Perceptron_Train_Loss.png)
 
 ### 2.4 [Update the current Model]
@@ -51,12 +53,16 @@
 * Once the training finishes one epoch, it concludes the current performance on both **training** and **validation** datasets.
 * By PERFORMANCE, I mean the "top-1 accuracy" and "top-5 accuracy" of the datasets.
 <br>
+
 ![Top 1 and Top 5 of Train and Val](https://github.com/Ratherman/AI/blob/main/DeepLearning/HW1/imgs/Perceptron_Train_Val_Acc_Record_Each_Epoch.png)
 ### 3.2 [Testing Phase]
 * Once the training phase ends, it concludes the final performance on both **validation** and **testing** datasets.
 * The following image shows the performance of **Perceptron**.
 <br>
+
 ![Top 1 and Top 5 of Val and Test](https://github.com/Ratherman/AI/blob/main/DeepLearning/HW1/imgs/Perceptron_Test_Val_Acc.png)
 * The following image shows the performance of **Random Forest**.
+<br>
+
 ![Random Forest of Val and Test]()
 * The following image shows the performance of **XGBoost**.
