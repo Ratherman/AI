@@ -6,7 +6,7 @@
 
 ## Train Model
 ### [Image Pre-processing]
-* Resize Image: Every Image has different scale, for sake of fairness, I resize each image into (256,256).
+* Resize Image: Every Image has different scale, for sake of fairness, I resize each image into (256,256,3).
     * (Function **create_COH_dataset**)
 * Feature Extraction: Use [Color Histogram](https://en.wikipedia.org/wiki/Color_histogram) to extract the features.
     * (Function **color_of_histogram**)
