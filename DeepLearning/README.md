@@ -22,7 +22,7 @@
 3. Loss Function Measurance
     * Cross Entropy: Use cross entropy to measure the current performance of the model.
 4. Update the current Model (Gradient Descent and Back Propagation)
-![Structure of Perceptron]()
+![Structure of Perceptron](https://github.com/Ratherman/AI/blob/main/DeepLearning/structure_of_perceptron.png)
 
 ## Evaluate performance
 ### [Training Phase]
