@@ -24,14 +24,14 @@ dval = xgb.DMatrix(val_X, label=val_Y)
 dtest = xgb.DMatrix(test_X, label=test_Y)
 
 param = {
-    "max_depth":3, # the maximum number of each tree
-    "eta":0.01, # the training step for each iteration
+    "max_depth":10, # the maximum number of each tree
+    "eta":0.03, # the training step for each iteration
     "silent":1, # loggin mode - quiet
     "objective": "multi:softprob", # error evaluation for multiclass training
     "num_class":50 # the number of classes exists in this datasets
 }
 
-num_round = 60
+num_round = 200
 tic = time.time()
 bst = xgb.train(param, dtrain, num_round)
 toc = time.time()
