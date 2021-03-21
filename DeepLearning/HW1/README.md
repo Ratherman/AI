@@ -14,7 +14,7 @@
 
 # 1. Intro:
 ### 1.1 [Download Dataset]
-* [Data Source](https://drive.google.com/open?id=1kwYYWL67O0Dcbx3dvZIfbGg9NiHdyisr) (includeing training, validation and testing dataset.)
+* [Data Source](https://drive.google.com/open?id=1kwYYWL67O0Dcbx3dvZIfbGg9NiHdyisr) (including training, validation and testing dataset.)
 ### 1.2 [Dataset Intro]
 * We have 50 types of animals, and each type contains 1300 images. The goal for our trained model, i.e. Perceptron, is to recognize the animals in the future as long as we provide it an image.
 
@@ -35,7 +35,7 @@
 
 ![Structure of Perceptron](https://github.com/Ratherman/AI/blob/main/DeepLearning/HW1/imgs/structure_of_perceptron.png)
 
-### 2.3 [Loss Function Measurance]
+### 2.3 [Loss Function Measureance]
 * Forward Propagation: Pass the data vector forward to get the current result.
     * (Function **Softmax**)
 * Cross Entropy: Use cross entropy to measure the current performance of the model.
