@@ -68,5 +68,4 @@
 * The following image shows the performance of **XGBoost**.
 <br>
 
-![XGBoost of Val and Test](![XGBoost of Val and Test](https://github.com/Ratherman/AI/blob/main/DeepLearning/HW1/imgs/XGBoost_Test_Val_Acc.jpg)
-)
+![XGBoost of Val and Test](https://github.com/Ratherman/AI/blob/main/DeepLearning/HW1/imgs/XGBoost_Test_Val_Acc.jpg)
