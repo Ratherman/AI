@@ -8,7 +8,7 @@
     * opencv-python (Ver 4.5.1) 
     * scikit-learn  (Ver 0.24.1)
     * xgboost (Ver 1.3.3)
-* If wanna run the src code on Google Colab, click the following links:
+* If wanna run the src code on Google Colab, find them in the following links:
     * [(Google Colab) Multi-Class-Perceptron.ipynb](https://colab.research.google.com/drive/1J_7woxV6hS5JVgpAGht-3Frbg4heDeE3?authuser=2#scrollTo=fFvesDo5Ra2I)
     * [(Google Colab) Random Forest and XGBoost.ipynb](https://colab.research.google.com/drive/1YaMmLyFjPLGtt2uAehAegyTajFBzreHT?authuser=2#scrollTo=qDcFxtDZIBfX)
 
@@ -51,4 +51,8 @@
 ![Top 1 and Top 5 of Train and Val](https://github.com/Ratherman/AI/blob/main/DeepLearning/HW1/imgs/Perceptron_Train_Val_Acc_Record_Each_Epoch.png)
 ### 3.2 [Testing Phase]
 * Once the training phase ends, it concludes the final performance on both **validation** and **testing** datasets.
+* The following image shows the performance of **Perceptron**.
 ![Top 1 and Top 5 of Val and Test](https://github.com/Ratherman/AI/blob/main/DeepLearning/HW1/imgs/Perceptron_Test_Val_Acc.png)
+* The following image shows the performance of **Random Forest**.
+![Random Forest of Val and Test]()
+* The following image shows the performance of **XGBoost**.

@@ -211,15 +211,15 @@ np_train_txt, np_test_txt, np_val_txt = read_metadata_files(PATH_TO_DESIRED_LOCA
 
 # Training Dataset
 Train_COH_Dataset, Train_COH_Label = create_COH_dataset(PATH_TO_DESIRED_LOCATION, np_train_txt, 256)
-save_dataset(Train_COH_Dataset, Train_COH_Label, "Train_COH_Dataset_all_256.csv", "Train_COH_Label_all_256.csv")
+save_dataset(Train_COH_Dataset, Train_COH_Label, "Train_COH_Dataset.csv", "Train_COH_Label.csv")
 
 # Validation Dataset
 Val_COH_Dataset, Val_COH_Label = create_COH_dataset(PATH_TO_DESIRED_LOCATION, np_val_txt, 256)
-save_dataset(Val_COH_Dataset, Val_COH_Label, "Val_COH_Dataset_RF.csv", "Val_COH_Label_RF.csv")
+save_dataset(Val_COH_Dataset, Val_COH_Label, "Val_COH_Dataset.csv", "Val_COH_Label.csv")
 
 # Testing Dataset
 Test_COH_Dataset, Test_COH_Label = create_COH_dataset(PATH_TO_DESIRED_LOCATION, np_test_txt, 256)
-save_dataset(Test_COH_Dataset, Test_COH_Label, "Test_COH_Dataset_RF.csv", "Test_COH_Label_RF.csv")
+save_dataset(Test_COH_Dataset, Test_COH_Label, "Test_COH_Dataset.csv", "Test_COH_Label.csv")
 
 np_Train_COH_Dataset = np.array(Train_COH_Dataset)
 np_Train_COH_Label = np.array(Train_COH_Label).reshape(len(Train_COH_Label),1)
