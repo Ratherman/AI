@@ -28,9 +28,9 @@
     * (Function **save_dataset**)
 
 ### 2.2 [Model Design]
-* Input Layer: It receives a data vector whose length is 769.
-* Weight Matrix: The matrix contains all trainable parameters whose shape is (769,50).
-* Output Layer: Followed by Softmax operation, it outputs a possibility vector whose length is 50.
+* Input Layer: It receives a data vector (X) whose length is 769.
+* Weight Matrix: The matrix (W) contains all trainable parameters whose shape is (769,50).
+* Output Layer: Followed by Softmax operation (From Z to S), it outputs a possibility vector whose length is 50.
 <br>
 
 ![Structure of Perceptron](https://github.com/Ratherman/AI/blob/main/DeepLearning/HW1/imgs/structure_of_perceptron.png)
@@ -64,8 +64,8 @@
 * The following image shows the performance of **Random Forest**.
 <br>
 
-![Random Forest of Val and Test]()
+![Random Forest of Val and Test](https://github.com/Ratherman/AI/blob/main/DeepLearning/HW1/imgs/RF_Test_Val_Acc.png)
 * The following image shows the performance of **XGBoost**.
 <br>
 
-![XGBoost of Val and Test]()
+![XGBoost of Val and Test](https://github.com/Ratherman/AI/blob/main/DeepLearning/HW1/imgs/XGB_Test_Val_Acc.jpg)
