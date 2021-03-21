@@ -66,3 +66,6 @@
 
 ![Random Forest of Val and Test]()
 * The following image shows the performance of **XGBoost**.
+<br>
+
+![XGBoost of Val and Test]()
