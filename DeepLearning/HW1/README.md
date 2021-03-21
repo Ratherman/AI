@@ -35,7 +35,7 @@
 
 ![Structure of Perceptron](https://github.com/Ratherman/AI/blob/main/DeepLearning/HW1/imgs/structure_of_perceptron.png)
 
-### 2.3 [Loss Function Measureance]
+### 2.3 [Loss Function Measurement]
 * Forward Propagation: Pass the data vector forward to get the current result.
     * (Function **Softmax**)
 * Cross Entropy: Use cross entropy to measure the current performance of the model.
