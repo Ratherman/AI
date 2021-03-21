@@ -17,7 +17,7 @@
 * Input Layer: It receives a data vector whose length is 769.
 * Weight Matrix: The matrix contains all trainable parameters whose shape is (769,50).
 * Output Layer: Followed by Softmax operation, it outputs a possibility vector whose length is 50.
-![Structure of Perceptron](https://github.com/Ratherman/AI/blob/main/DeepLearning/structure_of_perceptron.png)
+![Structure of Perceptron](https://github.com/Ratherman/AI/blob/main/DeepLearning/hw1/imgs/structure_of_perceptron.png)
 
 ### [Loss Function Measurance]
 * Forward Propagation: Pass the data vector forward to get the current result.
@@ -27,12 +27,13 @@
 ### [Update the current Model]
 * Back Propagation and Gradient Descent
     * (Codes between 234 and 300)
+![Epoch and Loss](https://github.com/Ratherman/AI/blob/main/DeepLearning/hw1/imgs/Perceptron_Train_Loss.png)
 
 ## Evaluate performance
 ### [Training Phase]
 * Once the training finishes one epoch, it concludes the current performance on both **training** and **validation** datasets.
 * By PERFORMANCE, I mean the "top-1 accuracy" and "top-5 accuracy" of the datasets.
-![Top 1 and Top 5 of Train and Val](https://github.com/Ratherman/AI/blob/main/DeepLearning/Perceptron_Train_Val_Acc_Record_Each_Epoch.png)
+![Top 1 and Top 5 of Train and Val](https://github.com/Ratherman/AI/blob/main/DeepLearning/hw1/imgs/Perceptron_Train_Val_Acc_Record_Each_Epoch.png)
 ### [Testing Phase]
 * Once the training phase ends, it concludes the final performance on both **validation** and **testing** datasets.
-![Top 1 and Top 5 of Val and Test](https://github.com/Ratherman/AI/blob/main/DeepLearning/Perceptron_Test_Val_Acc.png)
+![Top 1 and Top 5 of Val and Test](https://github.com/Ratherman/AI/blob/main/DeepLearning/hw1/imgs/Perceptron_Test_Val_Acc.png)
