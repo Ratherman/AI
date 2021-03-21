@@ -8,7 +8,6 @@
     * opencv-python (Ver 4.5.1) 
     * scikit-learn  (Ver 0.24.1)
     * xgboost (Ver 1.3.3)
-    
 * If wanna run the src code on Google Colab, click the following links:
     * [(Google Colab) Multi-Class-Perceptron.ipynb](https://colab.research.google.com/drive/1J_7woxV6hS5JVgpAGht-3Frbg4heDeE3?authuser=2#scrollTo=fFvesDo5Ra2I)
     * [(Google Colab) Random Forest and XGBoost.ipynb](https://colab.research.google.com/drive/1YaMmLyFjPLGtt2uAehAegyTajFBzreHT?authuser=2#scrollTo=qDcFxtDZIBfX)
