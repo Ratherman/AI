@@ -1,4 +1,5 @@
 *.pyc
 *.csv
 *.txt
-/DeepLearning/images
+/DeepLearning/__HW1_DATA
+/DeepLearning/HW2/images
