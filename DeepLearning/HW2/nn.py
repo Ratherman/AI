@@ -3,6 +3,10 @@ import matplotlib.pyplot as plt
 
 class nn():
 
+    ##########################
+    # [Input Vars] None
+    #
+    # [Output Vars] None
     def __init__(self):
         pass
 
