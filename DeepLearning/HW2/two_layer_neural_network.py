@@ -515,13 +515,10 @@ for epoch in range(Epoch):
     dEdW1, dEdW2 = backward_pass(Y_pred, Y_truth, A2, A1, X, W2, W1)
 
     # Update the parameters
-    if (epoch < 50){
+    if (epoch < 50):
       W1, W2 = update_weights(dEdW1, dEdW2, W1, W2, lr_1)
-    }
-    else
-    {
+    else:
       W1, W2 = update_weights(dEdW1, dEdW2, W1, W2, lr_2)
-    }
 
   toc = time.time()
   print(f"\n[Training] Epoch: {epoch}, the Cross Entropy Loss is {round(np.mean(e),4)}. In this epoch, I spent {round(toc - tic,2)} sec.")
