@@ -121,12 +121,11 @@ def create_COH_dataset(PATH_TO_DESIRED_LOCATION, metadata_file, image_size):
 # [4] Save Dataset #
 ####################
 
-
 # [Input Vars]
 #   1. <list> Dataset: Train_COH_Dataset, Val_COH_Dataset, Test_COH_Dataset
 #   2. <string> desired_name: 
 
-# [Outpu Vars] None
+# [Output Vars] None
 
 from numpy import asarray
 from numpy import savetxt
@@ -471,7 +470,8 @@ W2 = np.random.uniform(low=-0.01, high=0.01, size=(300,50))
 
 # Setup hyper parameters
 Epoch = 100
-lr = 0.03
+lr_1 = 0.03
+lr_2 = 0.01
 Scale = 1000.0
 
 # Accuracy_top_1 will contain the top-1 accuracy per epoch
@@ -515,7 +515,13 @@ for epoch in range(Epoch):
     dEdW1, dEdW2 = backward_pass(Y_pred, Y_truth, A2, A1, X, W2, W1)
 
     # Update the parameters
-    W1, W2 = update_weights(dEdW1, dEdW2, W1, W2, lr)
+    if (epoch < 50){
+      W1, W2 = update_weights(dEdW1, dEdW2, W1, W2, lr_1)
+    }
+    else
+    {
+      W1, W2 = update_weights(dEdW1, dEdW2, W1, W2, lr_2)
+    }
 
   toc = time.time()
   print(f"\n[Training] Epoch: {epoch}, the Cross Entropy Loss is {round(np.mean(e),4)}. In this epoch, I spent {round(toc - tic,2)} sec.")
