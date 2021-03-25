@@ -84,7 +84,6 @@ def color_of_histogram(img):
 #   5. Append the label into the COH_Label
 
 import cv2 as cv
-#from google.colab.patches import cv2_imshow
 import time
 
 def create_COH_dataset(PATH_TO_DESIRED_LOCATION, metadata_file, image_size):
