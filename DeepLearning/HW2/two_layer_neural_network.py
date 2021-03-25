@@ -3,9 +3,14 @@ import pandas as pd
 import numpy as np
 import time
 
-#######################
-# 1. Read COH Dataset #
-#######################
+# 1. Read Dataset
+# 2. Build & Train NN (Set Hyper Parameters here.)
+# 3. Draw Top-1/5 Accuracy and Cross Entropy
+
+
+###################
+# 1. Read Dataset #
+###################
 
 ROOT_PATH = "C:/Users/USER/Desktop/Projects/Github_Repo/AI/DeepLearning/__HW1_DATA/"
 
@@ -22,9 +27,9 @@ val_Y = pd.read_csv(ROOT_PATH + "Val_COH_Label.csv", header=None)
 test_X = pd.read_csv(ROOT_PATH + "Test_COH_Dataset.csv", header=None)
 test_Y = pd.read_csv(ROOT_PATH + "Test_COH_Label.csv", header=None)
 
-###########################
-# 2. Build Neural Network #
-###########################
+#######################
+# 2. Build & Train NN #
+#######################
 
 # Initialize the Custom Class
 NN = nn()
@@ -63,7 +68,7 @@ for epoch in range(Epoch):
     assert Y_truth.shape == (1,50), f"[Error] Y_truth's shape is {Y_truth.shape}. Expected shape is (1, 50)."
     
     # Record cross entropy.
-    e.append(round(NN.crossEntropy(Y_pred, Y_truth),4))
+    e.append(round(NN.cross_entropy(Y_pred, Y_truth),4))
 
     # Backward Propagation.
     dEdW1, dEdW2 = NN.backward_pass(Y_pred, Y_truth, A2, A1, X, W2, W1)
@@ -91,9 +96,9 @@ for epoch in range(Epoch):
 
 test_top1_accuracy, test_top5_accuracy = NN.top_accuracy(test_X, test_Y, W1, W2, Scale, "Test")
 
-###########################################
-# Draw Top-1/5 Accuracy and Cross Entropy #
-###########################################
+##############################################
+# 3. Draw Top-1/5 Accuracy and Cross Entropy #
+##############################################
 
 # Draw Diagram: Accuracy
 plt.figure(figsize=(20,10))

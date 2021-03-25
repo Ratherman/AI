@@ -1,16 +1,29 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
+# Function 【01】 ~ 【06】 are public functions.
+    # 【01】forward_pass
+    # 【02】backward_pass
+    # 【03】cross_entropy
+    # 【04】initialize_weights
+    # 【05】update_weights
+    # 【06】top_accuracy
+    
+# Function 【07】 ~ 【09】 are private functions.
+    # 【07】_grab_top_5_predictions
+    # 【08】_sigmoid
+    # 【09】_softmax
+
 class nn():
 
-    ##########################
+    # 【00】 #########################
     # [Input Vars] None
     #
     # [Output Vars] None
     def __init__(self):
         pass
 
-    ##########################
+    # 【01】 #########################
     # [Input Vars]
     #   1. <ndarray> X: Its shape should be (1, 769).
     #   2. <ndarray> W1: Its shape should be (769, 300).
@@ -42,7 +55,7 @@ class nn():
         
         return Y_pred, A2, A1
 
-    ##########################
+    # 【02】 #########################
     # [Input Vars]
     #   1. <ndarray> Y_pred: Its shape should be (1, 50).
     #   2. <ndarray> Y_truth: Its shape should be (1, 50).
@@ -87,20 +100,20 @@ class nn():
         
         return dEdW1, dEdW2
 
-    ##########################
+    # 【03】 #########################
     # [Input Vars]
     #   1. <ndarray> Y_pred: Its shape should be (1, 50).
     #   2. <ndarray> Y_truth: Its shape should be (1, 50).
     #
     # [Output Vars]
     #   2. <ndarray> Error
-    def crossEntropy(self, Y_pred, Y_truth):
+    def cross_entropy(self, Y_pred, Y_truth):
         assert Y_truth.shape == (1, 50), f"[Error] Y_truth's shape is {Y_truth.shape}. Expected shape is (1, 50)."
         assert Y_pred.shape == (1, 50), f"[Error] Y_pred's shape is {S.shape}. Expected shape is (1, 50)."
         Error = (-1 * Y_truth * np.log(Y_pred)).sum()
         return Error
 
-    ##########################
+    # 【04】 #########################
     # [Input Vars] None
     #
     # [Output Vars]
@@ -114,7 +127,7 @@ class nn():
         assert W2.shape == (300, 50), f"[Error] W2's shape is {W2.shape}. Expected shape is (300, 50)."
         return W1, W2
 
-    ##########################
+    # 【05】 #########################
     # [Input Vars]
     #   1. <ndarray> dEdW1
     #   2. <ndarray> dEdW2
@@ -130,7 +143,7 @@ class nn():
         W2 = W2 - lr * dEdW2
         return W1, W2
 
-    ##########################
+    # 【06】 #########################
     # [Input Vars]
     #   1. <list> Dataset: Either Train_COH_Dataset, Val_COH_Dataset, or Test_COH_Dataset
     #   2. <list> Label: Train_COH_Label, Val_COH_Label, Test_COH_Label
@@ -172,7 +185,7 @@ class nn():
         print(f"[Result of {Name}] The top-5 accuracy is {top5_accuracy} %")
         return top1_accuracy, top5_accuracy
 
-    ##########################
+    # 【07】 #########################
     # [Input Vars]
     #   1. <ndarray> Y_pred: It's a 1-D ndarray which contains the possibilities of the predictions.
     #
@@ -200,7 +213,7 @@ class nn():
 
         return top_1, top_2, top_3, top_4, top_5
 
-    ##########################
+    # 【08】 #########################
     # [Input Vars]
     #   1. <ndarray> Z
     #
@@ -210,7 +223,7 @@ class nn():
         A = 1/(1 + np.exp(-Z))
         return A
 
-    ##########################
+    # 【09】 #########################
     # [Input Vars]
     #   1. <ndarray> A
     #
