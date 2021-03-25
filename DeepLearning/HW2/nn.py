@@ -1,5 +1,4 @@
 import numpy as np
-import matplotlib.pyplot as plt
 
 # Function 【01】 ~ 【06】 are public functions.
     # 【01】forward_pass
