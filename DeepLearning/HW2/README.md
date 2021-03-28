@@ -25,10 +25,10 @@
 ### 2.2 [Model Design]
 * Input Layer: It receives a data vector (`X`) whose length is 769.
 * Hidden Layer:
-    * The 1st hidden layer is the Weight Matrix (W1) with the shape of (769, 300). (From X to Z1)
-    * The 2nd hidden layer is the Weight Matrix (W2) with the shape of (300, 50). (From A1 to Z2)
-* Output Layer: Followed by Softmax operation (From a2 to Ypred), it outputs a possibility vector whose length is 50.
-* Note: I apply activation function (sigmoid) on Z1 (1, 300) and Z2 (1, 300). By doing so, I get a1 (1, 50) and a2 (1, 50).
+    * The 1st hidden layer is the Weight Matrix (`W1`) with the shape of (769, 300). (From `X` to `Z1`)
+    * The 2nd hidden layer is the Weight Matrix (`W2`) with the shape of (300, 50). (From `A1` to `Z2`)
+* Output Layer: Followed by Softmax operation (From `a2` to `Ypred`), it outputs a possibility vector whose length is 50.
+* Note: I apply activation function (sigmoid) on `Z1` (1, 300) and `Z2` (1, 300). By doing so, I get `a1` (1, 50) and `a2` (1, 50).
 <br>
 
 ![Structure of Perceptron](https://github.com/Ratherman/AI/blob/main/DeepLearning/HW2/imgs/Two-Layer-NN.png)
@@ -47,7 +47,7 @@
     * Num. of Epochs: 100
     * Learning Rate: 0.01  
     * Scale: 500 
-        * The training data (i.e. X vector) will divided by this number. 
+        * The training data (i.e. `X`) will divided by this number. 
         * With number around 500, it can stablize the training procedure.
 <br>
 
