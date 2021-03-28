@@ -43,8 +43,8 @@ Trian_Accuracy_top_1, Val_Accuracy_top_1, Train_Accuracy_top_5, Val_Accuracy_top
 
 ############ Hyper Parameter ############
 Epoch = 100
-lr_1, lr_2 = 0.03, 0.01
-Scale = 500.0
+lr_1, lr_2 = 0.01, 0.01
+Scale = 100.0
 ############ Hyper Parameter ############
 
 tic = time.time()
