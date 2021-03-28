@@ -34,14 +34,51 @@
 ![Structure of Perceptron](https://github.com/Ratherman/AI/blob/main/DeepLearning/HW2/imgs/Two-Layer-NN.png)
 
 ### 2.3 [Training Procedures]
-* Weight Initialization: Che
-* Forward Propagation: Check (nn.py) ```def forward_pass(self, X, W1, W2):...```
-* Calculate Loss: Cross Entropy
-* Backward Propagation:
-* Update Weight:
+* Weight Initialization: (nn.py @ line 121) ```def initialize_weights(self):...```
+* Forward Propagation: (nn.py @ line 35) ```def forward_pass(self, X, W1, W2):...```
+* Calculate Loss: Cross Entropy (nn.py @ line 109) ```def cross_entropy(self, Y_pred, Y_truth):...```
+* Backward Propagation: (nn.py @ line 70) ```def backward_pass(self, Y_pred, Y_truth, A2, A1, X, W2, W1):...``` 
+* Update Weight:(nn.py @ line 140) ```def update_weights(self, dEdW1, dEdW2, W1, W2, lr):...```
 <br>
 
 # 3. Evaluate performance
 ### 3.1 [Training Phase]
+* Hyper Parameters: 
+    * Num. of Epochs: 100
+    * Learning Rate: 0.01  
+    * Scale: 500 
+        * The training data (i.e. X vector) will divided by this number. 
+        * With number around 500, it can stablize the training procedure.
+<br>
 
+![TwoLayerNN  Epoch_100  lr_0.01  Scale_500](https://github.com/Ratherman/AI/blob/main/DeepLearning/HW2/imgs/TwoLayerNN_Epoch_100_lr_0.01_Scale_500.png)
 ### 3.2 [Testing Phase]
+* Validation Accuracy:
+    * Top-1: 14.48 (%)
+    * Top-5: 37.19 (%)
+
+* Testing Accuracy:
+    * Top-1: 10.69 (%)
+    * Top-5: 35.41 (%)
+
+### 3.3 [Recording Table]
+* The following Table shows the performance with different setups.
+<br>
+
+![Record Table](https://github.com/Ratherman/AI/blob/main/DeepLearning/HW2/imgs/Record_Table.png)
+
+### 3.4 [Performance Comparison: HW1 vs. HW2]
+* Single-Layer Perceptron (HW1: Left) vs. Two-Layer NN (HW2: Right)
+- Validation Accuracy
+    - Top-1: 10.47 (%) vs. 14.48 (%)
+    - Top-5: 30.51 (%) vs. 37.19 (%)
+
+- Testing Accuracy
+    - Top-1: 8.24 (%) vs. 10.69 (%)
+    - Top-5: 28.73 (%) vs. 35.41 (%)
+
+* Conclusion
+    * The performance of Two-Layer NN is better than the one of Single-Layer Perceptron. (Val./Test Top-1/-5 Acc.)
+    * I think there are two reasons.
+        1. Compared to the Single-Layer Perceptron (with #38,450 trainable parameters), there are more trainable parameters in Two-Layer NN (#245,700).
+        2. Introduction of activation function (sigmoid) helps.
