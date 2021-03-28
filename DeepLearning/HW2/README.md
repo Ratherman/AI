@@ -27,15 +27,15 @@
 * Hidden Layer:
     * The 1st hidden layer is the Weight Matrix (W1) with the shape of (769, 300). (From X to Z1)
     * The 2nd hidden layer is the Weight Matrix (W2) with the shape of (300, 50). (From A1 to Z2)
-* Output Layer: Followed by Softmax operation (From A2 to S), it outputs a possibility vector whose length is 50.
-* Note: I apply activation function (sigmoid) on Z1 (1, 300) and Z2 (1, 300). By doing so, I get A1 (1, 50) and A2 (1, 50).
+* Output Layer: Followed by Softmax operation (From a2 to Ypred), it outputs a possibility vector whose length is 50.
+* Note: I apply activation function (sigmoid) on Z1 (1, 300) and Z2 (1, 300). By doing so, I get a1 (1, 50) and a2 (1, 50).
 <br>
 
 ![Structure of Perceptron](https://github.com/Ratherman/AI/blob/main/DeepLearning/HW2/imgs/Two-Layer-NN.png)
 
 ### 2.3 [Training Procedures]
-* Weight Initialization:
-* Forward Propagation:
+* Weight Initialization: Che
+* Forward Propagation: Check (nn.py) ```def forward_pass(self, X, W1, W2):...```
 * Calculate Loss: Cross Entropy
 * Backward Propagation:
 * Update Weight:
