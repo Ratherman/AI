@@ -17,13 +17,13 @@
 
 # 2. Train Model
 ### 2.1 [Image Pre-processing]
-* Resize Image: Every Image has different scale, for sake of fairness, I resize each image into (256,256,3).
+* Resize Image: Every Image has different scale, for sake of fairness, I resize each image into (256, 256, 3).
     * (Function **create_COH_dataset**)
 * Feature Extraction: Use [Color Histogram](https://en.wikipedia.org/wiki/Color_histogram) to extract the features.
     * (Function **color_of_histogram**)
 
 ### 2.2 [Model Design]
-* Input Layer: It receives a data vector (X) whose length is 769.
+* Input Layer: It receives a data vector (`X`) whose length is 769.
 * Hidden Layer:
     * The 1st hidden layer is the Weight Matrix (W1) with the shape of (769, 300). (From X to Z1)
     * The 2nd hidden layer is the Weight Matrix (W2) with the shape of (300, 50). (From A1 to Z2)
