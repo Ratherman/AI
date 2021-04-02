@@ -2,3 +2,12 @@
 
 ## Structure of LeNet
 ![Structure of LeNet](https://github.com/Ratherman/AI/blob/main/DeepLearning/HW3/imgs/Structure_LeNet5.png)
+
+## TO-DO LIST
+1. Try to classify MNIST dataset first.
+    * [_] 寫一個 Kernel 然後驗證是否可以得到 Gradient
+    * [_] 寫一個 Padding 驗證是不是有起效果
+    * [_] 寫一個 Stride 驗證是不是有起效果
+    * [_] 寫一個 Pooling 驗證是不是有起效果
+
+2. Generalize the model to the mini-IMAGENET dataset.
