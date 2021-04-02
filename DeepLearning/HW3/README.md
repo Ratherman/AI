@@ -8,7 +8,7 @@
 
 ## Progress
 1. Try to classify MNIST dataset first.
-    * [_] 利用 Numpy 和 Opencv 把圖片用2D的方式印出來
+    * ☑ 利用 Numpy 和 Matplotlib 把圖片用2D的方式印出來
     * [_] 寫一個 Kernel 然後驗證是否可以得到 Gradient
     * [_] 寫一個 Padding 驗證是不是有起效果
     * [_] 寫一個 Stride 驗證是不是有起效果
