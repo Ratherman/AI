@@ -31,7 +31,7 @@
 * Note: I apply activation function (sigmoid) on `Z1` (1, 300) and `Z2` (1, 300). By doing so, I get `a1` (1, 50) and `a2` (1, 50).
 <br>
 
-![Structure of Perceptron](https://github.com/Ratherman/AI/blob/main/DeepLearning/HW2/imgs/Two-Layer-NN.png)
+![Structure of Perceptron](https://github.com/Ratherman/AI/blob/main/DeepLearning/HW2_Two_Layer_Neural_Network/imgs/Two-Layer-NN.png)
 
 ### 2.3 [Training Procedures]
 * Weight Initialization: (nn.py @ line 121) ```def initialize_weights(self):...```
@@ -51,7 +51,7 @@
         * With number around 500, it can stablize the training procedure.
 <br>
 
-![TwoLayerNN  Epoch_100  lr_0.01  Scale_500](https://github.com/Ratherman/AI/blob/main/DeepLearning/HW2/imgs/TwoLayerNN_Epoch_100_lr_0.01_Scale_500.png)
+![TwoLayerNN  Epoch_100  lr_0.01  Scale_500](https://github.com/Ratherman/AI/blob/main/DeepLearning/HW2_Two_Layer_Neural_Network/imgs/TwoLayerNN_Epoch_100_lr_0.01_Scale_500.png)
 ### 3.2 [Testing Phase]
 * Validation Accuracy:
     * Top-1: 14.48 (%)
@@ -65,7 +65,7 @@
 * The following Table shows the performance with different setups.
 <br>
 
-![Record Table](https://github.com/Ratherman/AI/blob/main/DeepLearning/HW2/imgs/Record_Table.png)
+![Record Table](https://github.com/Ratherman/AI/blob/main/DeepLearning/HW2_Two_Layer_Neural_Network/imgs/Record_Table.png)
 
 ### 3.4 [Performance Comparison: HW1 vs. HW2]
 * Single-Layer Perceptron (HW1: Left) vs. Two-Layer NN (HW2: Right)
