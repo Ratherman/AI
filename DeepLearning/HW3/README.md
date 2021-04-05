@@ -7,11 +7,18 @@
 1. Kaggle Digit Recognizer Dataset [LINK](https://www.kaggle.com/c/digit-recognizer/data)
 
 ## Progress
-1. Try to classify MNIST dataset first.
-    * ☑ 利用 Numpy 和 Matplotlib 把圖片用2D的方式印出來
-    * [_] 寫一個 Kernel 然後驗證是否可以得到 Gradient
-    * [_] 寫一個 Padding 驗證是不是有起效果
-    * [_] 寫一個 Stride 驗證是不是有起效果
-    * [_] 寫一個 Pooling 驗證是不是有起效果
+1. Build LeNet From Scratch, and use it to classify MNIST Dataset
+    1. Draw the blueprint.
+    2. Build LeNet from scratch.
+    3. Prove the backward propagation is actually working!
+        * By using single example, and saw the loss curve going down.
+        * By using 50 examples, and still saw the loss curve going down.
+        * By using 2000 examples, and still wating for the result ...
+    4. Get the sense of how to choose non-hyper and hyper parameters.
 
-2. Generalize the model to the mini-IMAGENET dataset.
+    * To-Do
+        1. Build Keras-Version LeNet5, and compare the performance.
+        2. Write "Prediction" function.
+        3. Draw the blueprint for mini-ImageNet
+
+2. Generalize the model to the mini-ImageNet dataset.
