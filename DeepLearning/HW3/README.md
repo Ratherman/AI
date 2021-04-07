@@ -15,6 +15,7 @@
         * By using 50 examples, and still saw the loss curve going down.
         * By using 2000 examples, and still wating for the result ...
     4. Get the sense of how to choose non-hyper and hyper parameters.
+    5. Test Relu.
 
     * To-Do
         1. Test Relu.
