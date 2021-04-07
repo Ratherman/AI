@@ -17,8 +17,9 @@
     4. Get the sense of how to choose non-hyper and hyper parameters.
 
     * To-Do
-        1. Build Keras-Version LeNet5, and compare the performance.
-        2. Write "Prediction" function.
-        3. Draw the blueprint for mini-ImageNet
+        1. Test Relu.
+        2. Build Keras-Version LeNet5, and compare the performance.
+        3. Write "Prediction" function.
+        4. Draw the blueprint for mini-ImageNet
 
 2. Generalize the model to the mini-ImageNet dataset.
