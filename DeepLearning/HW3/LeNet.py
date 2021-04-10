@@ -576,10 +576,11 @@ import time
 import matplotlib.pyplot as plt
 
 # Initialize Parameters
-K_C1, b_C1, hparam_C1, hparam_S2, K_C3, b_C3, hparam_C3, hparam_S4, K_C5, b_C5, hparam_C5, W7, W8 = Initialize_Parameters(-1, 1)
+K_C1, b_C1, hparam_C1, hparam_S2, K_C3, b_C3, hparam_C3, hparam_S4, K_C5, b_C5, hparam_C5, W7, W8 = Initialize_Parameters(-0.1, 0.1)
+
 pool_mode = "maxpooling"
-act_mode = "sigmoid"
-Epoch = 100
+act_mode = "relu"
+Epoch = 5
 lr = 0.01
 
 # 0. Shuffle the training dataset.
@@ -601,7 +602,7 @@ val_top1_list.append(val_top1)
 val_top5_list.append(val_top5)
 
 loss_list = []
-train_size = 500
+train_size = Length_TRAIN
 for epoch in range(Epoch):
     tmp_list = []
     counter = 0
