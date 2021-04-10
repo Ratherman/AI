@@ -27,10 +27,21 @@ def draw_losses(losses):
     plt.plot(t, losses)
     plt.show()
 
+import cv2 as cv
+import numpy as np
+ROOT_PATH = "C:/Users/USER/Desktop/Projects/Github_Repo/AI/DeepLearning/__HW1_DATA/"
 def get_batch(X, Y, batch_size):
     N = len(X)
-    i = random.randint(1, N-batch_size)
-    return X[i:i+batch_size], Y[i:i+batch_size]
+    X_batch = []
+    Y_batch = []
+    for _ in range(batch_size):
+        i = random.randint(1, N)
+        img = cv.imread(ROOT_PATH + X[i])
+        img_resize = cv.resize(img, (28, 28))
+        img_resize = img_resize / 255.0
+        X_batch.append(img_resize)
+        Y_batch.append(Y[i])
+    return np.array(X_batch), np.array(Y_batch)
 
 class FC():
     """
@@ -265,18 +276,18 @@ class Net(metaclass=ABCMeta):
 class LeNet5(Net):
 
     def __init__(self):
-        self.conv1 = Conv(1, 6, 5)
+        self.conv1 = Conv(3, 6, 5, padding=2)
         self.ReLU1 = ReLU()
         self.pool1 = MaxPool(2,2)
         self.conv2 = Conv(6, 16, 5)
         self.ReLU2 = ReLU()
         self.pool2 = MaxPool(2,2)
-        self.FC1 = FC(16*4*4, 120)
+        self.FC1 = FC(16*5*5, 120)
         self.ReLU3 = ReLU()
         self.FC2 = FC(120, 84)
         self.ReLU4 = ReLU()
-        self.FC3 = FC(84, 10)
-        self.Softmax = Softmax()
+        self.FC3 = FC(84, 50)
+        #self.Softmax = Softmax()
 
         self.p2_shape = None
 
@@ -294,8 +305,9 @@ class LeNet5(Net):
         h4 = self.FC2._forward(a3)
         a5 = self.ReLU4._forward(h4)
         h5 = self.FC3._forward(a5)
-        a5 = self.Softmax._forward(h5)
-        return a5
+        #print(h5)
+        #a5 = self.Softmax._forward(h5)
+        return h5
 
     def backward(self, dout):
         #dout = self.Softmax._backward(dout)
@@ -328,36 +340,96 @@ class SGD():
         for param in self.parameters:
             param['val'] -= (self.lr*param['grad'] + self.reg*param['val'])
 
-X_train, Y_train, X_test, Y_test = load()
-X_train, X_test = X_train/float(255), X_test/float(255)
-X_train -= np.mean(X_train)
-X_test -= np.mean(X_test)
+#X_train, Y_train, X_test, Y_test = load()
+#X_train, X_test = X_train/float(255), X_test/float(255)
+#X_train -= np.mean(X_train)
+#X_test -= np.mean(X_test)
 
 batch_size = 64
-D_out = 10
+D_out = 50
 
 model = LeNet5()
 
 losses = []
-optim = SGD(model.get_params(), lr=0.0001, reg=0)
+optim = SGD(model.get_params(), lr=0.00001, reg=0)
 criterion = CrossEntropyLoss()
 
+
+
+
+def test_acc():
+    ROOT_PATH = "C:/Users/USER/Desktop/Projects/Github_Repo/AI/DeepLearning/__HW1_DATA/"
+    X_test = []
+    Y_test = []
+    for i in range(len(NP_TEST_TXT)):
+        img = cv.imread(ROOT_PATH + NP_TEST_TXT[i][0])
+        img_resize = cv.resize(img, (28, 28))
+        img_resize = img_resize / 255.0
+        X_test.append(img_resize)
+        Y_test.append(NP_TEST_TXT[i][1])
+
+    np_X_test = np.array(X_test)
+    np_Y_test = np.array(Y_test)
+
+    # TEST SET ACC
+    np_X_test = np_X_test.reshape(-1, 3, 28, 28)
+    #print(np_X_test.shape[0])
+    Y_pred = model.forward(np_X_test)
+    result = np.argmax(Y_pred, axis=1) - np_Y_test
+    result = list(result)
+    print("TEST--> Correct: " + str(result.count(0)) + " out of " + str(np_X_test.shape[0]) + ", acc=" + str(result.count(0)/np_X_test.shape[0]))
+
+# [Input Vars]
+#   1. <string> PATH_TO_DESIRED_LOCATION: It should be the directory containing (1) images/ (2) train.txt (3) test.txt (4) val.txt
+
+# [Output Vars]
+#   1. <ndarray> np_train_txt: It contains both the directory to a specific image and the related label.
+#   2. <ndarray> np_test_txt: It contains both the directory to a specific image and the related label.
+#   3. <ndarray> np_val_txt: It contains both the directory to a specific image and the related label.
+import pandas as pd
+import numpy as np
+def read_metadata_files(PATH_TO_DESIRED_LOCATION):
+    # train.txt
+    train_txt = pd.read_csv(PATH_TO_DESIRED_LOCATION+"train.txt", sep=" ")
+    NP_TRAIN_TXT = np.array(train_txt)
+    
+    # test.txt
+    test_txt = pd.read_csv(PATH_TO_DESIRED_LOCATION+"test.txt", sep=" ")
+    NP_TEST_TXT = np.array(test_txt)
+    
+    # val.txt
+    val_txt = pd.read_csv(PATH_TO_DESIRED_LOCATION+"val.txt", sep=" ")
+    NP_VAL_TXT = np.array(val_txt)
+    
+    print(f"[Check] There are {NP_TRAIN_TXT.shape[0]} pairs in train.txt.")
+    print(f"[Check] There are {NP_TEST_TXT.shape[0]} pairs in test.txt.")
+    print(f"[Check] There are {NP_VAL_TXT.shape[0]} pairs in val.txt.\n")
+    
+    return NP_TRAIN_TXT, NP_TEST_TXT, NP_VAL_TXT
+
+
+ROOT_PATH = "C:/Users/USER/Desktop/Projects/Github_Repo/AI/DeepLearning/__HW1_DATA/"
+NP_TRAIN_TXT, NP_TEST_TXT, NP_VAL_TXT = read_metadata_files(ROOT_PATH)
+
 # TRAIN
-ITER = 25000
+ITER = 1000
 
 for i in range(ITER):
-    X_batch, Y_batch = get_batch(X_train, Y_train, batch_size)
-    X_batch = X_batch.reshape(batch_size, 1, 28, 28)
+    #X_batch, Y_batch = get_batch(X_train, Y_train, batch_size)
+    X_batch, Y_batch = get_batch(NP_TRAIN_TXT[:, 0], NP_TRAIN_TXT[:, 1], batch_size)
+    #print(type(X_batch), type(Y_batch))
+
+    X_batch = X_batch.reshape(batch_size, 3, 28, 28)
     Y_batch = MakeOneHot(Y_batch, D_out)
 
     # forward, loss, backward, step
-    X_batch = X_batch.reshape(64, 1 , 28,28)
     Y_pred = model.forward(X_batch)
     loss, dout = criterion.get(Y_pred, Y_batch)
     model.backward(dout)
     optim.step()
     #if i % 100 == 0:
     print("%s%% iter: %s, loss: %s" % (100*i/ITER,i, loss))
+    test_acc()
     losses.append(loss)
 
 # save params
@@ -368,15 +440,8 @@ with open("weights.pkl","wb") as f:
 draw_losses(losses)
 
 # TRAIN SET ACC
-X_train = X_train.reshape(-1, 1, 28, 28)
-Y_pred = model.forward(X_train)
-result = np.argmax(Y_pred, axis=1) - Y_train
-result = list(result)
-print("TRAIN--> Correct: " + str(result.count(0)) + " out of " + str(X_train.shape[0]) + ", acc=" + str(result.count(0)/X_train.shape[0]))
-
-# TEST SET ACC
-X_test = X_test.reshape(-1, 1, 28, 28)
-Y_pred = model.forward(X_test)
-result = np.argmax(Y_pred, axis=1) - Y_test
-result = list(result)
-print("TEST--> Correct: " + str(result.count(0)) + " out of " + str(X_test.shape[0]) + ", acc=" + str(result.count(0)/X_test.shape[0]))
+#X_train = X_train.reshape(-1, 1, 28, 28)
+#Y_pred = model.forward(X_train)
+#result = np.argmax(Y_pred, axis=1) - Y_train
+#result = list(result)
+#print("TRAIN--> Correct: " + str(result.count(0)) + " out of " + str(X_train.shape[0]) + ", acc=" + str(result.count(0)/X_train.shape[0]))
