@@ -435,14 +435,13 @@ def LeNet5_forward(X, K_C1, b_C1, hparam_C1, hparam_S2, K_C3, b_C3, hparam_C3, h
     X_A5 = activation_forward(X_C5, act_mode)
     X_A6 = X_A5.reshape(1, 120)
     X_Z7 = np.dot(X_A6, W7)
-    #X_A7 = activation_forward(X_Z7, act_mode)
-    #X_Z8 = np.dot(X_A7, W8)
-    X_Z8 = np.dot(X_Z7, W8)
-    X_A8 = activation_forward(X_Z8, act_mode)
+    X_A7 = activation_forward(X_Z7, act_mode)
+    X_Z8 = np.dot(X_A7, W8)
 
-    Y_pred = __softmax(X_A8)
-    
-    return cache_C1, X_A1, cache_S2, cache_C3, X_A3, cache_S4, cache_C5, X_A5, X_A6, X_A7, X_A8, Y_pred
+    #X_A8 = activation_forward(X_Z8, act_mode)
+    #Y_pred = __softmax(X_A8)
+    Y_pred = __softmax(X_Z8)
+    return cache_C1, X_A1, cache_S2, cache_C3, X_A3, cache_S4, cache_C5, X_A5, X_A6, X_A7, Y_pred
 
 def cross_entropy(Y_pred, Y_truth):
     Error = (-1 * Y_truth * np.log(Y_pred)).sum()
@@ -452,7 +451,7 @@ def cross_entropy(Y_pred, Y_truth):
 # LeNet5 - Backward Propagation #
 #################################
 
-def LeNet5_backward(cache_C1, X_A1, cache_S2, cache_C3, X_A3, cache_S4, cache_C5, X_A5, X_A6, X_A7, X_A8, Y_pred, Y_truth, pool_mode = "avgpooling", act_mode = "sigmoid"):
+def LeNet5_backward(cache_C1, X_A1, cache_S2, cache_C3, X_A3, cache_S4, cache_C5, X_A5, X_A6, X_A7, Y_pred, Y_truth, pool_mode = "avgpooling", act_mode = "sigmoid"):
     
     #D_A8 = Y_pred - Y_truth
     
@@ -625,7 +624,7 @@ for epoch in range(Epoch):
     
         # 3. Forward Pass
         tic = time.time()
-        cache_C1, X_A1, cache_S2, cache_C3, X_A3, cache_S4, cache_C5, X_A5, X_A6, X_A7, X_A8, Y_pred = LeNet5_forward(X, K_C1, b_C1, hparam_C1, hparam_S2, K_C3, b_C3, hparam_C3, hparam_S4, K_C5, b_C5, hparam_C5, W7, W8, pool_mode, act_mode)
+        cache_C1, X_A1, cache_S2, cache_C3, X_A3, cache_S4, cache_C5, X_A5, X_A6, X_A7, Y_pred = LeNet5_forward(X, K_C1, b_C1, hparam_C1, hparam_S2, K_C3, b_C3, hparam_C3, hparam_S4, K_C5, b_C5, hparam_C5, W7, W8, pool_mode, act_mode)
         toc = time.time()
         forward_in_one_epoch = forward_in_one_epoch + (toc -tic)
         
@@ -634,7 +633,7 @@ for epoch in range(Epoch):
         
         # 5. Backward Pass
         tic = time.time()
-        D_W8, D_W7, D_K_C5, D_b_C5, D_K_C3, D_b_C3, D_K_C1, D_b_C1 = LeNet5_backward(cache_C1, X_A1, cache_S2, cache_C3, X_A3, cache_S4, cache_C5, X_A5, X_A6, X_A7, X_A8, Y_pred, Y_truth, pool_mode, act_mode)
+        D_W8, D_W7, D_K_C5, D_b_C5, D_K_C3, D_b_C3, D_K_C1, D_b_C1 = LeNet5_backward(cache_C1, X_A1, cache_S2, cache_C3, X_A3, cache_S4, cache_C5, X_A5, X_A6, X_A7, Y_pred, Y_truth, pool_mode, act_mode)
         toc = time.time()
         backward_in_one_epoch = backward_in_one_epoch + (toc-tic)
         
