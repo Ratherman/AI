@@ -4,13 +4,6 @@ import numpy as np
 import matplotlib.pyplot as plt
 from abc import ABCMeta, abstractmethod
 
-filename = [
-	["training_images","train-images-idx3-ubyte.gz"],
-	["test_images","t10k-images-idx3-ubyte.gz"],
-	["training_labels","train-labels-idx1-ubyte.gz"],
-	["test_labels","t10k-labels-idx1-ubyte.gz"]
-]
-
 def load():
     with open("mnist.pkl",'rb') as f:
         mnist = pickle.load(f)
@@ -26,22 +19,6 @@ def draw_losses(losses):
     t = np.arange(len(losses))
     plt.plot(t, losses)
     plt.show()
-
-import cv2 as cv
-import numpy as np
-ROOT_PATH = "C:/Users/USER/Desktop/Projects/Github_Repo/AI/DeepLearning/__HW1_DATA/"
-def get_batch(X, Y, batch_size):
-    N = len(X)
-    X_batch = []
-    Y_batch = []
-    for _ in range(batch_size):
-        i = random.randint(1, N)
-        img = cv.imread(ROOT_PATH + X[i])
-        img_resize = cv.resize(img, (28, 28))
-        img_resize = img_resize / 255.0
-        X_batch.append(img_resize)
-        Y_batch.append(Y[i])
-    return np.array(X_batch), np.array(Y_batch)
 
 class FC():
     """
@@ -153,7 +130,7 @@ class Conv():
             for c in range(self.Cout):
                 for h in range(H_):
                     for w in range(W_):
-                        Y[n, c, h, w] = np.sum(X[n, :, h:h+self.F, w:w+self.F] * self.W['val'][c, :, :, :]) + self.b['val'][c]
+                        Y[n, c, h, w] = np.sum(X[n, :, h:h+self.F, w:w+self.F] * self.W['val'][:, c, :, :]) + self.b['val'][c]
 
         self.cache = X
         return Y
@@ -340,30 +317,28 @@ class SGD():
         for param in self.parameters:
             param['val'] -= (self.lr*param['grad'] + self.reg*param['val'])
 
-#X_train, Y_train, X_test, Y_test = load()
-#X_train, X_test = X_train/float(255), X_test/float(255)
-#X_train -= np.mean(X_train)
-#X_test -= np.mean(X_test)
+import cv2 as cv
+import numpy as np
+ROOT_PATH = "C:/Users/USER/Desktop/Projects/Github_Repo/AI/DeepLearning/__HW1_DATA/"
+def get_batch(X, Y, batch_size):
+    N = len(X)
+    X_batch = []
+    Y_batch = []
+    for _ in range(batch_size):
+        i = random.randint(1, N)
+        img = cv.imread(ROOT_PATH + X[i])
+        img_resize = cv.resize(img, (28, 28))
+        img_resize = img_resize / 255.0
+        X_batch.append(img_resize)
+        Y_batch.append(Y[i])
+    return np.array(X_batch), np.array(Y_batch)
 
-batch_size = 64
-D_out = 50
-
-model = LeNet5()
-
-losses = []
-optim = SGD(model.get_params(), lr=0.00001, reg=0)
-criterion = CrossEntropyLoss()
-
-
-
-
-def test_acc():
-    ROOT_PATH = "C:/Users/USER/Desktop/Projects/Github_Repo/AI/DeepLearning/__HW1_DATA/"
+def test_acc(ROOT_PATH, IMG_WH):
     X_test = []
     Y_test = []
     for i in range(len(NP_TEST_TXT)):
         img = cv.imread(ROOT_PATH + NP_TEST_TXT[i][0])
-        img_resize = cv.resize(img, (28, 28))
+        img_resize = cv.resize(img, (IMG_WH, IMG_WH))
         img_resize = img_resize / 255.0
         X_test.append(img_resize)
         Y_test.append(NP_TEST_TXT[i][1])
@@ -411,15 +386,23 @@ def read_metadata_files(PATH_TO_DESIRED_LOCATION):
 ROOT_PATH = "C:/Users/USER/Desktop/Projects/Github_Repo/AI/DeepLearning/__HW1_DATA/"
 NP_TRAIN_TXT, NP_TEST_TXT, NP_VAL_TXT = read_metadata_files(ROOT_PATH)
 
+batch_size = 64
+D_out = 50
+IMG_WH = 28
+
+model = LeNet5()
+
+losses = []
+optim = SGD(model.get_params(), lr=0.001, reg=0)
+criterion = CrossEntropyLoss()
+
 # TRAIN
 ITER = 1000
 
 for i in range(ITER):
-    #X_batch, Y_batch = get_batch(X_train, Y_train, batch_size)
     X_batch, Y_batch = get_batch(NP_TRAIN_TXT[:, 0], NP_TRAIN_TXT[:, 1], batch_size)
-    #print(type(X_batch), type(Y_batch))
 
-    X_batch = X_batch.reshape(batch_size, 3, 28, 28)
+    X_batch = X_batch.reshape(batch_size, 3, IMG_WH, IMG_WH)
     Y_batch = MakeOneHot(Y_batch, D_out)
 
     # forward, loss, backward, step
@@ -429,7 +412,7 @@ for i in range(ITER):
     optim.step()
     #if i % 100 == 0:
     print("%s%% iter: %s, loss: %s" % (100*i/ITER,i, loss))
-    test_acc()
+    test_acc(ROOT_PATH)
     losses.append(loss)
 
 # save params
@@ -438,10 +421,3 @@ with open("weights.pkl","wb") as f:
 	pickle.dump(weights, f)
 
 draw_losses(losses)
-
-# TRAIN SET ACC
-#X_train = X_train.reshape(-1, 1, 28, 28)
-#Y_pred = model.forward(X_train)
-#result = np.argmax(Y_pred, axis=1) - Y_train
-#result = list(result)
-#print("TRAIN--> Correct: " + str(result.count(0)) + " out of " + str(X_train.shape[0]) + ", acc=" + str(result.count(0)/X_train.shape[0]))
