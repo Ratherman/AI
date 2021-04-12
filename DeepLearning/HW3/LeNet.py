@@ -521,7 +521,7 @@ def top_accuracy(Metadata, Name, K_C1, b_C1, hparam_C1, hparam_S2, K_C3, b_C3, h
         img_resize = cv.resize(img, (28, 28))
         X = img_resize / 255.0
         
-        cache_C1, X_A1, cache_S2, cache_C3, X_A3, cache_S4, cache_C5, X_A5, X_A6, X_A7, X_A8, Y_pred = LeNet5_forward(X, K_C1, b_C1, hparam_C1, hparam_S2, K_C3, b_C3, hparam_C3, hparam_S4, K_C5, b_C5, hparam_C5, W7, W8, pool_mode, act_mode)
+        cache_C1, X_A1, cache_S2, cache_C3, X_A3, cache_S4, cache_C5, X_A5, X_A6, X_A7, Y_pred = LeNet5_forward(X, K_C1, b_C1, hparam_C1, hparam_S2, K_C3, b_C3, hparam_C3, hparam_S4, K_C5, b_C5, hparam_C5, W7, W8, pool_mode, act_mode)
         if i == 100  or i == 200: print(f"[{i}-th Prediction] Prediction:\n{Y_pred[0,:5]}")
 
         # 4. Grab top 5 predictions.
