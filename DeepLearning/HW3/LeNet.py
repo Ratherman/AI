@@ -435,8 +435,9 @@ def LeNet5_forward(X, K_C1, b_C1, hparam_C1, hparam_S2, K_C3, b_C3, hparam_C3, h
     X_A5 = activation_forward(X_C5, act_mode)
     X_A6 = X_A5.reshape(1, 120)
     X_Z7 = np.dot(X_A6, W7)
-    X_A7 = activation_forward(X_Z7, act_mode)
-    X_Z8 = np.dot(X_A7, W8)
+    #X_A7 = activation_forward(X_Z7, act_mode)
+    #X_Z8 = np.dot(X_A7, W8)
+    X_Z8 = np.dot(X_Z7, W8)
     X_A8 = activation_forward(X_Z8, act_mode)
 
     Y_pred = __softmax(X_A8)
@@ -453,11 +454,12 @@ def cross_entropy(Y_pred, Y_truth):
 
 def LeNet5_backward(cache_C1, X_A1, cache_S2, cache_C3, X_A3, cache_S4, cache_C5, X_A5, X_A6, X_A7, X_A8, Y_pred, Y_truth, pool_mode = "avgpooling", act_mode = "sigmoid"):
     
-    D_A8 = Y_pred - Y_truth
+    #D_A8 = Y_pred - Y_truth
     
-    D_Z8_local = activation_backward(X_A8, act_mode)
-    D_Z8 = np.multiply(D_Z8_local, D_A8)
+    #D_Z8_local = activation_backward(X_A8, act_mode)
     
+    #D_Z8 = np.multiply(D_Z8_local, D_A8)
+    D_Z8 = Y_pred - Y_truth
     D_W8 = np.outer(X_A7, D_Z8)
     D_A7 = np.dot(D_Z8, D_W8.T)
     
