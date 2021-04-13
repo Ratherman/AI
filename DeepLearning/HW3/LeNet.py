@@ -437,10 +437,8 @@ def LeNet5_forward(X, K_C1, b_C1, hparam_C1, hparam_S2, K_C3, b_C3, hparam_C3, h
     X_Z7 = np.dot(X_A6, W7)
     X_A7 = activation_forward(X_Z7, act_mode)
     X_Z8 = np.dot(X_A7, W8)
-
-    #X_A8 = activation_forward(X_Z8, act_mode)
-    #Y_pred = __softmax(X_A8)
     Y_pred = __softmax(X_Z8)
+
     return cache_C1, X_A1, cache_S2, cache_C3, X_A3, cache_S4, cache_C5, X_A5, X_A6, X_A7, Y_pred
 
 def cross_entropy(Y_pred, Y_truth):
@@ -565,6 +563,20 @@ def grab_top_5_predictions(Y_pred):
     top_5 = Y_pred.argmax()
 
     return top_1, top_2, top_3, top_4, top_5
+"""
+def get_batch(X, Y, batch_size):
+    N = len(X)
+    X_batch = []
+    Y_batch = []
+    for _ in range(batch_size):
+        i = random.randint(1, N)
+        img = cv.imread(ROOT_PATH + X[i])
+        img_resize = cv.resize(img, (28, 28))
+        img_resize = img_resize / 255.0
+        X_batch.append(img_resize)
+        Y_batch.append(Y[i])
+    return np.array(X_batch), np.array(Y_batch)
+"""
 
 ROOT_PATH = "C:/Users/USER/Desktop/Projects/Github_Repo/AI/DeepLearning/__HW1_DATA/"
 NP_TRAIN_TXT, NP_TEST_TXT, NP_VAL_TXT = read_metadata_files(ROOT_PATH)
@@ -593,14 +605,14 @@ np.random.shuffle(random_index)
 val_top1_list = []
 val_top5_list = []
 
-tic = time.time()
-val_top1, val_top5 = top_accuracy(NP_VAL_TXT, "Val", K_C1, b_C1, hparam_C1, hparam_S2, K_C3, b_C3, hparam_C3, hparam_S4, K_C5, b_C5, hparam_C5, W7, W8, pool_mode, act_mode)
-toc = time.time()
-print(f"[Epoch: {-1}] The val top-1 Acc. is {val_top1}, val top-5 Acc. is {val_top5}.")
-print(f"[Epoch: {-1}] [Measure Accuracy] Spend {round(toc-tic,2)} sec.\n")
+#tic = time.time()
+#val_top1, val_top5 = top_accuracy(NP_VAL_TXT, "Val", K_C1, b_C1, hparam_C1, hparam_S2, K_C3, b_C3, hparam_C3, hparam_S4, K_C5, b_C5, hparam_C5, W7, W8, pool_mode, act_mode)
+#toc = time.time()
+#print(f"[Epoch: {-1}] The val top-1 Acc. is {val_top1}, val top-5 Acc. is {val_top5}.")
+#print(f"[Epoch: {-1}] [Measure Accuracy] Spend {round(toc-tic,2)} sec.\n")
 
-val_top1_list.append(val_top1)
-val_top5_list.append(val_top5)
+#val_top1_list.append(val_top1)
+#val_top5_list.append(val_top5)
 
 loss_list = []
 train_size = Length_TRAIN
@@ -640,29 +652,34 @@ for epoch in range(Epoch):
         # 6. Update Weights
         W8, W7, K_C5, b_C5, K_C3, b_C3, K_C1, b_C1 = update_trainable_parameters(lr, D_W8, W8, D_W7, W7, D_K_C5, K_C5, D_b_C5, b_C5, D_K_C3, K_C3, D_b_C3, b_C3, D_K_C1, K_C1, D_b_C1, b_C1)    
         
-        if counter == 100 or counter == 200: 
-            print(f"[Epoch: {epoch} || ({counter+1}/{train_size})] [Loss] {cross_entropy(Y_pred, Y_truth)} [Label]{img_label}\n[Check 1st D_K]:{D_K_C1[:,0,0,0]}")
+        #if counter == 100 or counter == 200: 
+        #print(f"[Epoch: {epoch} || ({counter+1}/{train_size})] [Loss] {cross_entropy(Y_pred, Y_truth)} [Label]{img_label}\n[Check 1st D_K]:{D_K_C1[:,0,0,0]}")
+        if counter % 10 == 0:
+            print(Y_pred)
+            print(np.argmax(Y_pred[0]))
+            print(img_label)
+            print(cross_entropy(Y_pred, Y_truth))
         counter = counter + 1
     
     # 7. Measure Accuracy
-    tic = time.time()
-    val_top1, val_top5 = top_accuracy(NP_VAL_TXT, "Val", K_C1, b_C1, hparam_C1, hparam_S2, K_C3, b_C3, hparam_C3, hparam_S4, K_C5, b_C5, hparam_C5, W7, W8, pool_mode, act_mode)
-    toc = time.time()
+    #tic = time.time()
+    #val_top1, val_top5 = top_accuracy(NP_VAL_TXT, "Val", K_C1, b_C1, hparam_C1, hparam_S2, K_C3, b_C3, hparam_C3, hparam_S4, K_C5, b_C5, hparam_C5, W7, W8, pool_mode, act_mode)
+    #toc = time.time()
 
     print(f"[Epoch: {epoch}] [Forward Propagation] Spend {round(forward_in_one_epoch,2)} sec.")
     print(f"[Epoch: {epoch}] [Backward Propagation] Spend {round(backward_in_one_epoch,2)} sec.")
-    print(f"[Epoch: {epoch}] The val top-1 Acc. is {val_top1}, val top-5 Acc. is {val_top5}.")
+    #print(f"[Epoch: {epoch}] The val top-1 Acc. is {val_top1}, val top-5 Acc. is {val_top5}.")
     print(f"[Epoch: {epoch}] The average loss is {np.mean(tmp_list)}]")
-    print(f"[Epoch: {epoch}] [Measure Accuracy] Spend {round(toc-tic,2)} sec.")
+    #print(f"[Epoch: {epoch}] [Measure Accuracy] Spend {round(toc-tic,2)} sec.")
 
-    val_top1_list.append(val_top1)
-    val_top5_list.append(val_top5)
+    #val_top1_list.append(val_top1)
+    #val_top5_list.append(val_top5)
     loss_list.append(np.mean(tmp_list))
 
 
-plt.plot(val_top1_list)
-plt.show()
-plt.plot(val_top5_list)
-plt.show()
+#plt.plot(val_top1_list)
+#plt.show()
+#plt.plot(val_top5_list)
+#plt.show()
 plt.plot(loss_list)
 plt.show()

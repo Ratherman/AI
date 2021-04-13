@@ -130,7 +130,7 @@ class Conv():
             for c in range(self.Cout):
                 for h in range(H_):
                     for w in range(W_):
-                        Y[n, c, h, w] = np.sum(X[n, :, h:h+self.F, w:w+self.F] * self.W['val'][:, c, :, :]) + self.b['val'][c]
+                        Y[n, c, h, w] = np.sum(X[n, :, h:h+self.F, w:w+self.F] * self.W['val'][:, :, :, :]) + self.b['val'][c]
 
         self.cache = X
         return Y
@@ -386,7 +386,7 @@ def read_metadata_files(PATH_TO_DESIRED_LOCATION):
 ROOT_PATH = "C:/Users/USER/Desktop/Projects/Github_Repo/AI/DeepLearning/__HW1_DATA/"
 NP_TRAIN_TXT, NP_TEST_TXT, NP_VAL_TXT = read_metadata_files(ROOT_PATH)
 
-batch_size = 64
+batch_size = 10
 D_out = 50
 IMG_WH = 28
 
@@ -410,9 +410,9 @@ for i in range(ITER):
     loss, dout = criterion.get(Y_pred, Y_batch)
     model.backward(dout)
     optim.step()
-    #if i % 100 == 0:
+    if i % 100 == 0: test_acc(ROOT_PATH)
+
     print("%s%% iter: %s, loss: %s" % (100*i/ITER,i, loss))
-    test_acc(ROOT_PATH)
     losses.append(loss)
 
 # save params
