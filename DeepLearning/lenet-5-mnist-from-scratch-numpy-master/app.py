@@ -521,7 +521,7 @@ class SGDMomentum():
 (1) Prepare Data: Load, Shuffle, Normalization, Batching, Preprocessing
 """
 
-#mnist.init()
+mnist.init()
 X_train, Y_train, X_test, Y_test = load()
 X_train, X_test = X_train/float(255), X_test/float(255)
 X_train -= np.mean(X_train)
