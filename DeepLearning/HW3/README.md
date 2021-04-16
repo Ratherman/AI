@@ -4,11 +4,11 @@
 ![Structure of LeNet](https://github.com/Ratherman/AI/blob/main/DeepLearning/HW3/imgs/Structure_LeNet5.png)
 
 ## Dataset:
-1. MNIST Dataset [LINK](https://www.kaggle.com/c/digit-recognizer/data)
+1. MNIST Dataset [(LINK)](https://www.kaggle.com/c/digit-recognizer/data)
     * 10 Different Classes
     * 60000 Training Examples, 10000 Testomg Examples
     * This Dataset is the same as the "mnist.pkl" in this dir.
-2. Mini-ImageNet [LINK](https://drive.google.com/file/d/1kwYYWL67O0Dcbx3dvZIfbGg9NiHdyisr/view)
+2. Mini-ImageNet [(LINK)](https://drive.google.com/file/d/1kwYYWL67O0Dcbx3dvZIfbGg9NiHdyisr/view)
     * 50 Different Classes
     * 60000 (Up) Training Examples, 449 Validation Examples, 449 Testing Examples.
 
