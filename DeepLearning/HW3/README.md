@@ -1,7 +1,7 @@
 # LeNet
 
 ## Structure of LeNet (Click to see details)
-![Structure of LeNet](https://github.com/Ratherman/AI/blob/main/DeepLearning/HW3/imgs/Structure_LeNet5.png)
+![Structure of LeNet](https://github.com/Ratherman/AI/blob/main/DeepLearning/HW3/imgs/LeNet_Mnist.png)
 
 ## Dataset:
 1. MNIST Dataset [(LINK)](https://www.kaggle.com/c/digit-recognizer/data)
