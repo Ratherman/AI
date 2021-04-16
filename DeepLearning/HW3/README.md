@@ -20,12 +20,12 @@
 
 * Github-Cloned_Hand-Crafted_LeNet5.ipynb
     * Descirption: **Works okay on MNIST but didn't work well on Mini-ImageNet Datasets, still need to fine tune the hyperparameters.**
-    * I use the repo from [IQ250 Github Link](https://github.com/IQ250/LeNet-by-Numpy), it works really well on MNIST dataset. 
+    * I use the repo from [IQ250 (Github Link)](https://github.com/IQ250/LeNet-by-Numpy), it works really well on MNIST dataset. 
 
 * Keras-Version_LeNet5.ipynb
     * Descirption: **Work okay on both MNIST and Mini-ImageNet Datasets.**
     * Use this to see the potential outcomes from adjusting hyperparameters.
 * Other Resources:
     * I also study the following repos for quite a while, but I didn't put them in this repo.
-    * The repo from [toxtli](https://github.com/toxtli/lenet-5-mnist-from-scratch-numpy) is a good example on how hand-crafted LeNet designed.
-    * The repo from [mattwang44](https://github.com/mattwang44/LeNet-from-Scratch) has good performance on classifying MNIST dataset.
+    * The repo from [toxtli (Github Link)](https://github.com/toxtli/lenet-5-mnist-from-scratch-numpy) is a good example on how hand-crafted LeNet designed.
+    * The repo from [mattwang44 (Github Link)](https://github.com/mattwang44/LeNet-from-Scratch) has good performance on classifying MNIST dataset.
