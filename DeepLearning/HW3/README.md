@@ -27,5 +27,5 @@
     * Use this to see the potential outcomes from adjusting hyperparameters.
 * Other Resources:
     * I also study the following repos for quite a while, but I didn't put them in this repo.
-    * The repo from [toxtli](https://github.com/toxtli/lenet-5-mnist-from-scratch-numpy) to get a feel of hand-crafted LeNet.
-    * The repo from [mattwang44](https://github.com/mattwang44/LeNet-from-Scratch) and see good results on classifying MNIST dataset.
+    * The repo from [toxtli](https://github.com/toxtli/lenet-5-mnist-from-scratch-numpy) is a good example on how hand-crafted LeNet designed.
+    * The repo from [mattwang44](https://github.com/mattwang44/LeNet-from-Scratch) has good performance on classifying MNIST dataset.
