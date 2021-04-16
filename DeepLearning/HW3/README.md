@@ -4,23 +4,28 @@
 ![Structure of LeNet](https://github.com/Ratherman/AI/blob/main/DeepLearning/HW3/imgs/Structure_LeNet5.png)
 
 ## Dataset:
-1. Kaggle Digit Recognizer Dataset [LINK](https://www.kaggle.com/c/digit-recognizer/data)
+1. MNIST Dataset [LINK](https://www.kaggle.com/c/digit-recognizer/data)
+    * 10 Different Classes
+    * 60000 Training Examples, 10000 Testomg Examples
+    * This Dataset is the same as the "mnist.pkl" in this dir.
+2. Mini-ImageNet [LINK](https://drive.google.com/file/d/1kwYYWL67O0Dcbx3dvZIfbGg9NiHdyisr/view)
+    * 50 Different Classes
+    * 60000 (Up) Training Examples, 449 Validation Examples, 449 Testing Examples.
 
-## Progress
-1. Build LeNet From Scratch, and use it to classify MNIST Dataset
-    1. Draw the blueprint.
-    2. Build LeNet from scratch.
-    3. Prove the backward propagation is actually working!
-        * By using single example, and saw the loss curve going down.
-        * By using 50 examples, and still saw the loss curve going down.
-        * By using 2000 examples, and still wating for the result ...
-    4. Get the sense of how to choose non-hyper and hyper parameters.
-    5. Test Relu.
+## Src Code:
+* My_Own_Hand-Crafted_LeNet5_[Placeholder].ipynb
+    * Descirption: **Didn't work well on both MNIST and Mini-ImageNet Datasets, still need to check potential bugs.**
+    * My_Own_Hand-Crafted_LeNet5_MNIST.ipynb: For training on MNIST Dataset.
+    * My_Own_Hand-Crafted_LeNet5_Mini-ImageNet.ipynb: For training on Mini-ImageNet Dataset.
 
-    * To-Do
-        1. Test Relu.
-        2. Build Keras-Version LeNet5, and compare the performance.
-        3. Write "Prediction" function.
-        4. Draw the blueprint for mini-ImageNet
+* Github-Cloned_Hand-Crafted_LeNet5.ipynb
+    * Descirption: **Works okay on MNIST but didn't work well on Mini-ImageNet Datasets, still need to fine tune the hyperparameters.**
+    * I use the repo from [IQ250 Github Link](https://github.com/IQ250/LeNet-by-Numpy), it works really well on MNIST dataset. 
 
-2. Generalize the model to the mini-ImageNet dataset.
+* Keras-Version_LeNet5.ipynb
+    * Descirption: **Work okay on both MNIST and Mini-ImageNet Datasets.**
+    * Use this to see the potential outcomes from adjusting hyperparameters.
+* Other Resources:
+    * I also study the following repos for quite a while, but I didn't put them in this repo.
+    * The repo from [toxtli](https://github.com/toxtli/lenet-5-mnist-from-scratch-numpy) to get a feel of hand-crafted LeNet.
+    * The repo from [mattwang44](https://github.com/mattwang44/LeNet-from-Scratch) and see good results on classifying MNIST dataset.
