@@ -1,4 +1,5 @@
 *.pyc
 *.csv
 *.txt
+*.vscode
 /DeepLearning/__HW1_DATA
