@@ -11,7 +11,7 @@ There are 6 different labels listed below:
 * 5 - Particle
 
 # Strategies
-1. Understand the background knowledge.
+1. (DONE 2021/05/08) Understand the background knowledge.
 2. Get a feel of data, draw it.
 3. "PyTorch" DataLoader
 4. "Tensorflow" DataLoader
