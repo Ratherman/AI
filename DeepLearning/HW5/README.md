@@ -12,7 +12,7 @@ There are 6 different labels listed below:
 
 # Strategies
 1.  (DONE 2021/05/08) Understand the background knowledge.
-2.  Get a feel of data, draw it.
+2.  (DONE 2021/05/08) Get a feel of data, draw it.
 3.  "PyTorch" DataLoader
 4.  "Tensorflow" DataLoader
 5.  "PyTorch" Version of Model (MVP --> Just a simple backbone ^_^)
