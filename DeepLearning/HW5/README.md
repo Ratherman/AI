@@ -6,11 +6,48 @@ In HW5, we are going to cope with AOI - task. It's basically a classification pr
     * best train acc: 91%
     * Learning Rate: 1e-3
     * epoch: 15
+    * tensor: 512 x 512 x 3
 
-2. LeNet-like Model v2: Train Acc xx%, Test Acc. xx%
-    * best train acc: 91%
+2. LeNet-like Model v2: Train Acc 99%, Test Acc. 95%
+    * best train acc: 99%
     * Learning Rate: 1e-4
     * epoch: 30
+    * Input tensor: 512 x 512 x 3
+    * Total/ Trainable params: 24,595,092
+    * Input size (MB): 3.00
+    * Forward/backward pass size (MB): 32.81
+    * Params size (MB): 93.82
+    * Estimated Total Size (MB): 129.64
+    * Spend Time: 4405.28 (sec)
+
+3. LeNet-like Model v3: Train Acc. 98%, Test Acc. 95%
+    * best train acc: 98%
+    * Learning Rate: 1e-4
+    * epoch: 30
+    * Input tensor: 512 x 512 x 3
+    * Total/ Trainable params: 24,595,092
+    * Input size (MB): 3.00
+    * Forward/backward pass size (MB): 32.81
+    * Params size (MB): 93.82
+    * Estimated Total Size (MB): 129.64
+    * Use:
+        * Normalization (only difference between v2 and v3): input = input / 255.
+    * Spend Time: 5242.81 (sec)
+
+4. ResNet-like Model v1: Train Acc. XX%, Test Acc. XX%
+    * best train acc: XX%
+    * Learning Rate: 1e-4
+    * epoch: 30
+    * Input tensor: 512 x 512 x 3
+    * Total/ Trainable params: XX,XXX,XXX
+    * Input size (MB): X.XX
+    * Forward/backward pass size (MB): XX.XX
+    * Params size (MB): XX.XX
+    * Estimated Total Size (MB): XXX.XX
+    * Use:
+        * Normalization
+    * Spend Time: XXXX.XX (sec)
+
 
 # Labels
 There are 6 different labels listed below:
