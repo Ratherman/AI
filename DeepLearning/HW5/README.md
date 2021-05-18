@@ -2,7 +2,7 @@
 In HW5, we are going to cope with AOI - task. It's basically a classification problem where the input would be a PNG file and the output would be the desired label.
 
 # Grades
-1. LeNet-like Model v1: Train Acc 84%, Test Acc. 80%
+1. LeNet-like Model v1: Train Acc 84%, Test Acc. 80% (No Curve Record)
     * best train acc: 91%
     * Learning Rate: 1e-3
     * epoch: 15
@@ -62,7 +62,7 @@ In HW5, we are going to cope with AOI - task. It's basically a classification pr
         * Normalization
         * Val Curve (i.e. Validation Split)
     * Spend Time: 3897.2 (sec)
-
+    * Observation: The acc curve has strong fluctuation, so in the next test, I will set the learning rate to 1e-5.
 
 # Labels
 There are 6 different labels listed below:
