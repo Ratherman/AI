@@ -34,19 +34,34 @@ In HW5, we are going to cope with AOI - task. It's basically a classification pr
         * Normalization (only difference between v2 and v3): input = input / 255.
     * Spend Time: 5242.81 (sec)
 
-4. ResNet-like Model v1: Train Acc. XX%, Test Acc. XX%
-    * best train acc: XX%
-    * Learning Rate: 1e-4
+4. ResNet-like Model v1: Train Acc. 99%, Test Acc. 44% (Obviously Overfitting)
+    * best train acc: 99%
+    * Learning Rate: 1e-5
     * epoch: 30
     * Input tensor: 512 x 512 x 3
-    * Total/ Trainable params: XX,XXX,XXX
-    * Input size (MB): X.XX
-    * Forward/backward pass size (MB): XX.XX
-    * Params size (MB): XX.XX
-    * Estimated Total Size (MB): XXX.XX
+    * Total/ Trainable params: 11,179,590
+    * Input size (MB): 3.00
+    * Forward/backward pass size (MB): 344.00
+    * Params size (MB): 42.65
+    * Estimated Total Size (MB): 389.65
     * Use:
         * Normalization
-    * Spend Time: XXXX.XX (sec)
+    * Spend Time: 14318.65 (sec)
+
+5. AlexNet-like Model v1: Train Acc. 61%, Test Acc. 62%
+    * best train acc: 89%
+    * Learning Rate: 1e-4
+    * epoch: 30
+    * Input tensor: 256 x 256 x 3
+    * Total/ Trainable params: 44,424,006
+    * Input size (MB): 0.75
+    * Forward/backward pass size (MB): 10.91
+    * Params size (MB): 169.46
+    * Estimated Total Size (MB): 181.13
+    * Use:
+        * Normalization
+        * Val Curve (i.e. Validation Split)
+    * Spend Time: 3897.2 (sec)
 
 
 # Labels
