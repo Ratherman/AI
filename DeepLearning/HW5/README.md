@@ -2,67 +2,41 @@
 In HW5, we are going to cope with AOI - task. It's basically a classification problem where the input would be a PNG file and the output would be the desired label.
 
 # Grades
-1. LeNet-like Model v1: Train Acc 84%, Test Acc. 80% (No Curve Record)
-    * best train acc: 91%
-    * Learning Rate: 1e-3
-    * epoch: 15
-    * tensor: 512 x 512 x 3
+1. LeNet5-like Model V1 (Use GTX 1660): Train Acc. 98%, Val Acc. 93%, Test Acc. N/A || Spend 1561 sec.
+    * Not Use Data Augmentation
+    * Optimizer: RMSprop(learning rate = 1e-4)
+    * Val Split: 0.2
+    * Batch Size: 8
+    * Epoch: 30
+    * Input Tensor: 3 x 512 x 512 (Input Size: 3.00 MB)
+    * Trainable Params: 24,595,092
+    * Forward/ backward pass size: 32.81 MB
+    * Params size: 93.82 MB
+    * Estimated Total Size: 129.94 MB
 
-2. LeNet-like Model v2: Train Acc 99%, Test Acc. 95%
-    * best train acc: 99%
-    * Learning Rate: 1e-4
-    * epoch: 30
-    * Input tensor: 512 x 512 x 3
-    * Total/ Trainable params: 24,595,092
-    * Input size (MB): 3.00
-    * Forward/backward pass size (MB): 32.81
-    * Params size (MB): 93.82
-    * Estimated Total Size (MB): 129.64
-    * Spend Time: 4405.28 (sec)
+2. AlexNet-like Model V1 (Use 940 MX): Train Acc. 85%, Val Acc. 80%, Test Acc. N/A || Spend 6475 sec.
+    * Not Use Data Augmentation
+    * Optimizer: RMSprop(learning rate = 1e-5)
+    * Val Split: 0.2
+    * Batch Size: 8
+    * Epoch: 30
+    * Input Tensor: 3 x 512 x 512 (Input Size: 3.00 MB)
+    * Trainable Params: 44,424,006
+    * Forward/ backward pass size: 44.55 MB
+    * Params size: 169.46 MB
+    * Estimated Total Size: 217.02 MB
 
-3. LeNet-like Model v3: Train Acc. 98%, Test Acc. 95%
-    * best train acc: 98%
-    * Learning Rate: 1e-4
-    * epoch: 30
-    * Input tensor: 512 x 512 x 3
-    * Total/ Trainable params: 24,595,092
-    * Input size (MB): 3.00
-    * Forward/backward pass size (MB): 32.81
-    * Params size (MB): 93.82
-    * Estimated Total Size (MB): 129.64
-    * Use:
-        * Normalization (only difference between v2 and v3): input = input / 255.
-    * Spend Time: 5242.81 (sec)
-
-4. ResNet-like Model v1: Train Acc. 99%, Test Acc. 44% (Obviously Overfitting)
-    * best train acc: 99%
-    * Learning Rate: 1e-5
-    * epoch: 30
-    * Input tensor: 512 x 512 x 3
-    * Total/ Trainable params: 11,179,590
-    * Input size (MB): 3.00
-    * Forward/backward pass size (MB): 344.00
-    * Params size (MB): 42.65
-    * Estimated Total Size (MB): 389.65
-    * Use:
-        * Normalization
-    * Spend Time: 14318.65 (sec)
-
-5. AlexNet-like Model v1: Train Acc. 61%, Test Acc. 62%
-    * best train acc: 89%
-    * Learning Rate: 1e-4
-    * epoch: 30
-    * Input tensor: 256 x 256 x 3
-    * Total/ Trainable params: 44,424,006
-    * Input size (MB): 0.75
-    * Forward/backward pass size (MB): 10.91
-    * Params size (MB): 169.46
-    * Estimated Total Size (MB): 181.13
-    * Use:
-        * Normalization
-        * Val Curve (i.e. Validation Split)
-    * Spend Time: 3897.2 (sec)
-    * Observation: The acc curve has strong fluctuation, so in the next test, I will set the learning rate to 1e-5.
+3. ResNet-like Model V1 (Use CPU): Train Acc. XX%, Val Acc. XX%, Test Acc. N/A || Spend XXXX sec.
+    * Not Use Data Augmentation
+    * Optimizer: RMSprop(learning rate = 1e-4)
+    * Val Split: 0.2
+    * Batch Size: 8
+    * Epoch: 10
+    * Input Tensor: 3 x 512 x 512 (Input Size: Not Estimated Using CPU)
+    * Trainable Params: Not Estimated Using CPU
+    * Forward/ backward pass size: Not Estimated Using CPU
+    * Params size: Not Estimated Using CPU
+    * Estimated Total Size: Not Estimated Using CPU
 
 # Labels
 There are 6 different labels listed below:

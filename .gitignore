@@ -1,6 +1,7 @@
 *.pyc
 *.csv
 *.txt
+/DeepLearning/HW5/torchsummary
 /DeepLearning/.vscode
 /DeepLearning/__HW1_DATA
 /DeepLearning/__HW5_DATA
