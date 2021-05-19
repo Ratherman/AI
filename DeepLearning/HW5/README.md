@@ -2,7 +2,7 @@
 In HW5, we are going to cope with AOI - task. It's basically a classification problem where the input would be a PNG file and the output would be the desired label.
 
 # Grades
-1. LeNet5-like Model V1 (Use GTX 1660): Train Acc. 98%, Val Acc. 93%, Test Acc. N/A || Spend 1561 sec.
+* A1: LeNet5-like Model V1 (Use GTX 1660): Train Acc. 98%, Val Acc. 93%, Test Acc. 92.50308% || Spend 1561 sec.
     * Not Use Data Augmentation
     * Optimizer: RMSprop(learning rate = 1e-4)
     * Val Split: 0.2
@@ -14,7 +14,19 @@ In HW5, we are going to cope with AOI - task. It's basically a classification pr
     * Params size: 93.82 MB
     * Estimated Total Size: 129.94 MB
 
-2. AlexNet-like Model V1 (Use 940 MX): Train Acc. 85%, Val Acc. 80%, Test Acc. N/A || Spend 6475 sec.
+* A2: LeNet5-like Model V2 (Use GTX 1660): Train Acc. 92%, Val Acc. 91%, Test Acc. 90.55487% || Spend 2356 sec.
+    * Use Data Augmentation: 512x512 -> Resize 712x712 -> CenterCrop 612x612 -> RandomCrop 512x512 -> H_Flip(p=0.5) -> V_Flip(p=0.5) -> Normalize(mean=0.5, std.=0.5)
+    * Optimizer: RMSprop(learning rate = 1e-4)
+    * Val Split: 0.2
+    * Batch Size: 8
+    * Epoch: 30
+    * Input Tensor: 3 x 512 x 512 (Input Size: 3.00 MB)
+    * Trainable Params: 24,595,092
+    * Forward/ backward pass size: 32.81 MB
+    * Params size: 93.82 MB
+    * Estimated Total Size: 129.94 MB
+
+* B1: AlexNet-like Model V1 (Use 940 MX): Train Acc. 85%, Val Acc. 80%, Test Acc. 82.26880% || Spend 6475 sec.
     * Not Use Data Augmentation
     * Optimizer: RMSprop(learning rate = 1e-5)
     * Val Split: 0.2
@@ -26,7 +38,19 @@ In HW5, we are going to cope with AOI - task. It's basically a classification pr
     * Params size: 169.46 MB
     * Estimated Total Size: 217.02 MB
 
-3. ResNet-like Model V1 (Use CPU): Train Acc. XX%, Val Acc. XX%, Test Acc. N/A || Spend XXXX sec.
+* B2: AlexNet-like Model V1 (Use 940 MX): Train Acc. 85%, Val Acc. 80%, Test Acc. 82.26880% || Spend 6475 sec.
+    * Not Use Data Augmentation
+    * Optimizer: RMSprop(learning rate = 1e-4) <---- Only Difference Between B1 and B2
+    * Val Split: 0.2
+    * Batch Size: 8
+    * Epoch: 30
+    * Input Tensor: 3 x 512 x 512 (Input Size: 3.00 MB)
+    * Trainable Params: 44,424,006
+    * Forward/ backward pass size: 44.55 MB
+    * Params size: 169.46 MB
+    * Estimated Total Size: 217.02 MB
+
+* C1: ResNet-like Model V1 (Use CPU): Train Acc. XX%, Val Acc. XX%, Test Acc. N/A || Spend XXXX sec.
     * Not Use Data Augmentation
     * Optimizer: RMSprop(learning rate = 1e-4)
     * Val Split: 0.2
