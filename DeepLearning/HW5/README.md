@@ -38,7 +38,7 @@ In HW5, we are going to cope with AOI - task. It's basically a classification pr
     * Params size: 169.46 MB
     * Estimated Total Size: 217.02 MB
 
-* B2: AlexNet-like Model V1 (Use 940 MX): Train Acc. 85%, Val Acc. 80%, Test Acc. 82.26880% || Spend 6475 sec.
+* B2: AlexNet-like Model V2 (Use 940 MX): Train Acc. 87%, Val Acc. 84%, Test Acc. N/A% || Spend 6475 sec.
     * Not Use Data Augmentation
     * Optimizer: RMSprop(learning rate = 1e-4) <---- Only Difference Between B1 and B2
     * Val Split: 0.2
@@ -49,8 +49,23 @@ In HW5, we are going to cope with AOI - task. It's basically a classification pr
     * Forward/ backward pass size: 44.55 MB
     * Params size: 169.46 MB
     * Estimated Total Size: 217.02 MB
+    * Thoughts: 
+        1. After increasing its learning rate, the acc./ loss curves fluctuates strongly. Not good.
+        2. Didn't test it for test acc. because both acc. fluctuates strongly.
 
-* C1: ResNet-like Model V1 (Use CPU): Train Acc. XX%, Val Acc. XX%, Test Acc. N/A || Spend XXXX sec.
+* B3: AlexNet-like Model V3 (Use GTX 1660): Train Acc. xx%, Val Acc. xx%, Test Acc. xx.xxxxx% || Spend xxxx sec.
+    * Use Data Augmentation: 512x512 -> Resize 712x712 -> CenterCrop 612x612 -> RandomCrop 512x512 -> H_Flip(p=0.5) -> V_Flip(p=0.5) -> Normalize(mean=0.5, std.=0.5)
+    * Optimizer: RMSprop(learning rate = 1e-4) <---- Only Difference Between B1 and B2
+    * Val Split: 0.2
+    * Batch Size: 8
+    * Epoch: 30
+    * Input Tensor: 3 x 512 x 512 (Input Size: 3.00 MB)
+    * Trainable Params: 44,424,006
+    * Forward/ backward pass size: 44.55 MB
+    * Params size: 169.46 MB
+    * Estimated Total Size: 217.02 MB
+
+* C1: ResNet-like Model V1 (Use CPU): Train Acc. 93%, Val Acc. 91%, Test Acc. N/A || Spend 10403.83 sec.
     * Not Use Data Augmentation
     * Optimizer: RMSprop(learning rate = 1e-4)
     * Val Split: 0.2
@@ -61,6 +76,9 @@ In HW5, we are going to cope with AOI - task. It's basically a classification pr
     * Forward/ backward pass size: Not Estimated Using CPU
     * Params size: Not Estimated Using CPU
     * Estimated Total Size: Not Estimated Using CPU
+    * Thoughts: 
+        1. Test Acc. is very low --> 30% ~ 50%. Could be issue of overfitting.
+        2. Didn't test it for test acc because the acc is predictably low.
 
 # Labels
 There are 6 different labels listed below:
