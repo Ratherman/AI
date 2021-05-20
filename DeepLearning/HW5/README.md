@@ -6,7 +6,7 @@
 # Note
 * In img/, the training/ validation accuracies are stored for every experiment below.
 
-# Final Result: After Experiment with val curve with various model (LeNet5, AlexNet, ResNet18), I decided to use LeNet5 without data augmentation. (See A1 ~ A3 for detail)
+# Final Result: LeNet5 W/WO Data Augmentation 
 * LeNet5-like Model (Use 940 MX): Train Acc. 99%, Test Acc. 95.31442 %
     * No Data Augmentation    
     * Optimizer: RMSprop(learning rate = 1e-4)
