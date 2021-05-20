@@ -5,6 +5,10 @@
 
 # Note
 * In img/, the training/ validation accuracies are stored for every experiment below.
+* REF: torchsummary
+    * https://github.com/sksq96/pytorch-summary
+    * With the help of torchsummary, I can easily check the GPU Memory Usage.
+* Use PyTorch: 1.7.1, Python 3.7
 
 # Final Result: LeNet5 W/WO Data Augmentation 
 * LeNet5-like Model (Use 940 MX): Train Acc. 99%, Test Acc. 95.31442 %
