@@ -11,19 +11,20 @@
 
 ```
 map = {
-    1: aquarium,
-    2: bottle,
-    3: bowl,
-    4: box,
-    5: bucket,
-    6: plastic_bag,
-    7: plate,
-    8: styrofoam,
-    9: tire,
-    10: toilet,
-    11: tub,
-    12: washing_machine,
-    13: water_tower
+    0: aquarium,
+    1: bottle,
+    2: bowl,
+    3: box,
+    4: bucket,
+    5: plastic_bag,
+    6: plate,
+    7: styrofoam,
+    8: tire,
+    9: toilet,
+    10: tub,
+    11: washing_machine,
+    12: water_tower
 }
 ```
 ## Step 01: Convert VOC Format to YOLO Format
+## Step 02: Generate train.txt

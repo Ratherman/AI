@@ -12,19 +12,19 @@ print(len(annotations))
 
 # Define labels
 map_table = {
-    "aquarium": 1,
-    "bottle": 2,
-    "bowl": 3,
-    "box": 4,
-    "bucket": 5,
-    "plastic_bag": 6,
-    "plate": 7,
-    "styrofoam": 8,
-    "tire": 9,
-    "toilet": 10,
-    "tub": 11,
-    "washing_machine": 12,
-    "water_tower": 13
+    "aquarium": 0,
+    "bottle": 1,
+    "bowl": 2,
+    "box": 3,
+    "bucket": 4,
+    "plastic_bag": 5,
+    "plate": 6,
+    "styrofoam": 7,
+    "tire": 8,
+    "toilet": 9,
+    "tub": 10,
+    "washing_machine": 11,
+    "water_tower": 12
 }
 
 # Excute
