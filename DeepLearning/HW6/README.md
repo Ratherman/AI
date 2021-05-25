@@ -26,3 +26,4 @@ map = {
     13: water_tower
 }
 ```
+## Step 01: Convert VOC Format to YOLO Format
