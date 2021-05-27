@@ -2,6 +2,21 @@
 ## 尋找病媒蚊孳生源-積水容器影像物件辨識
 * AIdea Competition Entry: https://aidea-web.tw/topic/cc2d8ec6-dfaf-42bd-8a4a-435bffc8d071
 
+## Outline:
+* [Results](https://github.com/Ratherman/AI/tree/main/DeepLearning/HW6#results)
+* [Src Code](https://github.com/Ratherman/AI/tree/main/DeepLearning/HW6#src-code)
+* [Ref Link](https://github.com/Ratherman/AI/tree/main/DeepLearning/HW6#ref-link)
+* [Datasets/Labels](https://github.com/Ratherman/AI/tree/main/DeepLearning/HW6#datasetslabels)
+* [Step 01: Convert VOC Format to YOLO Format](https://github.com/Ratherman/AI/tree/main/DeepLearning/HW6#step-01-convert-voc-format-to-yolo-format)
+* [Step 02: Generate train.txt](https://github.com/Ratherman/AI/tree/main/DeepLearning/HW6#step-02-generate-traintxt)
+* [Step 03: Preparation & Configuration](https://github.com/Ratherman/AI/tree/main/DeepLearning/HW6#step-03-preparation--configuration)
+* [Step 04: Training](https://github.com/Ratherman/AI/tree/main/DeepLearning/HW6#step-04-training)
+* [Step 05: Testing](https://github.com/Ratherman/AI/tree/main/DeepLearning/HW6#step-05-testing)
+* [Step 06: Parse json-format result to asked-format result.](https://github.com/Ratherman/AI/tree/main/DeepLearning/HW6#step-06-parse-json-format-result-to-asked-format-result)
+## Results:
+
+
+
 ## Src Code:
 * My Github Repo: [Link](https://github.com/Ratherman/AI/tree/main/DeepLearning/HW6)
 * My Google Colab Notebook: [Link](https://colab.research.google.com/drive/1AD7hIrI6Co-vlTKPbhJWN0OiUOpaML19#scrollTo=imc0NP19hLuq)
