@@ -33,7 +33,7 @@ map = {
 }
 ```
 ## Step 01: Convert VOC Format to YOLO Format
-* Python code: convert_voc_to_yolo_format
+* Python code: `convert_voc_to_yolo_format.py`
 * re-arrange the value of label_id into [0, 12].
 * After converting, the `bbox_info_yyyymmdd.txt` looks like this:
 ```
@@ -155,3 +155,10 @@ classes=13 # We have 13 different classes. Note that the algorithm accepts the r
  ...
 ]
 ```
+
+## Step 06: Parse json-format result to asked-format result.
+* Python Code: `parse_json_to_csv.py`
+* The asked format are:
+    1. CSV-file format required
+    2. six col. info required: `image_filename`, `label_id`, `x`, `y`, `w`, `h`, `confidence`
+* There is also one little tricky part is that I need to remember to re-arrange the lable_id into [1, 13] (from [0, 12]).
