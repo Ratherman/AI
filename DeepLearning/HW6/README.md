@@ -14,8 +14,30 @@
 * [Step 05: Testing](https://github.com/Ratherman/AI/tree/main/DeepLearning/HW6#step-05-testing)
 * [Step 06: Parse json-format result to asked-format result.](https://github.com/Ratherman/AI/tree/main/DeepLearning/HW6#step-06-parse-json-format-result-to-asked-format-result)
 ## Results:
-* Loss Curve and Accuracy Curve During training phase
-<img src="https://github.com/Ratherman/AI/blob/main/DeepLearning/HW6/img/first_try_10000_max_batch.png" width="750">
+* First Try: Loss Curve and Accuracy Curve During training phase
+    * Grade on AIdea: 0.3239033
+    * ID: Ratherman
+    * Batch_sie: 64
+    * Max_Batch: 10,000 // the number of batches will be trained.
+    * Learning Rate: 0.001
+    * Policy: Step (at 8,000 & 9,000) with scale factor (0.1 & 0.1).
+    * Input Width: 320
+    * Input Height: 320
+<img src="https://github.com/Ratherman/AI/blob/main/DeepLearning/HW6/img/first_try_10000_max_batch.png" width="600">
+
+* Second Try: Loss Curve and Accuracy Curve During training phase
+    * Grade on AIdea:
+    * ID: Ratherman
+    * Batch_size: 128
+    * Max_Batch: 26,000 // higher than 1st try. Followed by the empirical formula: #class x 2,000 = 13 x 2,000 = 26,000
+    * Learning Rate: 0.001
+    * Policy: Step (at 20,800 & 23,400) with scale factor (0.1 & 0.1).
+    * Input Width: 416 // higher than 1st try because 416 is close to original image size, i.e., 400.
+    * Input Height: 320
+<img src="https://github.com/Ratherman/AI/blob/main/DeepLearning/HW6/img/first_try_10000_max_batch.png" width="600">
+
+* Testing Result with bounding box
+<img src="https://github.com/Ratherman/AI/blob/main/DeepLearning/HW6/img/first_try_10000_max_batch.png" width="600">
 
 
 ## Src Code:
