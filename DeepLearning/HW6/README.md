@@ -2,8 +2,14 @@
 ## 尋找病媒蚊孳生源-積水容器影像物件辨識
 * AIdea Entry: https://aidea-web.tw/topic/cc2d8ec6-dfaf-42bd-8a4a-435bffc8d071
 
+## Src Code:
+* My Github Repo:[Link](https://github.com/Ratherman/AI/tree/main/DeepLearning/HW6)
+* My Google Colab Notebook: [Link](https://colab.research.google.com/drive/1AD7hIrI6Co-vlTKPbhJWN0OiUOpaML19#scrollTo=imc0NP19hLuq)
+
 ## Ref Link
-* https://github.com/argusswift/YOLOv4-pytorch/tree/d0a3b6553c22a7e45e218fb1b82465367e833792
+* [YouTube Link](https://www.youtube.com/watch?v=mmj3nxGT2YQ):YOLOv4 in the CLOUD: Build and Train Custom Object Detector (FREE GPU)
+* [Github Link](https://github.com/theAIGuysCode/YOLOv4-Cloud-Tutorial): theAIGuysCode/YOLOv4-Cloud-Tutorial
+* [Google Colab Notebook Link](https://colab.research.google.com/drive/1_GdoqCJWXsChrOiY8sZMr_zbr_fH-0Fg?usp=sharing): YOLOv4_Training_Tutorial.ipynb
 
 ## Datasets/Labels:
 * Train Datasets: 2671
@@ -29,7 +35,7 @@ map = {
 ## Step 01: Convert VOC Format to YOLO Format
 * Python code: convert_voc_to_yolo_format
 * re-arrange the value of label_id into [0, 12].
-* After converting, the result looks like this:
+* After converting, the `bbox_info_yyyymmdd.txt` looks like this:
 ```
 # label_id, cx, cy, w, h (ex: 20080110.jpg)
 3 0.14375 0.5458333333333333 0.19375 0.26666666666666666
@@ -37,9 +43,9 @@ map = {
 ```
 
 ## Step 02: Generate train.txt
-* Python code: [theAIGuysCode/YOLOv4-Cloud-Tutorial/yolov4/generate_train.py](https://github.com/theAIGuysCode/YOLOv4-Cloud-Tutorial/yolov4/generate_train.py)
+* Python code: [theAIGuysCode/YOLOv4-Cloud-Tutorial/yolov4/generate_train.py](https://github.com/theAIGuysCode/YOLOv4-Cloud-Tutorial/blob/master/yolov4/generate_train.py)
 * In this step, I used the code from [Github repo: theAIGuysCode](https://github.com/theAIGuysCode/YOLOv4-Cloud-Tutorial)
-* train.txt describes all images we used in training phase.
+* `train.txt` describes all images we used in training phase.
 ```
 # the content in train.txt looks like:
 data/obj/20130304.jpg
@@ -102,4 +108,50 @@ classes=13 # We have 13 different classes. Note that the algorithm accepts the r
 ```
 
 ## Step 04: Training
-* 
+* Python code (1): Mainly follow the Instructions from [Google Colab Notebook](https://colab.research.google.com/drive/1_GdoqCJWXsChrOiY8sZMr_zbr_fH-0Fg?usp=sharing)
+* Python code (2): I modify it a bit for this homework. (Also for brevity) => [[My Version of Google Colab Notebook]](https://colab.research.google.com/drive/1AD7hIrI6Co-vlTKPbhJWN0OiUOpaML19?usp=sharing)
+* But the most important two lines of code are:
+* (1) Get the pre-trained weights for the convolutional layers.
+    ```
+    !wget https://github.com/AlexeyAB/darknet/releases/download/darknet_yolo_v3_optimal/yolov4.conv.137
+    ```
+* (2) Train darknet.
+    * Note 1: `data/obj.data` and `cfg/yolov4-obj.cfg` are exactly the files we setup in step 03.
+    * Note 2: `-map` flag means we want to test the performance based on val. dataset (I set val. equals to train in this case) in terms of mAP.
+    ```
+    !./darknet detector train data/obj.data cfg/yolov4-obj.cfg yolov4.conv.137 -dont_show -map
+    ```
+* After training, the final weight, i.e., `yolov4-obj_final.weights` will be generated.
+
+## Step 05: Testing
+* Python code (1): Mainly follow the Instructions from [Google Colab Notebook](https://colab.research.google.com/drive/1_GdoqCJWXsChrOiY8sZMr_zbr_fH-0Fg?usp=sharing)
+* Python code (2): I modify it a bit for this homework. (Also for brevity) => [[My Version of Google Colab Notebook]](https://colab.research.google.com/drive/1AD7hIrI6Co-vlTKPbhJWN0OiUOpaML19?usp=sharing)
+* Python code (3) [theAIGuysCode/YOLOv4-Cloud-Tutorial/yolov4/generate_test.py](https://github.com/theAIGuysCode/YOLOv4-Cloud-Tutorial/blob/master/yolov4/generate_test.py)
+* Use python code (3) `generate_test.py` to generate `test.txt`.
+* Run the following command to test the trained model and save the output (JSON format: `result_test.json`).
+```
+!./darknet detector test data/obj.data cfg/yolov4-obj.cfg ../yolov4-obj_final.weights -ext_output -dont_show -out result_test.json < data/test.txt
+```
+* The `result.json` looks like this:
+```
+[
+{
+ "frame_id":1, 
+ "filename":"data/test/2010111918.jpg", 
+ "objects": [ 
+
+ ] 
+}, 
+{
+ "frame_id":2, 
+ "filename":"data/test/20090625.jpg", 
+ "objects": [ 
+  {"class_id":4, "name":"bucket", "relative_coordinates":{"center_x":0.487827, "center_y":0.631973, "width":0.096893, "height":0.141298}, "confidence":0.998110}, 
+  {"class_id":4, "name":"bucket", "relative_coordinates":{"center_x":0.453598, "center_y":0.565197, "width":0.123445, "height":0.212162}, "confidence":0.996475}, 
+  {"class_id":4, "name":"bucket", "relative_coordinates":{"center_x":0.516845, "center_y":0.678519, "width":0.051426, "height":0.092665}, "confidence":0.951427}, 
+  {"class_id":4, "name":"bucket", "relative_coordinates":{"center_x":0.592881, "center_y":0.654635, "width":0.051142, "height":0.087461}, "confidence":0.657259}
+ ]
+}, 
+ ...
+]
+```
