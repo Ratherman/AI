@@ -37,7 +37,7 @@ map = {
 ```
 
 ## Step 02: Generate train.txt
-* Python code: theAIGuysCode/YOLOv4-Cloud-Tutorial/yolov4/generate_train.py
+* Python code: [theAIGuysCode/YOLOv4-Cloud-Tutorial/yolov4/generate_train.py](https://github.com/theAIGuysCode/YOLOv4-Cloud-Tutorial/yolov4/generate_train.py)
 * In this step, I used the code from [Github repo: theAIGuysCode](https://github.com/theAIGuysCode/YOLOv4-Cloud-Tutorial)
 * train.txt describes all images we used in training phase.
 ```
@@ -100,3 +100,6 @@ scales=.1,.1
 ...
 classes=13 # We have 13 different classes. Note that the algorithm accepts the range of label id from 0 to 12. (see step 01)
 ```
+
+## Step 04: Training
+* 
