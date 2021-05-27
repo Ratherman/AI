@@ -15,8 +15,7 @@
 * [Step 06: Parse json-format result to asked-format result.](https://github.com/Ratherman/AI/tree/main/DeepLearning/HW6#step-06-parse-json-format-result-to-asked-format-result)
 ## Results:
 * Loss Curve and Accuracy Curve During training phase
-![](https://github.com/Ratherman/AI/blob/main/DeepLearning/HW6/img/first_try_10000_max_batch.png | width=250)
-<img src="https://github.com/Ratherman/AI/blob/main/DeepLearning/HW6/img/first_try_10000_max_batch.png" alt="alt text" width="250">
+<img src="https://github.com/Ratherman/AI/blob/main/DeepLearning/HW6/img/first_try_10000_max_batch.png" width="750">
 
 
 ## Src Code:
