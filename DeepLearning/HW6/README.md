@@ -1,15 +1,15 @@
 # Object Detection
 ## 尋找病媒蚊孳生源-積水容器影像物件辨識
-* AIdea Entry: https://aidea-web.tw/topic/cc2d8ec6-dfaf-42bd-8a4a-435bffc8d071
+* AIdea Competition Entry: https://aidea-web.tw/topic/cc2d8ec6-dfaf-42bd-8a4a-435bffc8d071
 
 ## Src Code:
-* My Github Repo:[Link](https://github.com/Ratherman/AI/tree/main/DeepLearning/HW6)
+* My Github Repo: [Link](https://github.com/Ratherman/AI/tree/main/DeepLearning/HW6)
 * My Google Colab Notebook: [Link](https://colab.research.google.com/drive/1AD7hIrI6Co-vlTKPbhJWN0OiUOpaML19#scrollTo=imc0NP19hLuq)
 
 ## Ref Link
-* [YouTube Link](https://www.youtube.com/watch?v=mmj3nxGT2YQ):YOLOv4 in the CLOUD: Build and Train Custom Object Detector (FREE GPU)
-* [Github Link](https://github.com/theAIGuysCode/YOLOv4-Cloud-Tutorial): theAIGuysCode/YOLOv4-Cloud-Tutorial
-* [Google Colab Notebook Link](https://colab.research.google.com/drive/1_GdoqCJWXsChrOiY8sZMr_zbr_fH-0Fg?usp=sharing): YOLOv4_Training_Tutorial.ipynb
+* [[YouTube Link](https://www.youtube.com/watch?v=mmj3nxGT2YQ)]: YOLOv4 in the CLOUD: Build and Train Custom Object Detector (FREE GPU)
+* [[Github Link](https://github.com/theAIGuysCode/YOLOv4-Cloud-Tutorial)]: theAIGuysCode/YOLOv4-Cloud-Tutorial
+* [[Google Colab Notebook Link](https://colab.research.google.com/drive/1_GdoqCJWXsChrOiY8sZMr_zbr_fH-0Fg?usp=sharing)]: YOLOv4_Training_Tutorial.ipynb
 
 ## Datasets/Labels:
 * Train Datasets: 2671
@@ -108,7 +108,7 @@ classes=13 # We have 13 different classes. Note that the algorithm accepts the r
 ```
 
 ## Step 04: Training
-* Python code (1): Mainly follow the Instructions from [Google Colab Notebook](https://colab.research.google.com/drive/1_GdoqCJWXsChrOiY8sZMr_zbr_fH-0Fg?usp=sharing)
+* Python code (1): Mainly follow the Instructions from [[Original Google Colab Notebook](https://colab.research.google.com/drive/1_GdoqCJWXsChrOiY8sZMr_zbr_fH-0Fg?usp=sharing)]
 * Python code (2): I modify it a bit for this homework. (Also for brevity) => [[My Version of Google Colab Notebook]](https://colab.research.google.com/drive/1AD7hIrI6Co-vlTKPbhJWN0OiUOpaML19?usp=sharing)
 * But the most important two lines of code are:
 * (1) Get the pre-trained weights for the convolutional layers.
@@ -124,7 +124,7 @@ classes=13 # We have 13 different classes. Note that the algorithm accepts the r
 * After training, the final weight, i.e., `yolov4-obj_final.weights` will be generated.
 
 ## Step 05: Testing
-* Python code (1): Mainly follow the Instructions from [Google Colab Notebook](https://colab.research.google.com/drive/1_GdoqCJWXsChrOiY8sZMr_zbr_fH-0Fg?usp=sharing)
+* Python code (1): Mainly follow the Instructions from [[Original Google Colab Notebook](https://colab.research.google.com/drive/1_GdoqCJWXsChrOiY8sZMr_zbr_fH-0Fg?usp=sharing)]
 * Python code (2): I modify it a bit for this homework. (Also for brevity) => [[My Version of Google Colab Notebook]](https://colab.research.google.com/drive/1AD7hIrI6Co-vlTKPbhJWN0OiUOpaML19?usp=sharing)
 * Python code (3) [theAIGuysCode/YOLOv4-Cloud-Tutorial/yolov4/generate_test.py](https://github.com/theAIGuysCode/YOLOv4-Cloud-Tutorial/blob/master/yolov4/generate_test.py)
 * Use python code (3) `generate_test.py` to generate `test.txt`.
