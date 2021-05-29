@@ -177,31 +177,31 @@ jupyter notebook
         # 4. width <int>: Use this for elastically resize image to desired shape.
         class AOI_Dataset(Dataset):
             
-        		# perform logic operation: think what kind of info I need when loading data
+        	# perform logic operation: think what kind of info I need when loading data
             def __init__(self, target_csv, root_path, height, width, transform = None):
                 
                 # height, width
-        				pass
+        		pass
                 
                 # attach static info to self 
-        				pass
+        		pass
                 
                 # 1. Read CSV file through root_path (REF: Step 04)
-        				pass				
+        	    pass				
                 
                 # 2. Remember the length (by self) (REF: def __len__(self))
-        				pass
+        		pass
                 
                 # 3. transform (you can also attach a "Function" to self)
                 pass
             
-        		# input: index
-        		# output: pair of (image, lable)
+        	# input: index
+        	# output: pair of (image, lable)
             def __getitem__(self, index):
                 # Read images
                 img = cv.imread(self.root_path + self.df.ID[index])
 
-        				# Use resize to a smaller shape when training takes so long.
+        		# Use resize to a smaller shape when training takes so long.
                 img_resize = cv.resize(img, (self.height, self.width))
 
                 # To Tensor
