@@ -34,7 +34,7 @@
     * Policy: Step (at 20,800 & 23,400) with scale factor (0.1 & 0.1).
     * Input Width: 416 // higher than 1st try because 416 is close to original image size, i.e., 400.
     * Input Height: 320
-<img src="https://github.com/Ratherman/AI/blob/main/DeepLearning/HW6/img/first_try_10000_max_batch.png" width="600">
+<img src="https://github.com/Ratherman/AI/blob/main/DeepLearning/HW6/img/second_try_26000_max_batch.png" width="600">
 
 * Testing Result with bounding box
 <img src="https://github.com/Ratherman/AI/blob/main/DeepLearning/HW6/img/first_try_10000_max_batch.png" width="600">
