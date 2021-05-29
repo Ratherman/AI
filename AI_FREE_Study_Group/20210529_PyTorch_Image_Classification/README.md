@@ -268,9 +268,9 @@ jupyter notebook
     class LeNet(nn.Module):
         def __init__(self):
             super().__init__()
-            self.conv1 = nn.Conv2d( 3,  6, 3, padding = 1) # 加深 channel 降低 resolution
-            self.conv2 = nn.Conv2d( 6, 16, 3, padding = 1) # 加深 channel 降低 resolution
-            self.conv3 = nn.Conv2d(16, 50, 3, padding = 1) # 加深 channel 降低 resolution
+            self.conv1 = nn.Conv2d( 3,  6, 3, padding = 1) # 加深 channel
+            self.conv2 = nn.Conv2d( 6, 16, 3, padding = 1) # 加深 channel
+            self.conv3 = nn.Conv2d(16, 50, 3, padding = 1) # 加深 channel
             self.pool = nn.MaxPool2d(2, 2)
             self.fc1 = nn.Linear(50 * 64 * 64, 120) # Why 64 Why 50
             self.fc2 = nn.Linear(120, 84)
