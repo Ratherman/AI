@@ -24,7 +24,7 @@
 
 # Start:
 
-- Step 01: Installation
+## Step 01: Installation
     - Anaconda
     - Conda Create Env
 
@@ -68,7 +68,7 @@
 
     - 示範上考慮到大家不一定都有顯卡，所以使用 CPU，若想要裝 higher version (e.g. 1.8.X) or GPU Version，請參考以下網址。
     - PyTorch Installation Link: [https://pytorch.org/get-started/previous-versions/](https://pytorch.org/get-started/previous-versions/)
-- Step 02: Get Dataset
+## Step 02: Get Dataset
 
     ### Temp: Download From Google Cloud
 
@@ -80,7 +80,7 @@
 
         ![](https://github.com/Ratherman/AI/blob/main/AI_FREE_Study_Group/20210529_PyTorch_Image_Classification/imgs/step02_02.png)
 
-- Step 03: Arrange File Structure
+## Step 03: Arrange File Structure
     - 預期的專案結構如下:
         - . / test_images/
         . / train_images/
@@ -113,7 +113,7 @@ jupyter notebook
 
 ---
 
-- Step 04: Have a look of image
+## Step 04: Have a look of image
     - import 此步驟需要之套件
 
         ```python
@@ -156,7 +156,7 @@ jupyter notebook
 
         ![](https://github.com/Ratherman/AI/blob/main/AI_FREE_Study_Group/20210529_PyTorch_Image_Classification/imgs/step04_01.png)
 
-- Step 05: Define Custom Dataset Class
+## Step 05: Define Custom Dataset Class
     - import 此步驟需要的套件
 
         ```python
@@ -217,7 +217,7 @@ jupyter notebook
         ```
 
     - REF: PyTorch 官方 Dataset & DataLoader 教學 [[Link](https://pytorch.org/tutorials/beginner/basics/data_tutorial.html)]
-- Step 06: Define DataLoader w.r.t Dataset Class
+## Step 06: Define DataLoader w.r.t Dataset Class
     - import 此步驟需要的套件
 
         ```python
@@ -243,7 +243,7 @@ jupyter notebook
         Train_DataLoader = torch.utils.data.DataLoader(Train_Dataset, batch_size = batch_size)
         ```
 
-- Step 07: Define LeNet5-like Structure
+## Step 07: Define LeNet5-like Structure
     - Yann Lecun
 
         ![](https://github.com/Ratherman/AI/blob/main/AI_FREE_Study_Group/20210529_PyTorch_Image_Classification/imgs/step07_01.png)
@@ -296,7 +296,7 @@ jupyter notebook
 
             ![](https://github.com/Ratherman/AI/blob/main/AI_FREE_Study_Group/20210529_PyTorch_Image_Classification/imgs/step07_03.png)
 
-- Step 08: Define Loss Function and setup Hyper Parameters
+## Step 08: Define Loss Function and setup Hyper Parameters
 
     ```python
     import torch.optim as optim
@@ -306,7 +306,7 @@ jupyter notebook
     epoch = 10 # change this to whatever number you'd like
     ```
 
-- Step 09: Training Phase
+## Step 09: Training Phase
 
     ```python
     from tqdm import tqdm
@@ -379,7 +379,7 @@ jupyter notebook
 
             ![](https://github.com/Ratherman/AI/blob/main/AI_FREE_Study_Group/20210529_PyTorch_Image_Classification/imgs/step09_01.png)
 
-- Step 10: Plot Accuracy & Loss Curves
+## Step 10: Plot Accuracy & Loss Curves
 
     ```python
     import matplotlib.pyplot as plt
@@ -408,7 +408,7 @@ jupyter notebook
 
     ![](https://github.com/Ratherman/AI/blob/main/AI_FREE_Study_Group/20210529_PyTorch_Image_Classification/imgs/step10_02.png)
 
-- Step 11: Testing Phase
+## Step 11: Testing Phase
 
     ```python
     transform_test = transforms.Compose([
