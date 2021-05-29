@@ -74,11 +74,11 @@
 
     - AIdea AOI Detection: [https://aidea-web.tw/topic/285ef3be-44eb-43dd-85cc-f0388bf85ea4](https://aidea-web.tw/topic/285ef3be-44eb-43dd-85cc-f0388bf85ea4)
 
-        ![](step02_01)
+        ![](https://github.com/Ratherman/AI/blob/main/AI_FREE_Study_Group/20210529_PyTorch_Image_Classification/imgs/step02_01.png)
 
     - Download Page:
 
-        ![](step02_02)
+        ![](https://github.com/Ratherman/AI/blob/main/AI_FREE_Study_Group/20210529_PyTorch_Image_Classification/imgs/step02_02.png)
 
 - Step 03: Arrange File Structure
     - 預期的專案結構如下:
@@ -88,15 +88,15 @@
         . / train.csv
         . / LeNet5.ipynb ← 這個 Python File 是要自己新建的
 
-        ![](step03_01)
+        ![](https://github.com/Ratherman/AI/blob/main/AI_FREE_Study_Group/20210529_PyTorch_Image_Classification/imgs/step03_01.png)
 
     - train_images
 
-        ![](step03_02)
+        ![](https://github.com/Ratherman/AI/blob/main/AI_FREE_Study_Group/20210529_PyTorch_Image_Classification/imgs/step03_02.png)
 
     - train.csv
 
-        ![](step03_03)
+        ![](https://github.com/Ratherman/AI/blob/main/AI_FREE_Study_Group/20210529_PyTorch_Image_Classification/imgs/step03_03.png)
 
 ---
 
@@ -246,11 +246,11 @@ jupyter notebook
 - Step 07: Define LeNet5-like Structure
     - Yann Lecun
 
-        ![](step07_01)
+        ![](https://github.com/Ratherman/AI/blob/main/AI_FREE_Study_Group/20210529_PyTorch_Image_Classification/imgs/step07_01.png)
 
         - Original Version of LeNet5 in his [paper](http://yann.lecun.com/exdb/publis/pdf/lecun-98.pdf).
 
-        ![](step07_02)
+        ![](https://github.com/Ratherman/AI/blob/main/AI_FREE_Study_Group/20210529_PyTorch_Image_Classification/imgs/step07_02.png)
 
     - Structure of Original LeNet5
 
@@ -294,7 +294,7 @@ jupyter notebook
     - API lookup [[Link](https://pytorch.org/docs/stable/index.html)]
         - Conv2D [[Link](https://pytorch.org/docs/1.7.1/generated/torch.nn.Conv2d.html#torch.nn.Conv2d)]
 
-            ![](step07_03)
+            ![](https://github.com/Ratherman/AI/blob/main/AI_FREE_Study_Group/20210529_PyTorch_Image_Classification/imgs/step07_03.png)
 
 - Step 08: Define Loss Function and setup Hyper Parameters
 
@@ -372,12 +372,12 @@ jupyter notebook
     print('Finished Training')
     ```
 
-    ![](step09_00)
+    ![](https://github.com/Ratherman/AI/blob/main/AI_FREE_Study_Group/20210529_PyTorch_Image_Classification/imgs/step09_00.png)
 
     - Why zero_grad
         - What step(), backward(), and zero_grad() do [[Link](https://discuss.pytorch.org/t/what-step-backward-and-zero-grad-do/33301)]
 
-            ![](step09_01)
+            ![](https://github.com/Ratherman/AI/blob/main/AI_FREE_Study_Group/20210529_PyTorch_Image_Classification/imgs/step09_01.png)
 
 - Step 10: Plot Accuracy & Loss Curves
 
@@ -404,9 +404,9 @@ jupyter notebook
     plt.show()
     ```
 
-    ![](step10_01)
+    ![](https://github.com/Ratherman/AI/blob/main/AI_FREE_Study_Group/20210529_PyTorch_Image_Classification/imgs/step10_01.png)
 
-    ![](step10_02)
+    ![](https://github.com/Ratherman/AI/blob/main/AI_FREE_Study_Group/20210529_PyTorch_Image_Classification/imgs/step10_02.png)
 
 - Step 11: Testing Phase
 
@@ -437,7 +437,7 @@ jupyter notebook
     df.to_csv(Name_of_csv_file, index=False)
     ```
 
-    ![](step11_01)
+    ![](https://github.com/Ratherman/AI/blob/main/AI_FREE_Study_Group/20210529_PyTorch_Image_Classification/imgs/step11_01.png)
 
 # Future Plan
 
