@@ -83,10 +83,10 @@
 - Step 03: Arrange File Structure
     - 預期的專案結構如下:
         - . / test_images/
-        . / train_images/
-        . / test.csv
-        . / train.csv
-        . / LeNet5.ipynb ← 這個 Python File 是要自己新建的
+        - . / train_images/
+        - . / test.csv
+        - . / train.csv
+        - . / LeNet5.ipynb ← 這個 Python File 是要自己新建的
 
         ![](https://github.com/Ratherman/AI/blob/main/AI_FREE_Study_Group/20210529_PyTorch_Image_Classification/imgs/step03_01.png)
 
