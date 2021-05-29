@@ -200,8 +200,8 @@ jupyter notebook
             def __getitem__(self, index):
                 # Read images
                 img = cv.imread(self.root_path + self.df.ID[index])
-
-        		# Use resize to a smaller shape when training takes so long.
+                
+                # Use resize to a smaller shape when training takes so long.
                 img_resize = cv.resize(img, (self.height, self.width))
 
                 # To Tensor
