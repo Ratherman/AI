@@ -154,7 +154,7 @@ jupyter notebook
 
     - Conclusion:
 
-        ![](step04_01)
+        ![](https://github.com/Ratherman/AI/blob/main/AI_FREE_Study_Group/20210529_PyTorch_Image_Classification/imgs/step04_01.png)
 
 - Step 05: Define Custom Dataset Class
     - import 此步驟需要的套件
