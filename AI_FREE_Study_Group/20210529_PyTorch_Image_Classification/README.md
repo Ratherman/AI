@@ -107,9 +107,9 @@
 jupyter notebook
 ```
 
-然後點選: LeNet5.py
+然後點選: LeNet5.ipynb
 
-![](https://github.com/Ratherman/AI/blob/main/AI_FREE_Study_Group/20210529_PyTorch_Image_Classification/imgs/step03_04.png)
+![](https://github.com/Ratherman/AI/blob/main/AI_FREE_Study_Group/20210529_PyTorch_Image_Classification/imgs/step03_05.png)
 
 ---
 
