@@ -14,8 +14,12 @@
 * [Step 05: Testing](https://github.com/Ratherman/AI/tree/main/DeepLearning/HW6#step-05-testing)
 * [Step 06: Parse json-format result to asked-format result.](https://github.com/Ratherman/AI/tree/main/DeepLearning/HW6#step-06-parse-json-format-result-to-asked-format-result)
 ## Results:
+* Demo of detection:
+<img src="https://github.com/Ratherman/AI/blob/main/DeepLearning/HW6/img/before_after.png" width="600">
+
 * First Try: Loss Curve and Accuracy Curve During training phase
     * Grade on AIdea: 0.3239033
+    * Spend 5 ~ 10 hours on Training
     * ID: Ratherman
     * Batch_sie: 64
     * Max_Batch: 10,000 // the number of batches will be trained.
@@ -26,7 +30,8 @@
 <img src="https://github.com/Ratherman/AI/blob/main/DeepLearning/HW6/img/first_try_10000_max_batch.png" width="600">
 
 * Second Try: Loss Curve and Accuracy Curve During training phase
-    * Grade on AIdea:
+    * Grade on AIdea: 0.3365820	
+    * Spend 30 ~ 40 hours on Training (but only make the grade better a little bit.)
     * ID: Ratherman
     * Batch_size: 128
     * Max_Batch: 26,000 // higher than 1st try. Followed by the empirical formula: #class x 2,000 = 13 x 2,000 = 26,000
