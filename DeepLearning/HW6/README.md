@@ -41,10 +41,6 @@
     * Input Height: 320
 <img src="https://github.com/Ratherman/AI/blob/main/DeepLearning/HW6/img/second_try_26000_max_batch.png" width="600">
 
-* Testing Result with bounding box
-<img src="https://github.com/Ratherman/AI/blob/main/DeepLearning/HW6/img/first_try_10000_max_batch.png" width="600">
-
-
 ## Src Code:
 * My Github Repo: [Link](https://github.com/Ratherman/AI/tree/main/DeepLearning/HW6)
 * My Google Colab Notebook: [Link](https://colab.research.google.com/drive/1AD7hIrI6Co-vlTKPbhJWN0OiUOpaML19#scrollTo=imc0NP19hLuq)
