@@ -24,8 +24,10 @@
    * Learning Rate: 1e-4 (Become 1e-5 at 25; become 1e-6 at 50)
    * Batch Size: 12
    * Input Image: 192 x 192 (Mainly due to the limitation of GPU, so I scaled it down to 192 x 192)
-   * Display
+   * Display (Left: Input Image; Middle: Ground Truth Mask; Right: Predicted Mask)
    * <img src="https://github.com/Ratherman/AI/blob/main/DeepLearning/HW7/imgs/display.png" width="750">
+   * Loss Curve
+   * <img src="https://github.com/Ratherman/AI/blob/main/DeepLearning/HW7/imgs/loss.png" width="750">
 * Second Try:
    * Results: `Still Training`
    * GPU: Tesla P100
