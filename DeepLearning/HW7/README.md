@@ -76,12 +76,12 @@ map = {
    * See `def __getitem__(self, index)`.
    ```python
    import cv2 as cv
-from torch.utils.data import Dataset, DataLoader
-from torchvision import transforms, datasets, models
+   from torch.utils.data import Dataset, DataLoader
+   from torchvision import transforms, datasets, models
 
-class RoadDataset(Dataset):
-    
-    def __init__(self, width, height, path_to_imgs, path_to_mask, transform = None):
+   class RoadDataset(Dataset):
+      
+      def __init__(self, width, height, path_to_imgs, path_to_mask, transform = None):
         
         self.height = height
         self.width = width
