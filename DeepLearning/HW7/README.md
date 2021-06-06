@@ -38,7 +38,16 @@
    * Input Image: 512 x 512 (This time is much larger than the one in 1st try!)
 
 ## Src Code
+There are two src codes. One is on github, and another is on google colab.
+* Github src code: https://github.com/Ratherman/AI/blob/main/DeepLearning/HW7/unet.ipynb
+* Google Colab src code: https://colab.research.google.com/drive/14vcRp54mPCniRnPUPuw4U3r2dFBh-3_R#scrollTo=bA1CNi6M4SAT
+
 ## Ref Link
+* The repo of "[usuyama/pytorch-unet](https://github.com/usuyama/pytorch-unet)" really helps me out. It shows how to use UNet to do Image Segmentation.
+* Some modifications are needed to complete this multi-class image segmentation task. And the person named "[ptrblck](https://discuss.pytorch.org/u/ptrblck)" on PyTorch Forum describes clearly on how to make the task work. The following links show the posts that help me a lot:
+   1. [Loss function for segmentation models](https://discuss.pytorch.org/t/loss-function-for-segmentation-models/32129/4)
+   2. [Multiclass segmentation U-net masks format](https://discuss.pytorch.org/t/multiclass-segmentation-u-net-masks-format/70979/5)
+
 ## Datasets/Lables
 ```python
 map = {
