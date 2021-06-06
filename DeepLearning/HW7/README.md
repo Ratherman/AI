@@ -1,5 +1,5 @@
 # Semantic Segmentation
-* [CodaLab Link](https://competitions.codalab.org/competitions/30993) Competition: Woodscape Fisheye Semantic Segmentation for Autonomous Driving | CVPR 2021 OmniCV Workshop Challenge
+* [Competition: Woodscape Fisheye Semantic Segmentation for Autonomous Driving | CVPR 2021 OmniCV Workshop Challenge](https://competitions.codalab.org/competitions/30993)
 * Codalab ID: Ratherman
 
 # Outline
