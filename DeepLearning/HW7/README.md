@@ -7,13 +7,11 @@
 * [Src Code](https://github.com/Ratherman/AI/tree/main/DeepLearning/HW7#src-code)
 * [Ref Link](https://github.com/Ratherman/AI/tree/main/DeepLearning/HW7#ref-link)
 * [Datasets/ Labels](https://github.com/Ratherman/AI/tree/main/DeepLearning/HW7#datasetslables)
-* Step 01: Visualize Images and Masks
-* Step 02: Define Custom Datasets
-* Step 03: Define Structure
-* Step 04: Training
-* Step 05: Testing
+* [Step 01: Visualize Images and Masks](https://github.com/Ratherman/AI/tree/main/DeepLearning/HW7#step-01-visualize-images-and-masks)
+* [Step 02: Define Custom Datasets](https://github.com/Ratherman/AI/tree/main/DeepLearning/HW7#step-02-define-custom-datasets)
+* [Step 03: Define Structure](https://github.com/Ratherman/AI/tree/main/DeepLearning/HW7#step-03-define-structure---classic-unet)
 
-## Results
+# Results
 * First Try:
    * Results: `score:0.34, mIoU:0.31, mAcc:0.46 (Rank: 17/17)`
    * GPU: GTX 1600
@@ -35,18 +33,18 @@
    * Batch Size: 11
    * Input Image: 512 x 512 (This time is much larger than the one in 1st try!)
 
-## Src Code
+# Src Code
 There are two src codes. One is on github, and another is on google colab.
 * Github src code: https://github.com/Ratherman/AI/blob/main/DeepLearning/HW7/unet.ipynb
 * Google Colab src code: https://colab.research.google.com/drive/14vcRp54mPCniRnPUPuw4U3r2dFBh-3_R#scrollTo=bA1CNi6M4SAT
 
-## Ref Link
+# Ref Link
 * The repo of "[usuyama/pytorch-unet](https://github.com/usuyama/pytorch-unet)" really helps me out. It shows how to use UNet to do Image Segmentation.
 * Some modifications are needed to complete this multi-class image segmentation task. And the person named "[ptrblck](https://discuss.pytorch.org/u/ptrblck)" on PyTorch Forum describes clearly on how to make the task work. The following links show the posts that helps me a lot:
    1. [Loss function for segmentation models](https://discuss.pytorch.org/t/loss-function-for-segmentation-models/32129/4)
    2. [Multiclass segmentation U-net masks format](https://discuss.pytorch.org/t/multiclass-segmentation-u-net-masks-format/70979/5)
 
-## Datasets/Lables
+# Datasets/Lables
 ```python
 map = {
    0: "void",
@@ -64,11 +62,11 @@ map = {
 * Expected output for each pixel is `[0, 0, 0]`, `[1, 1, 1]`, ... or `[9, 9, 9]`.
 * Shape of the each output mask should be `(width, height, channel)`.
 
-## Step 01: Visualize Images and Masks
+# Step 01: Visualize Images and Masks
 * Left: Input Image; Right: Ground Truth Mask
 * <img src="https://github.com/Ratherman/AI/blob/main/DeepLearning/HW7/imgs/display.png" width="750">
 
-## Step 02: Define Custom Datasets
+# Step 02: Define Custom Datasets
 * Note: Use `ToTensor` to noramlize image value.
 * Note: I am using `nn.CrossEntropyLoss()` as the loss function, its expected input for mask and image are listed below:
    * Mask: `(batch size, width, height)`
@@ -115,7 +113,7 @@ map = {
         return self.length
    ```
 
-## Step 03: Define Structure -> Classic UNet
+# Step 03: Define Structure -> Classic UNet
 * Basic Block:
    ```python
    import torch
