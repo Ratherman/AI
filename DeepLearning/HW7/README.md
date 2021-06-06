@@ -25,7 +25,7 @@
    * Batch Size: 12
    * Input Image: 192 x 192 (Mainly due to the limitation of GPU, so I scaled it down to 192 x 192)
    * Display
-   <img src="https://github.com/Ratherman/AI/blob/main/DeepLearning/HW7/imgs/display.png" width="750">
+   * <img src="https://github.com/Ratherman/AI/blob/main/DeepLearning/HW7/imgs/display.png" width="750">
 * Second Try:
    * Results: `Still Training`
    * GPU: Tesla P100
