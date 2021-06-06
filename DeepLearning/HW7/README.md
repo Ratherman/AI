@@ -72,6 +72,7 @@ map = {
    * Mask: `(batch size, width, height)`
    * Image: `(batch size, channel, width, height)`
    * See `def __getitem__(self, index)`.
+   * Using `cv.INTER_NEAREST` for `msk_resize` is to avoid the value of mask becomes floating numbers.
    ```python
    import cv2 as cv
    from torch.utils.data import Dataset, DataLoader
@@ -107,7 +108,6 @@ map = {
             img_tensor = self.transform(img_resize)
         
         return (img_tensor, msk_one_channel)
-        
         
     def __len__(self):
         return self.length
@@ -180,3 +180,4 @@ map = {
    ```
 
 # As For Training, Evaluation, Testing, Please directly see src code.
+* [src code](https://github.com/Ratherman/AI/tree/main/DeepLearning/HW7#src-code)
