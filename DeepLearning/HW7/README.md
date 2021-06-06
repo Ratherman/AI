@@ -41,7 +41,7 @@ There are two src codes. One is on github, and another is on google colab.
    1. Resize original images and masks. Make them smaller. (ex: 512 x 512 or 192 x 192)
    2. Train
    3. Test
-   4. Resize predicted mask back to the size of 966 x 1922.
+   4. Resize predicted mask back to the size of 966 x 1280.
    * <img src="https://github.com/Ratherman/AI/blob/main/DeepLearning/HW7/imgs/task.png" width="750">
 
 # Ref Link
