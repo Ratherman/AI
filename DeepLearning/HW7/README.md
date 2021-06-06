@@ -29,7 +29,7 @@
 * Second Try:
    * Results: `Still Training`
    * GPU: Tesla P100
-   * Spend: About 280 min
+   * Spend: About 300 min
    * Epoch: 20
    * Learning Rate: 1e-4 (Become 1e-5 at 15)
    * Batch Size: 11
@@ -115,7 +115,7 @@ map = {
         return self.length
    ```
 
-## Step 03: Define Structure
+## Step 03: Define Structure -> Classic UNet
 * Basic Block:
    ```python
    import torch
@@ -129,7 +129,7 @@ map = {
          nn.ReLU(inplace=True)
       ) 
    ```
-* All Blocks:
+* All Blocks: A Encoder-Decoder Structure
    ```python
    class UNet(nn.Module):
 
@@ -180,5 +180,5 @@ map = {
         
         return out
    ```
-## Step 04: Training
-## Step 05: Testing
+
+# As For Training, Evaluation, Testing, Please directly see src code.
