@@ -71,7 +71,7 @@ map = {
 
 # Step 01: Visualize Images and Masks
 * Left: Input Image; Right: Ground Truth Mask
-* <img src="https://github.com/Ratherman/AI/blob/main/DeepLearning/HW7/imgs/display.png" width="750">
+* <img src="https://github.com/Ratherman/AI/blob/main/DeepLearning/HW7/imgs/display2.png" width="750">
 
 # Step 02: Define Custom Datasets
 * Note: Use `ToTensor` to noramlize image value.
