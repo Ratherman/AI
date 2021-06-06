@@ -67,7 +67,7 @@ map = {
 }
 ```
 * Expected output for each pixel is `[0, 0, 0]`, `[1, 1, 1]`, ... or `[9, 9, 9]`.
-* Shape of the each output mask should be `(width, height, channel)`.
+* Shape of the each output mask should be `(width = 966, height = 1280, channel = 3)`.
 
 # Step 01: Visualize Images and Masks
 * Left: Input Image; Right: Ground Truth Mask
