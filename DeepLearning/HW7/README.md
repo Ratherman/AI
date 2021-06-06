@@ -10,6 +10,7 @@
 * [Step 01: Visualize Images and Masks](https://github.com/Ratherman/AI/tree/main/DeepLearning/HW7#step-01-visualize-images-and-masks)
 * [Step 02: Define Custom Datasets](https://github.com/Ratherman/AI/tree/main/DeepLearning/HW7#step-02-define-custom-datasets)
 * [Step 03: Define Structure](https://github.com/Ratherman/AI/tree/main/DeepLearning/HW7#step-03-define-structure---classic-unet)
+* [Thoughts](https://github.com/Ratherman/AI/tree/main/DeepLearning/HW7#thoughts)
 
 # Results
 * First Try:
