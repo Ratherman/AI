@@ -15,7 +15,7 @@
 * First Try:
    * Results: `score:0.34, mIoU:0.31, mAcc:0.46 (Rank: 17/17)`
    * GPU: GTX 1600
-   * Spend: About 420 min
+   * Spend: About 420 min (7hr)
    * Epoch: 60
    * Learning Rate: 1e-4 (Become 1e-5 at 25; become 1e-6 at 50)
    * Batch Size: 12
@@ -27,9 +27,9 @@
 * Second Try:
    * Results: `Still Training`
    * GPU: Tesla P100
-   * Spend: About 300 min
-   * Epoch: 20
-   * Learning Rate: 1e-4 (Become 1e-5 at 15)
+   * Spend: About 900 min (15hr)
+   * Epoch: 60
+   * Learning Rate: 1e-4 (Become 1e-5 at 25; become 1e-6 at 50)
    * Batch Size: 11
    * Input Image: 512 x 512 (This time is much larger than the one in 1st try!)
 
@@ -37,12 +37,19 @@
 There are two src codes. One is on github, and another is on google colab.
 * Github src code: https://github.com/Ratherman/AI/blob/main/DeepLearning/HW7/unet.ipynb
 * Google Colab src code: https://colab.research.google.com/drive/14vcRp54mPCniRnPUPuw4U3r2dFBh-3_R#scrollTo=bA1CNi6M4SAT
+* The whole src code does the following:
+   1. Resize original images and masks. Make them smaller. (ex: 512 x 512 or 192 x 192)
+   2. Train
+   3. Test
+   4. Resize predicted mask back to the size of 966 x 1922.
+   * <img src="https://github.com/Ratherman/AI/blob/main/DeepLearning/HW7/imgs/task.png" width="750">
 
 # Ref Link
 * The repo of "[usuyama/pytorch-unet](https://github.com/usuyama/pytorch-unet)" really helps me out. It shows how to use UNet to do Image Segmentation.
 * Some modifications are needed to complete this multi-class image segmentation task. And the person named "[ptrblck](https://discuss.pytorch.org/u/ptrblck)" on PyTorch Forum describes clearly on how to make the task work. The following links show the posts that helps me a lot:
    1. [Loss function for segmentation models](https://discuss.pytorch.org/t/loss-function-for-segmentation-models/32129/4)
    2. [Multiclass segmentation U-net masks format](https://discuss.pytorch.org/t/multiclass-segmentation-u-net-masks-format/70979/5)
+* [Paper Link](https://arxiv.org/abs/1505.04597) U-Net: Convolutional Networks for Biomedical Image Segmentation
 
 # Datasets/Lables
 ```python
@@ -113,7 +120,8 @@ map = {
         return self.length
    ```
 
-# Step 03: Define Structure -> Classic UNet
+# Step 03: Define Structure -> UNet (with minor modification)
+* <img src="https://github.com/Ratherman/AI/blob/main/DeepLearning/HW7/imgs/UNet_Architecture.png" width="750">
 * Basic Block:
    ```python
    import torch
@@ -127,7 +135,10 @@ map = {
          nn.ReLU(inplace=True)
       ) 
    ```
-* All Blocks: A Encoder-Decoder Structure
+* All Blocks: 
+   * A Encoder-Decoder Structure
+   * Fully Convolutional Network
+   * 
    ```python
    class UNet(nn.Module):
 
@@ -181,3 +192,6 @@ map = {
 
 # As For Training, Evaluation, Testing, Please directly see src code.
 * [src code](https://github.com/Ratherman/AI/tree/main/DeepLearning/HW7#src-code)
+
+# Thoughts:
+* It's still possible to keep the image resolution even with the limited GPU resources, which is to tile the large image.
