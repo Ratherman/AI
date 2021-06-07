@@ -36,7 +36,7 @@
    * Display (Left: Input Image; Middle: Ground Truth Mask; Right: Predicted Mask)
    * <img src="https://github.com/Ratherman/AI/blob/main/DeepLearning/HW7/imgs/display3.png" width="750">
    * Loss Curve
-   * <img src="https://github.com/Ratherman/AI/blob/main/DeepLearning/HW7/imgs/loss2.png" width="750">
+   * <img src="https://github.com/Ratherman/AI/blob/main/DeepLearning/HW7/imgs/loss_2.png" width="750">
 
 # Src Code
 There are two src codes. One is on github, and another is on google colab.
