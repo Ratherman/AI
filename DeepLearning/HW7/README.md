@@ -26,13 +26,17 @@
    * Loss Curve
    * <img src="https://github.com/Ratherman/AI/blob/main/DeepLearning/HW7/imgs/loss.png" width="750">
 * Second Try:
-   * Results: `Still Training`
+   * Results: `score:0.38, mIoU:0.35, mAcc:0.50 (Rank: 17/17)`
    * GPU: Tesla P100
    * Spend: About 900 min (15hr)
    * Epoch: 60
    * Learning Rate: 1e-4 (Become 1e-5 at 25; become 1e-6 at 50)
    * Batch Size: 11
    * Input Image: 512 x 512 (This time is much larger than the one in 1st try!)
+   * Display (Left: Input Image; Middle: Ground Truth Mask; Right: Predicted Mask)
+   * <img src="https://github.com/Ratherman/AI/blob/main/DeepLearning/HW7/imgs/display3.png" width="750">
+   * Loss Curve
+   * <img src="https://github.com/Ratherman/AI/blob/main/DeepLearning/HW7/imgs/loss2.png" width="750">
 
 # Src Code
 There are two src codes. One is on github, and another is on google colab.
@@ -196,3 +200,7 @@ map = {
 
 # Thoughts:
 * It's still possible to keep the image resolution even with the limited GPU resources, which is to tile the large image.
+* By simply providing input images with more resolution, the overall performance could be higher.
+* Future plan:
+   * For model-centric approach: It might be helpful by replace the backbone.
+   * For data-centric approach: It might be helpful by tiling the input images.
