@@ -41,7 +41,7 @@
 
         <details>
         <summary> Combining Properties of the SISR process with the Design of the CNN Frame </summary>
-        
+
         * Combining sparse coding with deep NN
         * Learning to ensemble by NN
         * Deep architectures with progressive methodology
