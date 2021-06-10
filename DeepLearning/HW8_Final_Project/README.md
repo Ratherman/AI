@@ -19,19 +19,22 @@
             * Rather than increasing resolution by explicitly enlarging feature maps as the deconvolution layer does, ESPCN extends the channels of the output features for storing the extra points to increase resolution and then rearranges these points to obtain the HR output through a specific mapping criterion.
         </details>
         
-        2. The Deeper, The Better
-            * VDSR is the first very deep model used in SISR.
-                * The second contribution is the residual learning.
-            * DRCN
-                * To overcome the difficulties of training a deep recursive CNN, a multisupervised strategy is applied, and the result can be regarded as the fusion of 16 intermediate results.
-            * SRResNet
-                * It composed of 16 residual units (a residual unit consists of two nonlinear convolutions with residual learning.)
-            * DRRN
-            * DRCN
-                * Then, to accommodate parameter reduction, each block shares the same parameters and is reused recursively.
-            * EDSR
-                * Remove the usage of BN.
-                * Increases the number of output features of each layer on a large scale.
-            * MDSR
-                * Achieve the multiscale architecture.
-            * SRDenseNet
+        <details>
+        <summary> The Deeper, The Better </summary>
+
+        * VDSR is the first very deep model used in SISR.
+            * The second contribution is the residual learning.
+        * DRCN
+            * To overcome the difficulties of training a deep recursive CNN, a multisupervised strategy is applied, and the result can be regarded as the fusion of 16 intermediate results.
+        * SRResNet
+            * It composed of 16 residual units (a residual unit consists of two nonlinear convolutions with residual learning.)
+        * DRRN
+        * DRCN
+            * Then, to accommodate parameter reduction, each block shares the same parameters and is reused recursively.
+        * EDSR
+            * Remove the usage of BN.
+            * Increases the number of output features of each layer on a large scale.
+        * MDSR
+            * Achieve the multiscale architecture.
+        * SRDenseNet
+        </details>
