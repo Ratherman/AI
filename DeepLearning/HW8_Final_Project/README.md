@@ -12,6 +12,7 @@
     * SOTA Deep SISR Networks
         <details>
         <summary> Learning Effective Upsampling with CNN </summary>
+        
         * FSRCNN is the first work to use normal deconvolution layer to reconstruct HR images from LR feature maps.
         * ESPCN
             * Efficient Subpixel Convolution Layer
