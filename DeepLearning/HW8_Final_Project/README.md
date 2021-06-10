@@ -83,3 +83,16 @@
         * More Effective DL Algorithms for Large-scale SISR and SISR with Unknow Corruption.
         * Theoretical Understanding of Deep Models for SISR.
         * More Rational Assessment Criteria for SISR in Different Applications.
+
+## SRCNN: 
+* [Paper Link](https://arxiv.org/abs/1501.00092): Image Super-Resolution Using Deep Convolutional Networks
+* [Github Link](https://github.com/yjn870/SRCNN-pytorch): SRCNN-pytorch
+
+
+## ESPCN:
+* [Paper Link](https://arxiv.org/abs/1609.05158): Real-Time Single Image and Video Super-Resolution Using an Efficient Sub-Pixel Convolutional Neural Network
+* [Github Link](https://github.com/Lornatang/ESPCN-PyTorch/blob/a3804d810e1416356c9e2b0bbb1619e39fa858d4/espcn_pytorch/model.py#L18): ESPCN-PyTorch
+
+## SRGAN:
+* [Paper Link](https://arxiv.org/abs/1609.04802):Photo-Realistic Single Image Super-Resolution Using a Generative Adversarial Network
+* [Github Link](https://github.com/Lornatang/SRGAN-PyTorch)
