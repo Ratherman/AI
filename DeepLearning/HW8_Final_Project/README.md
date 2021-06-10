@@ -3,13 +3,13 @@
 # Reading Papers:
 ## Deep Learning for Single Image Super-Resolution：A Brief Review
 * Deep Architectures For SISR
-    * SRCNN
+    * Section A: SRCNN
         * A three-layer CNN.
         * The filter size of each layer are [`64 x 1 x 9 x 9`, `32 x 64 x 5 x 5`, `1 x 32 x 5 x 5`]
         * The functions of these three nonlinear transformations are `(1) Patch extraction, (2) Nonlinear mapping, (3) Reconstuction`.
         * The loss function：mean square error (MSE).
         * We argue that its acclaim is owing to the CNN's strong capability of learning valid representations from big data in an end-to-end manner.
-    * SOTA Deep SISR Networks
+    * Section B: SOTA Deep SISR Networks
         <details>
         <summary> Learning Effective Upsampling with CNN </summary>
         
@@ -62,3 +62,24 @@
                 * However, this approach will increase runtime immensely.
 
         </details>
+
+    * Section C: Comparisons among Different Models and Discussion.
+        * PSNR/SSIM for measuring reconstruction quality
+        * Number of parameters of NN for measuring storage efficiency (Params)
+        * Number of composite multiply-accumulate operations for measuring computational efficiency (Mult&Adds)
+        * MAYBE use ESPCN because the parameters is much smaller than others and its Mult&Adds is also smaller.
+        * MAYBE use SRGAN because it's GAN-based.
+
+    * Section D: Optimization Objectives for DL-Based SISR
+        * Benchmark of Optimization Objectives for DL-based SISR
+            * MSE favors a high PSNR.
+        * Objective Functions Based on non-Gaussian Additive Noises
+        * Optimizing Forward KLD with Nonparametric Estimation
+    
+    * Section E: Characters of Different Objective Fucntions
+        
+    * Section F: Trends And Challenges
+        * Lighter Deep Architectures for Efficient SISR.
+        * More Effective DL Algorithms for Large-scale SISR and SISR with Unknow Corruption.
+        * Theoretical Understanding of Deep Models for SISR.
+        * More Rational Assessment Criteria for SISR in Different Applications.
