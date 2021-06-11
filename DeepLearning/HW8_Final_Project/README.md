@@ -86,13 +86,13 @@
 
 ## SRCNN: 
 * [Paper Link](https://arxiv.org/abs/1501.00092): Image Super-Resolution Using Deep Convolutional Networks
-* [Github Link](https://github.com/yjn870/SRCNN-pytorch): SRCNN-pytorch
-
+* [REF Github Link](https://github.com/yjn870/SRCNN-pytorch): SRCNN-pytorch
+* [Google Colab Src Link](https://colab.research.google.com/drive/16nYeVokmDM_1cc_bi6z0Zu-MX9MRTbU3#scrollTo=GgR0KL5H2zv8): Google Colab SRC Link
 
 ## ESPCN:
 * [Paper Link](https://arxiv.org/abs/1609.05158): Real-Time Single Image and Video Super-Resolution Using an Efficient Sub-Pixel Convolutional Neural Network
-* [Github Link](https://github.com/Lornatang/ESPCN-PyTorch/blob/a3804d810e1416356c9e2b0bbb1619e39fa858d4/espcn_pytorch/model.py#L18): ESPCN-PyTorch
+* [REF Github Link](https://github.com/Lornatang/ESPCN-PyTorch/blob/a3804d810e1416356c9e2b0bbb1619e39fa858d4/espcn_pytorch/model.py#L18): ESPCN-PyTorch
 
 ## SRGAN:
 * [Paper Link](https://arxiv.org/abs/1609.04802):Photo-Realistic Single Image Super-Resolution Using a Generative Adversarial Network
-* [Github Link](https://github.com/Lornatang/SRGAN-PyTorch)
+* [REF Github Link](https://github.com/Lornatang/SRGAN-PyTorch)
