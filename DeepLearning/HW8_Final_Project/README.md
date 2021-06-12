@@ -144,7 +144,6 @@
     * PS is an periodic shuffling operator that rearranges the elements of a H x W x C * r^2 tensor to a tensor of shape rH x rW x C.
     * Given a training set consisting of HR image examples, we generatethe corresponding LR images, and calculate the pixel-wise mean squared error (MSE) of the reconstructuion as an objective function to train the network.
     </details>
-    <details>
 
 3. Experiments
     <details>
