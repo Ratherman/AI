@@ -1,27 +1,27 @@
 # Take Note
 
 # Reading Papers:
-## Deep Learning for Single Image Super-Resolution：A Brief Review
+### Deep Learning for Single Image Super-Resolution：A Brief Review
 * Deep Architectures For SISR
-    * Section A: SRCNN
-        * A three-layer CNN.
-        * The filter size of each layer are [`64 x 1 x 9 x 9`, `32 x 64 x 5 x 5`, `1 x 32 x 5 x 5`]
-        * The functions of these three nonlinear transformations are `(1) Patch extraction, (2) Nonlinear mapping, (3) Reconstuction`.
-        * The loss function：mean square error (MSE).
-        * We argue that its acclaim is owing to the CNN's strong capability of learning valid representations from big data in an end-to-end manner.
-    * Section B: SOTA Deep SISR Networks
-        <details>
-        <summary> Learning Effective Upsampling with CNN </summary>
-        
+    <details>
+    <summary> Section A: SRCNN </summary>
+
+    * A three-layer CNN.
+    * The filter size of each layer are [`64 x 1 x 9 x 9`, `32 x 64 x 5 x 5`, `1 x 32 x 5 x 5`]
+    * The functions of these three nonlinear transformations are `(1) Patch extraction, (2) Nonlinear mapping, (3) Reconstuction`.
+    * The loss function：mean square error (MSE).
+    * We argue that its acclaim is owing to the CNN's strong capability of learning valid representations from big data in an end-to-end manner.
+    </details>
+    <details>
+    <summary> Section B: SOTA Deep SISR Networks </summary>
+
+    * Learning Effective Upsampling with CNN 
         * FSRCNN is the first work to use normal deconvolution layer to reconstruct HR images from LR feature maps.
         * ESPCN
             * Efficient Subpixel Convolution Layer
             * Rather than increasing resolution by explicitly enlarging feature maps as the deconvolution layer does, ESPCN extends the channels of the output features for storing the extra points to increase resolution and then rearranges these points to obtain the HR output through a specific mapping criterion.
-        </details>
         
-        <details>
-        <summary> The Deeper, The Better </summary>
-
+    * The Deeper, The Better
         * VDSR is the first very deep model used in SISR.
             * The second contribution is the residual learning.
         * DRCN
@@ -37,11 +37,8 @@
         * MDSR
             * Achieve the multiscale architecture.
         * SRDenseNet
-        </details>
 
-        <details>
-        <summary> Combining Properties of the SISR process with the Design of the CNN Frame </summary>
-
+    * Combining Properties of the SISR process with the Design of the CNN Frame
         * Combining sparse coding with deep NN
         * Learning to ensemble by NN
         * Deep architectures with progressive methodology
@@ -60,29 +57,34 @@
             * ZSSR: 
                 * the first literature combining deep architectures with interal-example learning.
                 * However, this approach will increase runtime immensely.
+    </details>
+    <details>
+    <summary> Section C: Comparisons among Different Models and Discussion. </summary>
+    
+    * PSNR/SSIM for measuring reconstruction quality
+    * Number of parameters of NN for measuring storage efficiency (Params)
+    * Number of composite multiply-accumulate operations for measuring computational efficiency (Mult&Adds)
+    * MAYBE use ESPCN because the parameters is much smaller than others and its Mult&Adds is also smaller.
+    * MAYBE use SRGAN because it's GAN-based.
+    </details>
+    <details>
+    <summary> Section D: Optimization Objectives for DL-Based SISR </summary>
 
-        </details>
-
-    * Section C: Comparisons among Different Models and Discussion.
-        * PSNR/SSIM for measuring reconstruction quality
-        * Number of parameters of NN for measuring storage efficiency (Params)
-        * Number of composite multiply-accumulate operations for measuring computational efficiency (Mult&Adds)
-        * MAYBE use ESPCN because the parameters is much smaller than others and its Mult&Adds is also smaller.
-        * MAYBE use SRGAN because it's GAN-based.
-
-    * Section D: Optimization Objectives for DL-Based SISR
-        * Benchmark of Optimization Objectives for DL-based SISR
-            * MSE favors a high PSNR.
-        * Objective Functions Based on non-Gaussian Additive Noises
-        * Optimizing Forward KLD with Nonparametric Estimation
+    * Benchmark of Optimization Objectives for DL-based SISR
+        * MSE favors a high PSNR.
+    * Objective Functions Based on non-Gaussian Additive Noises
+    * Optimizing Forward KLD with Nonparametric Estimation
     
     * Section E: Characters of Different Objective Fucntions
-        
-    * Section F: Trends And Challenges
-        * Lighter Deep Architectures for Efficient SISR.
-        * More Effective DL Algorithms for Large-scale SISR and SISR with Unknow Corruption.
-        * Theoretical Understanding of Deep Models for SISR.
-        * More Rational Assessment Criteria for SISR in Different Applications.
+    </details>
+    <details>        
+    <summary> Section F: Trends And Challenges </summary>
+    
+    * Lighter Deep Architectures for Efficient SISR.
+    * More Effective DL Algorithms for Large-scale SISR and SISR with Unknow Corruption.
+    * Theoretical Understanding of Deep Models for SISR.
+    * More Rational Assessment Criteria for SISR in Different Applications.
+    </details>
 # SRCNN: 
 * [Paper Link](https://arxiv.org/abs/1501.00092): Image Super-Resolution Using Deep Convolutional Networks
 * [REF Github Link](https://github.com/yjn870/SRCNN-pytorch): SRCNN-pytorch
@@ -90,7 +92,7 @@
 # ESPCN:
 * [Paper Link](https://arxiv.org/abs/1609.05158): Real-Time Single Image and Video Super-Resolution Using an Efficient Sub-Pixel Convolutional Neural Network
 * [REF Github Link](https://github.com/Lornatang/ESPCN-PyTorch/blob/a3804d810e1416356c9e2b0bbb1619e39fa858d4/espcn_pytorch/model.py#L18): ESPCN-PyTorch
-## Real-Time Single Image and Video Super-Resolution Using an Efficient Sub-Pixel Convolutional Neural Network
+### Real-Time Single Image and Video Super-Resolution Using an Efficient Sub-Pixel Convolutional Neural Network
 * Abstract
     * In this paper, we present the first convolutional neural network (CNN) capable of real-time SR of 1080p videos on a single K2 GPU.
     * We introduce an efficient sub-pixel convolution layer which learns an array of upscaling filters to upscale the final LR feature maps into the HR output.
