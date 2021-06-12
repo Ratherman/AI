@@ -102,6 +102,7 @@
     * It's a highly ill-posed problem, due to the loss of high-frequency information that occurs during the non-invertible low-pass filtering and subsampling operations.
     <details>
     <summary> 1.1 Related Work </summary>
+    
     * Sparse coding is an effective mechanism that assumes any natural image can be sparsely represented in a transform domain.
     * This transform domain is usually a dictionary of image atoms, which can be learnt through a training process that tries to discover the correspondence between LR and HR patches.
     </details>
