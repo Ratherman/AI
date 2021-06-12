@@ -153,6 +153,7 @@
     * For their final models, they use 50,000 randomly selected images from ImageNet for the Training.
     * We only consider the luminance channel in YCbCr colour space in this section because humans are more sensitive to luminance changes.
     </details>
+    <details>
     <summary> 3.2 Implementation details </summary>
 
     * The training stops after no improvement of the cost function is observed after 100 epochs.
