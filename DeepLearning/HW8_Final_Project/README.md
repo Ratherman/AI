@@ -136,7 +136,41 @@
     * The addition of a deconvolution layer is a popular choice for recovering resolution from max-pooling adn other image down-sample layers.
     * It's trival to show that the bicubic interpolation used in SDRCNN is a psecial case of the decovolution layer.
     </details>
+    <details>
+    <summary> 2.2 Efficient sub-pixel convolution layer </summary>
 
+    * PS is an periodic shuffling operator that rearranges the elements of a H x W x C * r^2 tensor to a tensor of shape rH x rW x C.
+    * Given a training set consisting of HR image examples, we generatethe corresponding LR images, and calculate the pixel-wise mean squared error (MSE) of the reconstructuion as an objective function to train the network.
+    </details>
+    <details>
+
+3. Experiments
+    <details>
+    <summary> 3.1 Datasets </summary>
+    
+    * For their final models, they use 50,000 randomly selected images from ImageNet for the Training.
+    * We only consider the luminance channel in YCbCr colour space in this section because humans are more sensitive to luminance changes.
+    </details>
+    <summary> 3.2 Implementation details </summary>
+
+    * The training stops after no improvement of the cost function is observed after 100 epochs.
+    * Initial learning rate is set to 0.01 and final learning rate is set to 0.0001 and updated gradually when the improvement of the cost function is smaller than a threshold miu.The final layer learns 10 times slower.
+    </details>
+    <details>
+    <summary> 3.3 Image super-resolution results </summary>
+    
+    * It is noticeable that despite each filter is independent in LR space, out independent filters is actually smooth in the HR space after PS.
+    * Compared to SRCNN's last layer filters, their final layer filters has complex patterns for different feature maps, it also has much richer and more meaningful representations.
+    * Result suggest that tanh function performs better for SISR compared to relu.
+    </details>
+    <details>
+    <summary> 3.4 Run time evaluations </summary>
+
+    * The mean PSNR (dB) of different methods. Benchmarks: Set5, Set14, BSD300, BSD500
+    </details>
+
+4. Conclusion
+    * We propose a novel sub-pixel convolution layer which is capable of super-resolving LR data into HR space with very little additional computational cost compared to a deconvolution layer at training time.
 # SRGAN:
 * [Paper Link](https://arxiv.org/abs/1609.04802):Photo-Realistic Single Image Super-Resolution Using a Generative Adversarial Network
 * [REF Github Link](https://github.com/Lornatang/SRGAN-PyTorch)
