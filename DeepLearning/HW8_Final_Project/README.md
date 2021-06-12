@@ -92,7 +92,38 @@
 ## ESPCN:
 * [Paper Link](https://arxiv.org/abs/1609.05158): Real-Time Single Image and Video Super-Resolution Using an Efficient Sub-Pixel Convolutional Neural Network
 * [REF Github Link](https://github.com/Lornatang/ESPCN-PyTorch/blob/a3804d810e1416356c9e2b0bbb1619e39fa858d4/espcn_pytorch/model.py#L18): ESPCN-PyTorch
+## Real-Time Single Image and Video Super-Resolution Using an Efficient Sub-Pixel Convolutional Neural Network
+* Abstract
+    * In this paper, we present the first convolutional neural network (CNN) capable of real-time SR of 1080p videos on a single K2 GPU.
+    * We introduce an efficient sub-pixel convolution layer which learns an array of upscaling filters to upscale the final LR feature maps into the HR output.
 
+1. Introduction
+    * The global SR problem assumes LR data to be a low-pass filtered (blurred), downsampled and nisy version of HR data.
+    * It's a highly ill-posed problem, due to the loss of high-frequency information that occurs during the non-invertible low-pass filtering and subsampling operations.
+    
+    <details>
+    <summary> 1.1 Related Work </summary>
+    * Sparse coding is an effective mechanism that assumes any natural image can be sparsely represented in a transform domain.
+    * This transform domain is usually a dictionary of image atoms, which can be learnt through a training process that tries to discover the correspondence between LR and HR patches.
+    </details>
+    
+    <details>
+    <summary> 1.2 Motivations and contributions </summary>
+    * To super-resolve a LR image into HR space, it is necessary to increase the resolution of the LR image to match that of the HR image at some point.
+    * In this paper, contrary to previous works, we propose to increase the resolution from LR to HR only at the very end of the network and super-resolbe HR data from LR feature maps.
+    </details>
+
+    <details>
+    <summary> 1.3 Advantage </summary>
+    * For a network with L layers, we learn n_L-1 upscaling filters for the n_L-1 feature maps as opposed to one upscaling filter for the input image.
+    * Thus, the network is capable of learning a better and more complex LR to HR mapping compared to a single fixed filter upscaling at the first layer.
+    </details>
+
+* Method
+    * The downsampling operation is deterministic and known: to produce I^LR from I^HR, we first convolve I^HR using a Gaussian filter - then downsample the image by a factor of r.
+    * In general, both I^LR and I^HR can have C color channels, thus they are represented as real-valued tensors of size H x W x C and rH x rW x C, respectively.
+    * To solve the SISR problem, the SRCNN recovers from an upscaled and interpolated version of I^LR instead of I^LR.
+    * In ESPCN, they avoid upscaling I^LR before feeding it into the network. Instead, they first apply a l layer convolutional neural network directly to the LR image, and then apply a sub-pixel convolution layer that upscaled the LR feature maps to produce I^SR.
 ## SRGAN:
 * [Paper Link](https://arxiv.org/abs/1609.04802):Photo-Realistic Single Image Super-Resolution Using a Generative Adversarial Network
 * [REF Github Link](https://github.com/Lornatang/SRGAN-PyTorch)
