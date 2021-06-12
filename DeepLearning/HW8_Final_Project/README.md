@@ -83,13 +83,11 @@
         * More Effective DL Algorithms for Large-scale SISR and SISR with Unknow Corruption.
         * Theoretical Understanding of Deep Models for SISR.
         * More Rational Assessment Criteria for SISR in Different Applications.
-
-## SRCNN: 
+# SRCNN: 
 * [Paper Link](https://arxiv.org/abs/1501.00092): Image Super-Resolution Using Deep Convolutional Networks
 * [REF Github Link](https://github.com/yjn870/SRCNN-pytorch): SRCNN-pytorch
 * [Google Colab Src Link](https://colab.research.google.com/drive/16nYeVokmDM_1cc_bi6z0Zu-MX9MRTbU3#scrollTo=GgR0KL5H2zv8): Google Colab SRC Link
-
-## ESPCN:
+# ESPCN:
 * [Paper Link](https://arxiv.org/abs/1609.05158): Real-Time Single Image and Video Super-Resolution Using an Efficient Sub-Pixel Convolutional Neural Network
 * [REF Github Link](https://github.com/Lornatang/ESPCN-PyTorch/blob/a3804d810e1416356c9e2b0bbb1619e39fa858d4/espcn_pytorch/model.py#L18): ESPCN-PyTorch
 ## Real-Time Single Image and Video Super-Resolution Using an Efficient Sub-Pixel Convolutional Neural Network
@@ -123,11 +121,22 @@
     * Thus, the network is capable of learning a better and more complex LR to HR mapping compared to a single fixed filter upscaling at the first layer.
     </details>
 
-* Method
+2. Method
+    <details>
+    <summary> 2.0 Preface </summary>
+
     * The downsampling operation is deterministic and known: to produce I^LR from I^HR, we first convolve I^HR using a Gaussian filter - then downsample the image by a factor of r.
     * In general, both I^LR and I^HR can have C color channels, thus they are represented as real-valued tensors of size H x W x C and rH x rW x C, respectively.
     * To solve the SISR problem, the SRCNN recovers from an upscaled and interpolated version of I^LR instead of I^LR.
     * In ESPCN, they avoid upscaling I^LR before feeding it into the network. Instead, they first apply a l layer convolutional neural network directly to the LR image, and then apply a sub-pixel convolution layer that upscaled the LR feature maps to produce I^SR.
-## SRGAN:
+    </details>
+    <details>
+    <summary> 2.1 Deconvolution layer </summary>
+    
+    * The addition of a deconvolution layer is a popular choice for recovering resolution from max-pooling adn other image down-sample layers.
+    * It's trival to show that the bicubic interpolation used in SDRCNN is a psecial case of the decovolution layer.
+    </details>
+
+# SRGAN:
 * [Paper Link](https://arxiv.org/abs/1609.04802):Photo-Realistic Single Image Super-Resolution Using a Generative Adversarial Network
 * [REF Github Link](https://github.com/Lornatang/SRGAN-PyTorch)
