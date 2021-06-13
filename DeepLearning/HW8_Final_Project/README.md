@@ -176,3 +176,71 @@
 # SRGAN:
 * [Paper Link](https://arxiv.org/abs/1609.04802):Photo-Realistic Single Image Super-Resolution Using a Generative Adversarial Network
 * [REF Github Link](https://github.com/Lornatang/SRGAN-PyTorch)
+### Photo-Realistic Single Image Super-Resolution Using a Generative Adversarial Network
+* Abstract:
+1. Introduction
+    <details>
+    <summary> 1.1 Related Work </summary>
+
+
+    </details>
+    <details>
+    <summary> 1.2 Contribution </summary>
+
+    
+    </details>
+2. Method
+    <details>
+    <summary> 2.1 Adversarial Network Architecture </summary>
+
+    
+    </details>
+    <details>
+    <summary> 2.2 Perceptual Loss Function </summary>
+
+    
+    </details>
+3. Experiments
+    <details>
+    <summary> 3.1 Data and Similarity Measures</summary>
+
+    
+    </details>
+    <details>
+    <summary> 3.2 Training Details and Parameters</summary>
+
+    
+    </details>
+    <details>
+    <summary> 3.3 Mean Opinion Score (MOS) Testing</summary>
+
+    
+    </details>
+    <details>
+    <summary> 3.4 Investigation of Content Loss</summary>
+
+    
+    </details>
+    <details>
+    <summary> 3.5 Performance of the Final Networks</summary>
+
+    
+    </details>
+4. Disussion and Future Work
+5. Conclusion
+6. Supplementary Material
+    <details>
+    <summary> 6.1 Performance (PSNR/time) vs. Network Depth </summary>
+
+    
+    </details>
+    <details>
+    <summary> 6.2 Evaluation of Generator during SRGAN training </summary>
+
+    
+    </details>
+    <details>
+    <summary> 6.3 Mean Opinion Score (MOS) Testing </summary>
+
+    
+    </details>
