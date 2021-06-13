@@ -263,8 +263,10 @@
 4. Disussion and Future Work
     * We have furthur shown that standard quantitative measures such as PSNR and SSIM fail to capture and accurately assess image quality with respect to the human visual system.
 5. Conclusion
+
 6. Supplementary Material
-    </details>
+
+    <details>
     <summary> 6.1 Performance (PSNR/time) vs. Network Depth </summary>
 
     * We observed substantial gains in performance with the additional skip-connection.
