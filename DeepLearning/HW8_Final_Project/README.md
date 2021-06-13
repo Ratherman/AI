@@ -177,70 +177,95 @@
 * [Paper Link](https://arxiv.org/abs/1609.04802):Photo-Realistic Single Image Super-Resolution Using a Generative Adversarial Network
 * [REF Github Link](https://github.com/Lornatang/SRGAN-PyTorch)
 ### Photo-Realistic Single Image Super-Resolution Using a Generative Adversarial Network
-* Abstract:
+* Abstract
 1. Introduction
     <details>
     <summary> 1.1 Related Work </summary>
 
-
+    * How do we recover the finer texture details when we super-resolbe at large upscaling facotrs?
+    * The behavior of optimization-based super-resolution methods is principally driven by the choice of the objective function.
+    * To our knowledge, it is the first framework capable of inferring photo-realistic natural images for 4x upsacaling factors.
+    * We propose a perceptual loss function which consists of an adversarial loss and a content loss.
+    * The adversarial loss pushes our solution to the natural image manifold using a discriminator network.
     </details>
     <details>
     <summary> 1.2 Contribution </summary>
 
-    
+    * The ability of MSE (and PSNR) to capture perceptually relevant differences, such as high texture detail, is very limited as they are defined based on pixel-wise image differences.
+    * We propse a super-resolution generative adversarial network (SRGAN) for which we employ a deep residual network (ResNet) with skip-connection and diverge from MSE as teh sole optimization target.
+
+    * 1.1 Related work
+        * Another powerful design choice that eases the training of deep CNNs is the recently introduced concept of residual blocks and skip-connections.
+        * Minimizing MSE encourages finding pixel-wise averages of plausible solutions which are typically overly-smooth and thus have poor perceptual quality.
+    * 1.2 Contribution
+        * The GAN procedure encourages the reconstructions to move towards regions of the search space with high probability of containing photo-realistic images and thus closer to the natural image manifold.
+        * We replace the MSE-based content loss with a loss calculated on feature maps of the VGG network.
     </details>
 2. Method
     <details>
+    <summary> 2.0 Preface </summary>
+
+    * For an image with C color channels, we describe I^LR by a real-valued tensor of size W x H x C and I^HR, I^SR by rW x rH x C respectively.
+    * Our ultimate goal is to train a generating function G that estimates for a given LR input image its corresponding HR counterpart.
+    * In this work we will specifically design a perceptual loss I^SR as a weighted combination of several loss components.
+    </details>
+
+    <details>
     <summary> 2.1 Adversarial Network Architecture </summary>
 
-    
+    * At the core of our very deep generator network G, which is illustrated in Figure 4 are B residual blocks with identical layout.
+    * Specifically, we use two convolutional layers with small 3 x 3 kernels and 64 feature maps followed by batch-normalization layers and ParametricReLU as the activation function.
+    * We use LeakyReLU activation (alpha = 0.2) and avoid max-pooling throughout the network.
+    * It contains eight convolutional layers with an increasing numnber of 3 x 3 filter kernels, increasing by a factor of 2 from 64 to 512 kerneks as in the VGG network.
+    * Strided convolutions are used to reduce the image resolution each time the number of feature is doubled.
+    * The resulting 512 feature maps are followed by two dense layers and a final sigmoid activation function to obtain a probability for sample classification.
     </details>
     <details>
     <summary> 2.2 Perceptual Loss Function </summary>
 
-    
+    * The definition of our perceptual loss function I^SR is critical for the performance of out generator network.
+    * We design a loss function that assesses a solution with respect to perceptually relevant characteristics.
+    * Content Loss:
+        * We define the VGG loss based on the ReLU activation layers of the pre-trained 19 layer VGG network.
+        * We then define the VGG loss as the euclidean distance between the feature representations of a reconstructed image G(I^LR) and the reference image I^HR.
+    * Adversarial loss:
+        * This encourages our network to favor solutions that reside on the manifold of natural images.
     </details>
 3. Experiments
     <details>
-    <summary> 3.1 Data and Similarity Measures</summary>
-
-    
-    </details>
-    <details>
     <summary> 3.2 Training Details and Parameters</summary>
 
-    
+    * We obtained the LR images by downsampling the HR images (BGR, C = 3) using bicubic kernel with downsampling factor r = 4.
+    * For each mini-batch we crop 16 random 96 x 96 HR sub images of distinct training images.
+    * Note that we can apply the generator model to images of arbitrary size as it is fully convolutional.
+    * We scaled the range of the LR input images to [0, 1] and for the HR images to [-1, 1]. The MSE loss was thus calculated on images of intensity range [-1 ,1].
+    * The SRResNet networks were trained with a learning rate of 1e-4 and 1e6 update iterations.
+    * We employed the trained MSE-based SRResNet network as initialization for the generator when training the actual GAN to avoid undesired local optima.
+    * All SRGAN variants were trained with 1e5 update iterations at a learning rate of 1e-4 and another 1e5 iterations at a lower rate of 1e-5.
+    * We alternate updates to the generator and discriminator network.
+    * Our generator network has 16 identitcal (B = 16) residual blocks.
+    * During test time we turn batch-normalization update off to obtain an output that deterministically depends only on the input.
     </details>
     <details>
     <summary> 3.3 Mean Opinion Score (MOS) Testing</summary>
 
-    
+    * The raters rated 12 versions of each image on Set5, Set14 and BSD100: (1) nearest neighbor (NN), bicubic, SRCNN, SelfExSR, DRCN, ESPCN, SRResNet-MSE, SRResNet-VGG22, SRGAN-MSE, SRGAN-VGG22, SRGAN-VGG54, and the original HR image.
+
     </details>
     <details>
     <summary> 3.4 Investigation of Content Loss</summary>
 
-    
-    </details>
-    <details>
-    <summary> 3.5 Performance of the Final Networks</summary>
-
-    
+    * SRGAN-MSE: to investigate the adversarial network with the standard MSE as content loss.
+    * SRGAN-VGG22: a loss defined on feature maps representing lower-level features.
+    * SRGAN-VGG54: a loss defined on feature maps of higher level features from deeper network layers with more potential to focus on the content of the images. We refer to this network as SRGAN in the following.
+    * We observed a trend that using the higher level VGG feature maps yields better texture detail when compared to lower level.
     </details>
 4. Disussion and Future Work
+    * We have furthur shown that standard quantitative measures such as PSNR and SSIM fail to capture and accurately assess image quality with respect to the human visual system.
 5. Conclusion
 6. Supplementary Material
-    <details>
+    </details>
     <summary> 6.1 Performance (PSNR/time) vs. Network Depth </summary>
 
-    
-    </details>
-    <details>
-    <summary> 6.2 Evaluation of Generator during SRGAN training </summary>
-
-    
-    </details>
-    <details>
-    <summary> 6.3 Mean Opinion Score (MOS) Testing </summary>
-
-    
+    * We observed substantial gains in performance with the additional skip-connection.
     </details>
