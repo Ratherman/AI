@@ -120,11 +120,13 @@
         * Fig. `center` shows the model learns to encode distance within the image in the similarity of position embeddings.
         * Closer patches tend to have more similar position embeddings.
         * Patches in the same row/column have similar embeddings.
-            
+        <p align = "center">
+          <img width="750" src="https://github.com/Ratherman/AI/blob/main/My_Tutorial/20210619_PyTorch_VIT_Classification/imgs/fig7.png">
+        </p>
 
         * What is Positional Encoding?
             * Prof. Hung-yi Lee comes to rescue! (It's a 45 min video, only 5 mins between 20:00 - 25:00 should be enough to have a feel of positional encoding.)
-            * [【【機器學習2021】自注意力機制 (Self-attention) (下)](https://www.youtube.com/watch?v=gmsMY5kc-zw)
+            * [【機器學習2021】自注意力機制 (Self-attention) (下)](https://www.youtube.com/watch?v=gmsMY5kc-zw)
                 <p align = "center">
                   <img width="750" src="https://github.com/Ratherman/AI/blob/main/My_Tutorial/20210619_PyTorch_VIT_Classification/imgs/positional-encoding.png">
                 </p>
