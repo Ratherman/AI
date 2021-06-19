@@ -33,9 +33,8 @@
     * GPT (2020) uses language modeling as its pre-training task.
 2. Naive application of self-attention to images would require that each pixel attends to every other pixel: Quadratic cost.=
 3. Model Overview: Use the image from [lucidrains/vit-pytorch](https://github.com/lucidrains/vit-pytorch/blob/main/images/vit.gif)
-![](https://github.com/Ratherman/AI/blob/main/My_Tutorial/20210619_PyTorch_VIT_Classification/imgs/vit.gif)
-<img src="https://github.com/Ratherman/AI/blob/main/My_Tutorial/20210619_PyTorch_VIT_Classification/imgs/vit.gif" width="500">
-<img src="https://github.com/Ratherman/AI/blob/main/My_Tutorial/20210619_PyTorch_VIT_Classification/imgs/vit.png" width="500">
+    * <img src="https://github.com/Ratherman/AI/blob/main/My_Tutorial/20210619_PyTorch_VIT_Classification/imgs/vit.gif" width="500">
+    * <img src="https://github.com/Ratherman/AI/blob/main/My_Tutorial/20210619_PyTorch_VIT_Classification/imgs/vit.png" width="500">
 
 </details>
 <details>
