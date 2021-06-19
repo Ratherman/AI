@@ -33,9 +33,12 @@
     * GPT (2020) uses language modeling as its pre-training task.
 2. Naive application of self-attention to images would require that each pixel attends to every other pixel: Quadratic cost.=
 3. Model Overview: Use the image from [lucidrains/vit-pytorch](https://github.com/lucidrains/vit-pytorch/blob/main/images/vit.gif)
-    * <img src="https://github.com/Ratherman/AI/blob/main/My_Tutorial/20210619_PyTorch_VIT_Classification/imgs/vit.gif" width="750" align="center">
-    * <img src="https://github.com/Ratherman/AI/blob/main/My_Tutorial/20210619_PyTorch_VIT_Classification/imgs/vit.png" width="750" align="center">
-
+    <p align="center">
+      <img width="750" src="https://github.com/Ratherman/AI/blob/main/My_Tutorial/20210619_PyTorch_VIT_Classification/imgs/vit.gif">
+    </p>
+    <p align="center">
+      <img width="750" src="https://github.com/Ratherman/AI/blob/main/My_Tutorial/20210619_PyTorch_VIT_Classification/imgs/vit.png">
+    </p>
 </details>
 <details>
 <summary> Method </summary>
@@ -46,7 +49,7 @@
         1. Reshape the image from (H, W, C) into patch'ES' N x (P, P, C), where N = H x W / P^2
         2. Flatten the patchES and map to D dimensions with a trainable linear projection.
         3. Refer to the output of this projection as the patch embeddings.
-    * "Class" Token
+    * "Class" Token: `CLS`
         1. Similar to BERT's Class token.
         2. Prof. Hung-yi Lee comes to rescue! (It's a 50 min video, but the first 15 min is enough for our understanding of CLS token.)
             * [機器學習2021】自督導式學習 (Self-supervised Learning) (二) – BERT簡介](https://www.youtube.com/watch?v=gh0hewYkjgo)
