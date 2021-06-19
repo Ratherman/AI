@@ -33,8 +33,8 @@
     * GPT (2020) uses language modeling as its pre-training task.
 2. Naive application of self-attention to images would require that each pixel attends to every other pixel: Quadratic cost.=
 3. Model Overview: Use the image from [lucidrains/vit-pytorch](https://github.com/lucidrains/vit-pytorch/blob/main/images/vit.gif)
-    <img src="https://github.com/Ratherman/AI/blob/main/My_Tutorial/20210619_PyTorch_VIT_Classification/imgs/vit.gif" width="750" align="center">
-    <img src="https://github.com/Ratherman/AI/blob/main/My_Tutorial/20210619_PyTorch_VIT_Classification/imgs/vit.png" width="750" align="center">
+    * <img src="https://github.com/Ratherman/AI/blob/main/My_Tutorial/20210619_PyTorch_VIT_Classification/imgs/vit.gif" width="750" align="center">
+    * <img src="https://github.com/Ratherman/AI/blob/main/My_Tutorial/20210619_PyTorch_VIT_Classification/imgs/vit.png" width="750" align="center">
 
 </details>
 <details>
@@ -51,9 +51,9 @@
         2. Prof. Hung-yi Lee comes to rescue! (It's a 50 min video, but the first 15 min is enough for our understanding of CLS token.)
             * [機器學習2021】自督導式學習 (Self-supervised Learning) (二) – BERT簡介](https://www.youtube.com/watch?v=gh0hewYkjgo)
             * 2021/4/16
-            <img src="https://github.com/Ratherman/AI/blob/main/My_Tutorial/20210619_PyTorch_VIT_Classification/imgs/self-supervised-learning.png" width="750" align="center">
-            <img src="https://github.com/Ratherman/AI/blob/main/My_Tutorial/20210619_PyTorch_VIT_Classification/imgs/Bert-Review.png" width="750" align="center">
-            <img src="https://github.com/Ratherman/AI/blob/main/My_Tutorial/20210619_PyTorch_VIT_Classification/imgs/Next-sentence-prediction.png" width="750" align="center">
+            * <img align="center" width="750" src="https://github.com/Ratherman/AI/blob/main/My_Tutorial/20210619_PyTorch_VIT_Classification/imgs/self-supervised-learning.png">
+            * <img src="https://github.com/Ratherman/AI/blob/main/My_Tutorial/20210619_PyTorch_VIT_Classification/imgs/Bert-Review.png" width="750" align="center">
+            * <img src="https://github.com/Ratherman/AI/blob/main/My_Tutorial/20210619_PyTorch_VIT_Classification/imgs/Next-sentence-prediction.png" width="750" align="center">
     * Position embeddings are added to the patch embeddings to retain positional information.
     * Transformer Encoder:
         1. MSA: Multiheaded Self-Attention.
