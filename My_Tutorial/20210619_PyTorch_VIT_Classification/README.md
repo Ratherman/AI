@@ -6,7 +6,7 @@
 <details>
 <summary> Abstract </summary>
 
-1. Alexey Dosovitskiy (Google Research, Grain Team)
+1. Alexey Dosovitskiy (Google Research, Brain Team)
 2. In vision, attention is either applied in conjunction with convolutional networks, or used to replace certain components of convolutional networks while keeping their overall structure in place.
 3. We show that the reliance on CNNs is not necessary and a pure transformer applied directly to sequences of image patches can perform very well on image classification tasks.
 4. Pre-trained on large amounts of data first, and then transferred to small-size dataset.
@@ -36,7 +36,7 @@
 1. Transformers were for machine translation (2017), and have since become the state of the art method in many NLP tasks.
     * BERT (2019) uses a denoising self-supervised pre-training task.
     * GPT (2020) uses language modeling as its pre-training task.
-2. Naive application of self-attention to images would require that each pixel attends to every other pixel: Quadratic cost.=
+2. Naive application of self-attention to images would require that each pixel attends to every other pixel: Quadratic cost.
 3. Model Overview: Use the image from [lucidrains/vit-pytorch](https://github.com/lucidrains/vit-pytorch/blob/main/images/vit.gif)
     <p align="center">
       <img width="750" src="https://github.com/Ratherman/AI/blob/main/My_Tutorial/20210619_PyTorch_VIT_Classification/imgs/vit.gif">
@@ -95,7 +95,7 @@
     * Baseline: ResNet
     * Training & Fine-tuning:
         * Use Adam with Beta1=0.9, Beta2 = 0.999, a batch size of 4096 and apply a high weight decay of 0.1, which we found to be useful for transfer of all models.
-        * Use a lenear learing rate and decay.
+        * Use a linear learing rate and decay.
 2. Comparison to SOTA
     <p align = "center">
       <img width="750" src="https://github.com/Ratherman/AI/blob/main/My_Tutorial/20210619_PyTorch_VIT_Classification/imgs/compare_sota.png">
@@ -142,7 +142,7 @@
     
 6. Self-Supervision
     * We also perform a preliminary exploration on `masked patch prediction` for self-supervision, mimicking the masked language modeling task used in BERT.
-    * With self-supervised pre-training, out smaller ViT-B/16 model achieves 79.9% accuracy on ImageNet, a significant improvement of 2% to training from scratch, but still 4% behind supervised pre-training.
+    * With self-supervised pre-training, our smaller ViT-B/16 model achieves 79.9% accuracy on ImageNet, a significant improvement of 2% to training from scratch, but still 4% behind supervised pre-training.
 </details>
 <details>
 <summary> Conclusion </summary>
