@@ -141,26 +141,28 @@
         </p>
     
 6. Self-Supervision
+    * We also perform a preliminary exploration on `masked patch prediction` for self-supervision, mimicking the masked language modeling task used in BERT.
+    * With self-supervised pre-training, out smaller ViT-B/16 model achieves 79.9% accuracy on ImageNet, a significant improvement of 2% to training from scratch, but still 4% behind supervised pre-training.
 </details>
 <details>
 <summary> Conclusion </summary>
 
+* We do not introduce image-specific inductive biases into the architecture apart from the initial patch extraction step.
+* We interpret an image as a sequence of patches and process it by a standard Transformer encoder as used in NLP.
+* Challenges:
+    * Apply ViT to other computer vision tasks, such as detection and segmentation.
+    * Another challenge is to continue exploring self-supervised pre-training methods.
 </details>
+<hr>
+Let's leave it there. ^_^ By "it", I mean Appendix.
+<hr>
 <details>
-<summary> Appendix: Multihead Self-attention </summary>
+<summary> Appendix </summary>
 
-</details>
-<details>
-<summary> Appendix: Experiment Details </summary>
-
-</details>
-<details>
-<summary> Appendix: Additional Results </summary>
-
-</details>
-<details>
-<summary> Appendix: Additional Analyses </summary>
-
+1. Multihead Self-attention
+2. Experiment Details
+3. Additional Results
+4. Additional Analyses
 </details>
 
 # Code Blocks & Explanations
