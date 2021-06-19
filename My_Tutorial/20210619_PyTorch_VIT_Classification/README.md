@@ -1,6 +1,6 @@
 # Visual Transformer
-[Paper Link](https://arxiv.org/abs/2010.11929) An Image is Worth 16 x 16 Words: Transformers for Image Recognition at Scale.
-[Github Link]() Not yet decided
+* [[Paper Link]](https://arxiv.org/abs/2010.11929) An Image is Worth 16 x 16 Words: Transformers for Image Recognition at Scale.
+* [[Github Link]]() Not yet decided
 
 # Paper Note:
 <details>
@@ -32,11 +32,34 @@
     * BERT (2019) uses a denoising self-supervised pre-training task.
     * GPT (2020) uses language modeling as its pre-training task.
 2. Naive application of self-attention to images would require that each pixel attends to every other pixel: Quadratic cost.=
-3. Use the image from [lucidrains/vit-pytorch](https://github.com/lucidrains/vit-pytorch/blob/main/images/vit.gif)
+3. Model Overview: Use the image from [lucidrains/vit-pytorch](https://github.com/lucidrains/vit-pytorch/blob/main/images/vit.gif)
 ![](https://github.com/Ratherman/AI/blob/main/My_Tutorial/20210619_PyTorch_VIT_Classification/imgs/vit.gif)
 </details>
 <details>
 <summary> Method </summary>
+
+1. Vision Transformer (ViT)
+    * The standard Tranformer receives as input a 1D sequence of token embeddings.
+    * Handel 2D images:
+        1. Reshape the image from (H, W, C) into patch'ES' N x (P, P, C), where N = H x W / P^2
+        2. Flatten the patchES and map to D dimensions with a trainable linear projection.
+        3. Refer to the output of this projection as the patch embeddings.
+    * "Class" Token
+        1. Similar to BERT's Class token.
+        2. Prof. Hung-yi Lee comes to rescue! (It's a 50 min video, but the first 15 min is enough for our understanding of CLS token.)
+            * [機器學習2021】自督導式學習 (Self-supervised Learning) (二) – BERT簡介](https://www.youtube.com/watch?v=gh0hewYkjgo)
+            * 2021/4/16
+            * <img src="https://github.com/Ratherman/AI/blob/main/My_Tutorial/20210619_PyTorch_VIT_Classification/imgs/Bert-Review.png" width="500">
+            * <img src="https://github.com/Ratherman/AI/blob/main/My_Tutorial/20210619_PyTorch_VIT_Classification/imgs/self-supervised-prediction.png" width="500">
+            * <img src="https://github.com/Ratherman/AI/blob/main/My_Tutorial/20210619_PyTorch_VIT_Classification/imgs/Next-Sentence.png" width="500">
+    * Position embeddings are added to the patch embeddings to retain positional information.
+    * Transformer Encoder:
+        1. MSA: Multiheaded Self-Attention.
+        2. MLP: Multi-Layer Perceptron.
+        3. LN: Layernorm. (Before Every Block)
+        4. Residual connections. (After Every Block)
+    * Inductive Bias, Hybrid Architecture: These concepts exist in 4D world, but I lived happily in 3D world already, so. XD
+2. Fine-Tuning And Higher Resolution
 
 </details>
 <details>
