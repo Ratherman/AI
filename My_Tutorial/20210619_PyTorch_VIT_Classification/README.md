@@ -135,6 +135,10 @@
             * learned from data
     * We compute the average distance in image space across which information is integrated, based on the attention weights.
         * This "attention distance" is analogous to receptive field size in CNNs.
+        * Globally, we find that the model attends to image regions that are semantically relevant for classification.
+        <p align = "center">
+          <img width="750" src="https://github.com/Ratherman/AI/blob/main/My_Tutorial/20210619_PyTorch_VIT_Classification/imgs/fig6.png">
+        </p>
     
 6. Self-Supervision
 </details>
