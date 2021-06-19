@@ -53,7 +53,11 @@
             * 2021/4/16
             <p align = "center">
               <img width="750" src="https://github.com/Ratherman/AI/blob/main/My_Tutorial/20210619_PyTorch_VIT_Classification/imgs/self-supervised-learning.png">
+            </p>
+            <p align = "center">
               <img width="750" src="https://github.com/Ratherman/AI/blob/main/My_Tutorial/20210619_PyTorch_VIT_Classification/imgs/Bert-Review.png">
+            </p>
+            <p align = "center">
               <img width="750" src="https://github.com/Ratherman/AI/blob/main/My_Tutorial/20210619_PyTorch_VIT_Classification/imgs/Next-sentence-prediction.png">
             </p>
     * Position embeddings are added to the patch embeddings to retain positional information.
