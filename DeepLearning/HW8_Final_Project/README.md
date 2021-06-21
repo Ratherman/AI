@@ -271,3 +271,31 @@
 
     * We observed substantial gains in performance with the additional skip-connection.
     </details>
+
+## 打開人工智能的黑盒子(2019-06-18)
+<details>
+<summary> 序 </summary>
+
+* 知乎 Link: https://zhuanlan.zhihu.com/p/58099941
+* XAI: Explainable Artificial Intelligence, AI 3.0
+* 在強人工智能出現以前，我們不用擔心如何約束AI，而應聚焦在如何解釋AI做出的每個決定。
+* 可靠性、可解釋性、負責任、透明性
+</details>
+<details>
+<summary> 什麼是可解釋能力 </summary>
+
+* 人類需要可解釋能力的另一個原因是機器與人類目標的錯位。有時候人類想要因果關係，但監督式學習給出來的只是相關關係。
+* 局部線性可解釋性(LIME)
+* 反卷積(Deconvolution)
+    * 作者寫下: 最讓人討厭的是卷積帶來的周期性結構，如果能夠去掉這種週期性結構，每張 Feature Map 只給出一個重要特徵，那麼可能會清楚明白的多，也更匹配人類智能的理解能力。
+* Saliency Map
+* 類積活地圖(Class Activation Map)
+    * Class Activation Map 的問題是如果使用底層的 feature map 計算 class activation map, 結果分辨率很高，物體的邊界很清晰，但是包含有很多無關的屬性。而高層的 feature map 計算的 class activation map 提取了對分類最重要的區域，更接局域，但定位精度不高。
+    * 一般的CAM只高量一張圖片中對分類起最重要作用的區域，但對於語意分割任務，人類則希望獲得一個物體的整體，比如整隻大象，而不僅僅是大象的鼻子，眼睛和耳朵。
+* Mask 的方法
+</details>
+<details>
+<summary> 方向展望 </summary>
+
+* 人類看到一張圖片的時候大腦不僅對圖片中所有物體做了分類，同時還做了像素級別的分割。我們並沒有在 Bounding Box/ Pixel-wise Segmentation 做過監督訓練。如果能夠過半監督學習的方式，比如 Autoencoder, GAN + Classifier 的方法，弱監督學習到如何對一張圖片做出與人類大腦一致的分割，那麼將極大提高其可解釋性，至少是人類可理解的解釋。
+<details>
