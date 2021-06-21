@@ -299,7 +299,7 @@
 <summary> 方向展望 </summary>
 
 * 人類看到一張圖片的時候大腦不僅對圖片中所有物體做了分類，同時還做了像素級別的分割。我們並沒有在 Bounding Box/ Pixel-wise Segmentation 做過監督訓練。如果能夠過半監督學習的方式，比如 Autoencoder, GAN + Classifier 的方法，弱監督學習到如何對一張圖片做出與人類大腦一致的分割，那麼將極大提高其可解釋性，至少是人類可理解的解釋。
-<details>
+</details>
 
 # (2020) XAI
 ### Opportunities and Challenges in Explainable Artificial Intelligence (XAI): A Survey
