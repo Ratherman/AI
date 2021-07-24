@@ -174,3 +174,16 @@ Let's leave it there. ^_^ By "it", I mean Appendix.
 </details>
 
 # Code Blocks & Explanations
+* There are 5 modules I'll cover in the following contents.
+* From small module to large module.
+* Besides knowing how to make vision transformer work, there will be also one more section/ module to introduce XAI.
+
+## Module 1: Patch Embedding Module
+
+## Module 2: Attention Module
+
+## Module 3: Multilayer Perceptron
+
+## Module 4: Block Module
+
+## Module 5: Vision Transformer
